@@ -30,10 +30,12 @@ public class CollectionBeanProducto implements Serializable {
     private double precio;
     private int stock;
     private Categoria categoria;
+    private boolean editable;
 
     public CollectionBeanProducto() {
-	this.list.add(new RowProducto(4, "Foco LED alta potencia ", "EVLITE", 3.91, 15, 4));
-        this.list.add(new RowProducto(5, "Reflector Led Slim ", "EVLITE", 9.98, 4, 4));
+        Categoria c = new Categoria();
+	this.list.add(new RowProducto(4, "Foco LED alta potencia ", "EVLITE", 3.91, 15, c));
+        this.list.add(new RowProducto(5, "Reflector Led Slim ", "EVLITE", 9.98, 4, c));
     }
 
     public String add() {
@@ -41,26 +43,26 @@ public class CollectionBeanProducto implements Serializable {
 	return null;
     }
 
-    public String delete(Row t) {
+    public String delete(RowProducto t) {
 	this.list.remove(t);
 	return null;
     }
 
-    public String edit(Row t) {
+    public String edit(RowProducto t) {
 	t.setEditable(true);
 	return null;
     }
 
-    public String save(Row t) {
+    public String save(RowProducto t) {
 	t.setEditable(false);
 	return null;
     }
 
-    public Row[] getList() {
-	return list.toArray(new Row[0]);
+    public RowProducto[] getList() {
+	return list.toArray(new RowProducto[0]);
     }
 
-    public void setList(Set<Row> list) {
+    public void setList(Set<RowProducto> list) {
 	this.list = list;
     }
 
@@ -111,6 +113,16 @@ public class CollectionBeanProducto implements Serializable {
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
     }
+
+    public boolean isEditable() {
+        return editable;
+    }
+
+    public void setEditable(boolean editable) {
+        this.editable = editable;
+    }
+    
+    
 
   
 }
