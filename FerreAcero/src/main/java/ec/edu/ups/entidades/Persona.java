@@ -12,7 +12,7 @@ import java.io.Serializable;
 
 /**
  *
- * @author Bernardo ct
+ * @author Bernardo 
  */
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -48,7 +48,7 @@ public class Persona implements Serializable{
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "persona")
     private Rols rol;
 
-   @OneToMany(cascade = CascadeType.ALL, mappedBy = "Persona")
+   @OneToMany(cascade = CascadeType.ALL, mappedBy = "persona")
     private Set<FacturaCabecera> facturas = new HashSet<FacturaCabecera>();
    
     public Persona() {

@@ -28,7 +28,7 @@ public class Sucursal implements Serializable {
     private String nombre;
     private String latitud;
     private String longitud;
-     @OneToMany(cascade = CascadeType.ALL, mappedBy = "Sucursal")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "Sucursal")
     private Set<Producto> productos = new HashSet<Producto>();
 
     public Sucursal() {
