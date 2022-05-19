@@ -5,6 +5,8 @@
 package ec.edu.ups.entidades;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -14,10 +16,7 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.HashSet;
 import java.util.Set;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+
 
 /**
  *
@@ -33,10 +32,12 @@ public class CarritoCabecera implements Serializable {
     private GregorianCalendar carr_fecha;
    
     
-    @Transient
-    private boolean editable;
+    
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "CarritoCabecera")
     private Set<CarritoDetalle> carritodetalle = new HashSet<CarritoDetalle>();
+    
+    @Transient
+    private boolean editable;
 
     public CarritoCabecera() {
     }

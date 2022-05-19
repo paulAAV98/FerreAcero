@@ -1,25 +1,17 @@
 ec\edu\ups\pojos\Row.class
 ec\edu\ups\beans\ProductoBean.class
-<<<<<<< HEAD
-=======
 ec\edu\ups\beans\CarritoDetalleBean.class
->>>>>>> f43e446a30c3dcd6d998636f66420fc1d8027e95
 ec\edu\ups\beans\CollectionBean.class
 ec\edu\ups\ejb\CategoriaFacade.class
 ec\edu\ups\entidades\Persona.class
 ec\edu\ups\entidades\Sucursal.class
 ec\edu\ups\ferreacero\JakartaRestConfiguration.class
 ec\edu\ups\ferreacero\resources\JakartaEE9Resource.class
-<<<<<<< HEAD
-ec\edu\ups\beans\CollectionBeanFacturaCabecera.class
-ec\edu\ups\entidades\Categoria.class
-=======
 ec\edu\ups\ejb\CarritoCabeceraFacade.class
 ec\edu\ups\beans\CollectionBeanFacturaCabecera.class
 ec\edu\ups\ejb\CarritoDetalleFacade.class
 ec\edu\ups\entidades\Categoria.class
 ec\edu\ups\pojos\RowCarritoDetalle.class
->>>>>>> f43e446a30c3dcd6d998636f66420fc1d8027e95
 ec\edu\ups\entidades\CarritoDetalle.class
 ec\edu\ups\ejb\PersonaFacade.class
 ec\edu\ups\entidades\TarjetaCredito.class
@@ -28,10 +20,7 @@ ec\edu\ups\beans\CategoriaBean.class
 ec\edu\ups\entidades\FacturaDetalle.class
 ec\edu\ups\beans\CollectionBeanCategoria.class
 ec\edu\ups\beans\FacturaCabecera.class
-<<<<<<< HEAD
-=======
 ec\edu\ups\beans\CarritoCabeceraBean.class
->>>>>>> f43e446a30c3dcd6d998636f66420fc1d8027e95
 ec\edu\ups\ejb\AbstractFacade.class
 ec\edu\ups\entidades\Producto.class
 ec\edu\ups\beans\PersonaBean.class
@@ -41,8 +30,5 @@ ec\edu\ups\entidades\FacturaCabecera.class
 ec\edu\ups\pojos\RowProducto.class
 ec\edu\ups\beans\CollectionBeanProducto.class
 ec\edu\ups\entidades\Rols.class
-<<<<<<< HEAD
-=======
 ec\edu\ups\pojos\RowCarritoCabecera.class
->>>>>>> f43e446a30c3dcd6d998636f66420fc1d8027e95
 ec\edu\ups\entidades\CarritoCabecera.class
