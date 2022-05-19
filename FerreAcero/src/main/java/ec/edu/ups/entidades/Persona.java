@@ -4,7 +4,7 @@
  */
 package ec.edu.ups.entidades;
 
-import ec.edu.ups.beans.FacturaCabecera;
+import ec.edu.ups.entidades.FacturaCabecera;
 import jakarta.persistence.CascadeType;
 import java.io.Serializable;
 
@@ -47,13 +47,19 @@ public class Persona implements Serializable{
     private boolean editable;
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "persona")
     private Rols rol;
+<<<<<<< HEAD
    @OneToMany(cascade = CascadeType.ALL, mappedBy = "FacturaCabecera")
     private Set<FacturaCabecera> facturas = new HashSet<FacturaCabecera>();
+=======
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "persona")
+    private Set<FacturaCabecera> facturas = new HashSet<FacturaCabecera>();
+   
+>>>>>>> edd6942ddfbeba5bf0356502deffe30ff6a46abb
 
     public Persona() {
     }
 
-    public Persona(int id, String nombre, String apellido, String clave, String cedula, String direccion, String email, String telefono, FacturaCabecera factura) {
+    public Persona(int id, String nombre, String apellido, String clave, String cedula, String direccion, String email, String telefono) {
         this.per_id = id;
         this.per_nombre = nombre;
         this.per_apellido = apellido;
@@ -62,6 +68,10 @@ public class Persona implements Serializable{
         this.per_direccion = direccion;
         this.per_email = email;
         this.per_telefono = telefono;
+<<<<<<< HEAD
+=======
+        
+>>>>>>> edd6942ddfbeba5bf0356502deffe30ff6a46abb
         
         this.editable = editable;
         this.rol = rol;
@@ -139,6 +149,7 @@ public class Persona implements Serializable{
         return per_telefono;
     }
 
+<<<<<<< HEAD
  public void addFacturas(FacturaCabecera factura){
         this.facturas.add(factura);
     }
@@ -146,12 +157,15 @@ public class Persona implements Serializable{
     public void removeFacturas(FacturaCabecera factura){
         this.facturas.remove(factura);
     }
+=======
+   
+>>>>>>> edd6942ddfbeba5bf0356502deffe30ff6a46abb
 
   
 
    
     /*public static long getSerialVersionUID() {
-        return serialVersionUID;
+       return serialVersionUID;
     }*/
     
     

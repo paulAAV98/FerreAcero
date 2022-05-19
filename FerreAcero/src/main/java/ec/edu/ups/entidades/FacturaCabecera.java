@@ -13,6 +13,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 
 /**
  *
@@ -30,9 +33,19 @@ public class FacturaCabecera implements Serializable {
     private double total;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "factura")
     private Set<FacturaDetalle> facturadetalles = new HashSet<FacturaDetalle>();
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "factura")
-    private Set<Persona> personas = new HashSet<Persona>();
-    ////persoan
+    @ManyToOne
+    @JoinColumn
+    private Persona per;
+
+    public void setPer(Persona per) {
+        this.per = per;
+    }
+
+    public Persona getPer() {
+        return per;
+    }
+    
+    
     
     public FacturaCabecera(){
         super();
@@ -85,25 +98,14 @@ public class FacturaCabecera implements Serializable {
         this.facturadetalles = facturadetalles;
     }
     
-    public Set<Persona> getPersonas() {
-        return personas;
-    }
-
-    public void setPersonas(Set<Persona> personas) {
-        this.personas = personas;
-    }
+   
     public void addFacturaDetalle(FacturaDetalle detalle){
         this.facturadetalles.add(detalle);
     }
     public void removeFacturaDetalle(FacturaDetalle detalle){
         this.facturadetalles.remove(detalle);
     }
-    public void addPersona(Persona persona){
-        this.personas.add(persona);
-    }
-    public void removePersona(Persona persona){
-        this.personas.remove(persona);
-    }
+    
 
     @Override
     public int hashCode() {

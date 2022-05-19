@@ -43,7 +43,7 @@ public class PersonaBean implements Serializable {
     }
     
     public String add() {	
-        personaFacade.create(new Persona(per_id,per_nombre, per_apellido, per_clave, per_cedula, per_direccion, per_email, per_telefono, factura));
+        personaFacade.create(new Persona(per_id,per_nombre, per_apellido, per_clave, per_cedula, per_direccion, per_email, per_telefono));
         list = personaFacade.findAll();
 	return null;
     }
