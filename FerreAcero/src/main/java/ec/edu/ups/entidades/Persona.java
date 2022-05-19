@@ -4,7 +4,7 @@
  */
 package ec.edu.ups.entidades;
 
-import ec.edu.ups.beans.FacturaCabecera;
+import ec.edu.ups.entidades.FacturaCabecera;
 import jakarta.persistence.CascadeType;
 import java.io.Serializable;
 
@@ -20,12 +20,15 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Persistence;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import jakarta.persistence.Transient;
 import java.util.GregorianCalendar;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Persona implements Serializable{
@@ -44,14 +47,14 @@ public class Persona implements Serializable{
     private boolean editable;
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "persona")
     private Rols rol;
-    @ManyToOne
-    @JoinColumn
-    private FacturaCabecera factura;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "persona")
+    private Set<FacturaCabecera> facturas = new HashSet<FacturaCabecera>();
+   
 
     public Persona() {
     }
 
-    public Persona(int id, String nombre, String apellido, String clave, String cedula, String direccion, String email, String telefono, FacturaCabecera factura) {
+    public Persona(int id, String nombre, String apellido, String clave, String cedula, String direccion, String email, String telefono) {
         this.per_id = id;
         this.per_nombre = nombre;
         this.per_apellido = apellido;
@@ -60,7 +63,7 @@ public class Persona implements Serializable{
         this.per_direccion = direccion;
         this.per_email = email;
         this.per_telefono = telefono;
-        this.factura = factura;
+        
         
         this.editable = editable;
         this.rol = rol;
@@ -138,19 +141,13 @@ public class Persona implements Serializable{
         return per_telefono;
     }
 
-    public FacturaCabecera getFactura() {
-        return factura;
-    }
-
-    public void setFactura(FacturaCabecera factura) {
-        this.factura = factura;
-    }
+   
 
   
 
    
     /*public static long getSerialVersionUID() {
-        return serialVersionUID;
+       return serialVersionUID;
     }*/
     
     
