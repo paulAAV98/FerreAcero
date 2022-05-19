@@ -33,6 +33,7 @@ public class Producto implements Serializable {
     @ManyToOne
     @JoinColumn
     private Categoria categoria;
+    private boolean editable;
 
        public Producto() {
         super();
@@ -47,7 +48,16 @@ public class Producto implements Serializable {
         this.categoria = categoria;
     }
 
+    public boolean isEditable() {
+        return editable;
+    }
 
+    public void setEditable(boolean editable) {
+        this.editable = editable;
+    }
+
+    
+    
     @Override
     public int hashCode() {
         return id;

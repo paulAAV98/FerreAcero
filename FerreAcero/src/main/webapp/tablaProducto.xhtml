@@ -40,8 +40,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit t
 		<h:dataTable value="#{collectionBean.list}" var="o" styleClass="tabla"
 			headerClass="cabeceraTabla" rowClasses="filaPar,filaImpar">
 			<h:column>
-				<f:facet name="header">Id</f:facet>#{o.id}
-                        </h:column>
+				<f:facet name="header">Id</f:facet>
+                                <h:inputText value="#{o.id}" size="10" rendered="#{o.editable}" />
+                                <h:outputText value="#{o.id}" rendered="#{not o.editable}" />
 			<h:column>
 				<f:facet name="header">Nombre</f:facet>
 				<h:inputText value="#{o.nombre}" size="10" rendered="#{o.editable}" />

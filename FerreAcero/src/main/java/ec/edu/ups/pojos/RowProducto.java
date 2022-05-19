@@ -89,11 +89,6 @@ public class RowProducto implements Serializable {
     public void setEditable(boolean editable) {
         this.editable = editable;
     }
-    
-    
-
-
-    
 
     @Override
     public int hashCode() {
