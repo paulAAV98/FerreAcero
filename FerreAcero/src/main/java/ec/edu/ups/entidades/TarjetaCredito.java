@@ -19,6 +19,39 @@ public class TarjetaCredito implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
+    private int codigo;
+    private String tipoTarjeta;
+    
+    private Persona persona ;
+
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
+    }
+
+    public String getTipoTarjeta() {
+        return tipoTarjeta;
+    }
+
+    public void setTipoTarjeta(String tipoTarjeta) {
+        this.tipoTarjeta = tipoTarjeta;
+    }
+
+    public Persona getPersona() {
+        return persona;
+    }
+
+    public void setPersona(Persona persona) {
+        this.persona = persona;
+    }
+    
+    
+    
+    
+    
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
