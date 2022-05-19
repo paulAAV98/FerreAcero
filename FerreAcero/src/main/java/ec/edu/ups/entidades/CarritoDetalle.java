@@ -12,7 +12,7 @@ import javax.persistence.Id;
 
 /**
  *
- * @author Bernardo
+ * @author ssnajs
  */
 @Entity
 public class CarritoDetalle implements Serializable {
@@ -20,6 +20,67 @@ public class CarritoDetalle implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    private int detalle_id;
+    private int  detalle_cantidad;
+    private double detalle_precio;
+    private double detalle_iva;
+    private double detalle_total;
+    
+    private Producto producto;
+
+    public int getDetalle_id() {
+        return detalle_id;
+    }
+
+    public void setDetalle_id(int detalle_id) {
+        this.detalle_id = detalle_id;
+    }
+
+    public int getDetalle_cantidad() {
+        return detalle_cantidad;
+    }
+
+    public void setDetalle_cantidad(int detalle_cantidad) {
+        this.detalle_cantidad = detalle_cantidad;
+    }
+
+    public double getDetalle_precio() {
+        return detalle_precio;
+    }
+
+    public void setDetalle_precio(double detalle_precio) {
+        this.detalle_precio = detalle_precio;
+    }
+
+    public double getDetalle_iva() {
+        return detalle_iva;
+    }
+
+    public void setDetalle_iva(double detalle_iva) {
+        this.detalle_iva = detalle_iva;
+    }
+
+    public double getDetalle_total() {
+        return detalle_total;
+    }
+
+    public void setDetalle_total(double detalle_total) {
+        this.detalle_total = detalle_total;
+    }
+
+    public Producto getProducto() {
+        return producto;
+    }
+
+    public void setProducto(Producto producto) {
+        this.producto = producto;
+    }
+   
+    
+    
+    
+    
+    
     private int id;
 
     public int getId() {
