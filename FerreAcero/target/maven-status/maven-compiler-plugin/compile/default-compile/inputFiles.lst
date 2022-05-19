@@ -1,6 +1,7 @@
 C:\Users\Usuario R\Documents\GitHub\ProyectoLeon\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\ejb\PersonaFacade.java
 C:\Users\Usuario R\Documents\GitHub\ProyectoLeon\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\entidades\CarritoDetalle.java
 C:\Users\Usuario R\Documents\GitHub\ProyectoLeon\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\ferreacero\resources\JakartaEE9Resource.java
+C:\Users\Usuario R\Documents\GitHub\ProyectoLeon\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\entidades\FacturaDetalle.java
 C:\Users\Usuario R\Documents\GitHub\ProyectoLeon\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\entidades\CarritoCabecera.java
 C:\Users\Usuario R\Documents\GitHub\ProyectoLeon\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\entidades\Rols.java
 C:\Users\Usuario R\Documents\GitHub\ProyectoLeon\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\entidades\Sucursal.java
@@ -13,6 +14,9 @@ C:\Users\Usuario R\Documents\GitHub\ProyectoLeon\FerreAcero\FerreAcero\src\main\
 C:\Users\Usuario R\Documents\GitHub\ProyectoLeon\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\ejb\AbstractFacade.java
 C:\Users\Usuario R\Documents\GitHub\ProyectoLeon\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\beans\PersonaBean.java
 C:\Users\Usuario R\Documents\GitHub\ProyectoLeon\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\ejb\CategoriaFacade.java
+C:\Users\Usuario R\Documents\GitHub\ProyectoLeon\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\ejb\FacturaCabeceraFacade.java
+C:\Users\Usuario R\Documents\GitHub\ProyectoLeon\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\entidades\FacturaCabecera.java
 C:\Users\Usuario R\Documents\GitHub\ProyectoLeon\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\entidades\Persona.java
 C:\Users\Usuario R\Documents\GitHub\ProyectoLeon\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\beans\ProductoBean.java
+C:\Users\Usuario R\Documents\GitHub\ProyectoLeon\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\ejb\FacturaDetalleFacade.java
 C:\Users\Usuario R\Documents\GitHub\ProyectoLeon\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\entidades\TarjetaCredito.java
