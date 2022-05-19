@@ -124,7 +124,7 @@ public class FacturaCabecera implements Serializable {
         if (this.id != other.id) {
             return false;
         }
-        return true;
+        return true;  
     }
 
     @Override
