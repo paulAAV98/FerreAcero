@@ -15,7 +15,7 @@ import java.io.Serializable;
 
 /**
  *
- * @author Usuario
+ * @author Bernardo
  */
 @Entity
 public class Producto implements Serializable {

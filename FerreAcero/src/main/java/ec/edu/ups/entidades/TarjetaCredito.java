@@ -12,7 +12,7 @@ import javax.persistence.Id;
 
 /**
  *
- * @author USUARIO
+ * @author Bernardo
  */
 @Entity
 public class TarjetaCredito implements Serializable {

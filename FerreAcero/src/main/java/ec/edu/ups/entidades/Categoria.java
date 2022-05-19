@@ -17,7 +17,7 @@ import java.util.Set;
 
 /**
  *
- * @author Usuario
+ * @author Bernardo
  */
 @Entity
 public class Categoria implements Serializable {
