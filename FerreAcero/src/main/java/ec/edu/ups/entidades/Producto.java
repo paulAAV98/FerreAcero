@@ -37,9 +37,6 @@ public class Producto implements Serializable {
     @JoinColumn
     private Sucursal sucursal;
     private boolean editable;
-    @ManyToOne
-    @JoinColumn
-    Sucursal sucursal;
     
 
        public Producto() {

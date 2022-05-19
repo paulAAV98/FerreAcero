@@ -13,14 +13,12 @@ import jakarta.persistence.OneToMany;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
-<<<<<<< HEAD
 
-=======
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
->>>>>>> 775dacc4c771dbde71e2d394ca521c3af7a6df28
 
 /**
  *
