@@ -45,17 +45,6 @@ public class Persona implements Serializable{
     private String per_telefono;
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "persona")
     private Rols rol;
-<<<<<<< HEAD
-
-
-   
-
-
-   
-
-
-=======
->>>>>>> 33b92a6e6c00a7c94a0ce393f212e21b5140df93
    @OneToMany(cascade = CascadeType.ALL, mappedBy = "persona")
     private Set<FacturaCabecera> facturacabecera = new HashSet<FacturaCabecera>();
    @Transient
