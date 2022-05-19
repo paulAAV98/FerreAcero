@@ -9,6 +9,8 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Transient;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -30,72 +32,25 @@ public class CarritoCabecera implements Serializable {
     @Transient
     private boolean editable;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "CarritoCabecera")
-    private CarritoDetalle CarritoDetalle;
-    
+    private Set<CarritoDetalle> carritodetalle = new HashSet<CarritoDetalle>();
 
-    public int getCarr_id() {
-        return carr_id;
+    public CarritoCabecera() {
     }
 
-    public void setCarr_id(int carr_id) {
+    public CarritoCabecera(int carr_id, Date carr_fecha) {
         this.carr_id = carr_id;
-    }
-
-    public Date getCarr_fecha() {
-        return carr_fecha;
-    }
-
-    public void setCarr_fecha(Date carr_fecha) {
         this.carr_fecha = carr_fecha;
-    }
-
-    public CarritoDetalle getCarritoDetalle() {
-        return CarritoDetalle;
-    }
-
-    public void setCarritoDetalle(CarritoDetalle CarritoDetalle) {
-        this.CarritoDetalle = CarritoDetalle;
-    }
-
     
+    }
+   
+
+    public void addCarritoDetalle(CarritoDetalle carritodetalle){
+        this.carritodetalle.add(carritodetalle);
+    }
     
-    
-    
-    
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
-
-    public int getId() {
-        return id;
+    public void removeCarritoDetalle(CarritoDetalle carritodetalle){
+        this.carritodetalle.remove(carritodetalle);
     }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (int) id;
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof CarritoCabecera)) {
-            return false;
-        }
-        CarritoCabecera other = (CarritoCabecera) object;
-        if (this.id != other.id) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "ec.edu.ups.entidades.CarritoCabecera[ id=" + id + " ]";
-    }
+   
     
 }

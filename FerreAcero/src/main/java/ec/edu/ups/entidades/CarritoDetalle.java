@@ -4,6 +4,11 @@
  */
 package ec.edu.ups.entidades;
 
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Transient;
 import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -21,99 +26,57 @@ public class CarritoDetalle implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int detalle_id;
-    private int  detalle_cantidad;
+    private int detalle_cantidad;
     private double detalle_precio;
     private double detalle_iva;
     private double detalle_total;
-    
-    private Producto producto;
 
-    public int getDetalle_id() {
-        return detalle_id;
+    @ManyToOne
+    @JoinColumn
+    private Producto produto;
+    private CarritoCabecera carritocabecera;
+
+    @Transient
+    private boolean editable;
+
+    public CarritoDetalle() {
     }
 
-    public void setDetalle_id(int detalle_id) {
+    public CarritoDetalle(int detalle_id, int detalle_cantidad, double detalle_precio, double detalle_iva, double detalle_total, Producto produto, CarritoCabecera carritocabecera) {
         this.detalle_id = detalle_id;
-    }
-
-    public int getDetalle_cantidad() {
-        return detalle_cantidad;
-    }
-
-    public void setDetalle_cantidad(int detalle_cantidad) {
         this.detalle_cantidad = detalle_cantidad;
-    }
-
-    public double getDetalle_precio() {
-        return detalle_precio;
-    }
-
-    public void setDetalle_precio(double detalle_precio) {
         this.detalle_precio = detalle_precio;
-    }
-
-    public double getDetalle_iva() {
-        return detalle_iva;
-    }
-
-    public void setDetalle_iva(double detalle_iva) {
         this.detalle_iva = detalle_iva;
-    }
-
-    public double getDetalle_total() {
-        return detalle_total;
-    }
-
-    public void setDetalle_total(double detalle_total) {
         this.detalle_total = detalle_total;
+        this.produto = produto;
+        this.carritocabecera = carritocabecera;
     }
 
-    public Producto getProducto() {
-        return producto;
+    public boolean isEditable() {
+        return editable;
     }
 
-    public void setProducto(Producto producto) {
-        this.producto = producto;
+    public void setEditable(boolean editable) {
+        this.editable = editable;
     }
-   
     
     
-    
-    
-    
-    private int id;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     @Override
     public int hashCode() {
-        int hash = 0;
-        hash += (int) id;
-        return hash;
+        return detalle_id;
     }
 
     @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof CarritoDetalle)) {
+    public boolean equals(Object other) {
+// TODO: Warning - this method won't work in the case the id fields are not set
+        if (other == null) {
             return false;
         }
-        CarritoDetalle other = (CarritoDetalle) object;
-        if (this.id != other.id) {
+        if (getClass() != other.getClass()) {
             return false;
         }
-        return true;
+        return other.hashCode() == this.hashCode();
     }
 
-    @Override
-    public String toString() {
-        return "ec.edu.ups.entidades.CarritoDetalle[ id=" + id + " ]";
-    }
-    
 }
