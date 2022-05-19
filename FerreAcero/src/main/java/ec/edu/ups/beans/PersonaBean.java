@@ -10,6 +10,7 @@ import ec.edu.ups.entidades.Persona;
 import jakarta.annotation.PostConstruct;
 import jakarta.ejb.EJB;
 import jakarta.enterprise.context.SessionScoped;
+import jakarta.faces.annotation.FacesConfig;
 import jakarta.inject.Named;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -19,6 +20,7 @@ import java.util.List;
  *
  * @author bernardo
  */
+@FacesConfig(version = FacesConfig.Version.JSF_2_3)
 @Named
 @SessionScoped
 public class PersonaBean implements Serializable {
@@ -27,15 +29,14 @@ public class PersonaBean implements Serializable {
      @EJB
      private PersonaFacade personaFacade;     
      private List<Persona> list = new ArrayList<>();
-     private int per_id;
-    private String  per_nombre;
-    private String per_apellido;
-    private String per_clave;
-    private String per_cedula;
-    private String per_direccion;
-    private String per_email;
-    private String per_telefono;
-    private FacturaCabecera factura;
+     private int id;
+    private String nombre;
+    private String apellido;
+    private String clave;
+    private String cedula;
+    private String direccion;
+    private String email;
+    private String telefono;
 
     @PostConstruct
     public void init() {	
@@ -43,7 +44,7 @@ public class PersonaBean implements Serializable {
     }
     
     public String add() {	
-        personaFacade.create(new Persona(per_id,per_nombre, per_apellido, per_clave, per_cedula, per_direccion, per_email, per_telefono));
+        personaFacade.create(new Persona(id,nombre, apellido, clave, cedula, direccion, email, telefono));
         list = personaFacade.findAll();
 	return null;
     }
@@ -82,37 +83,71 @@ public class PersonaBean implements Serializable {
         this.personaFacade = personaFacade;
     }
 
-    public void setPer_apellido(String per_apellido) {
-        this.per_apellido = per_apellido;
+    public int getId() {
+        return id;
     }
 
-    public void setPer_cedula(String per_cedula) {
-        this.per_cedula = per_cedula;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void setPer_clave(String per_clave) {
-        this.per_clave = per_clave;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setPer_direccion(String per_direccion) {
-        this.per_direccion = per_direccion;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public void setPer_email(String per_email) {
-        this.per_email = per_email;
+    public String getApellido() {
+        return apellido;
     }
 
-    public void setPer_id(int per_id) {
-        this.per_id = per_id;
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
-    public void setPer_nombre(String per_nombre) {
-        this.per_nombre = per_nombre;
+    public String getClave() {
+        return clave;
     }
 
-    public void setPer_telefono(String per_telefono) {
-        this.per_telefono = per_telefono;
+    public void setClave(String clave) {
+        this.clave = clave;
     }
+
+    public String getCedula() {
+        return cedula;
+    }
+
+    public void setCedula(String cedula) {
+        this.cedula = cedula;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+   
 
     public void setPersonaFacade(PersonaFacade personaFacade) {
         this.personaFacade = personaFacade;

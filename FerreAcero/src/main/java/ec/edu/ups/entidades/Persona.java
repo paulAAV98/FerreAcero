@@ -4,7 +4,6 @@
  */
 package ec.edu.ups.entidades;
 
-import ec.edu.ups.entidades.FacturaCabecera;
 import jakarta.persistence.CascadeType;
 import java.io.Serializable;
 
@@ -45,8 +44,6 @@ public class Persona implements Serializable{
     private String per_telefono;
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "persona")
     private Rols rol;
-   @OneToMany(cascade = CascadeType.ALL, mappedBy = "persona")
-    private Set<FacturaCabecera> facturacabecera = new HashSet<FacturaCabecera>();
    @Transient
     private boolean editable;
 
@@ -142,13 +139,6 @@ public class Persona implements Serializable{
     }
 
 
- public void addFacturaCabecera(FacturaCabecera factura){
-        this.facturacabecera.add(factura);
-    }
-    
-    public void removeFacturaCabecera(FacturaCabecera factura){
-        this.facturacabecera.remove(factura);
-    }
    
     /*public static long getSerialVersionUID() {
        return serialVersionUID;

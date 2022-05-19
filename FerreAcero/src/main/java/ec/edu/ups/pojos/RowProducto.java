@@ -5,6 +5,7 @@
 package ec.edu.ups.pojos;
 
 import ec.edu.ups.entidades.Categoria;
+import ec.edu.ups.entidades.Sucursal;
 import java.io.Serializable;
 
 /**
@@ -21,15 +22,17 @@ public class RowProducto implements Serializable {
     private double precio;
     private int stock;
     private Categoria categoria;
+    private Sucursal sucursal;
     private boolean editable;
 
-    public RowProducto(int id, String nombre, String marca, double precio, int stock, Categoria categoria) {
+    public RowProducto(int id, String nombre, String marca, double precio, int stock, Categoria categoria, Sucursal sucursal) {
         this.id = id;
         this.nombre = nombre;
         this.marca = marca;
         this.precio = precio;
         this.stock = stock;
         this.categoria = categoria;
+        this.sucursal = sucursal;
     }
 
     
@@ -90,6 +93,16 @@ public class RowProducto implements Serializable {
         this.editable = editable;
     }
 
+    public Sucursal getSucursal() {
+        return sucursal;
+    }
+
+    public void setSucursal(Sucursal sucursal) {
+        this.sucursal = sucursal;
+    }
+
+    
+    
     @Override
     public int hashCode() {
 	return id;

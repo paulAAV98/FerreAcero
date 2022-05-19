@@ -8,6 +8,7 @@ import ec.edu.ups.ejb.ProductoFacade;
 import ec.edu.ups.entidades.Categoria;
 import ec.edu.ups.entidades.Persona;
 import ec.edu.ups.entidades.Producto;
+import ec.edu.ups.entidades.Sucursal;
 import jakarta.annotation.PostConstruct;
 import jakarta.ejb.EJB;
 import jakarta.enterprise.context.SessionScoped;
@@ -35,13 +36,14 @@ public class ProductoBean implements Serializable {
     private double precio;
     private int stock;
     private Categoria categoria;
+    private Sucursal sucursal;
     @PostConstruct
     public void init() {	
 	list = productoFacade.findAll();
     }
     
     public String add() {	
-        productoFacade.create(new Producto(id, nombre, marca, precio, stock, categoria));
+        productoFacade.create(new Producto(id, nombre, marca, precio, stock, categoria, sucursal));
         list = productoFacade.findAll();
 	return null;
     }
