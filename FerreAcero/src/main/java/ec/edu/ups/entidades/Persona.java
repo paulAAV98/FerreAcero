@@ -4,84 +4,155 @@
  */
 package ec.edu.ups.entidades;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
+import jakarta.persistence.CascadeType;
 import java.io.Serializable;
-import java.util.GregorianCalendar;
+
 
 
 /**
  *
- * @author Usuario
+ * @author Bernardo
  */
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.Persistence;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
+import jakarta.persistence.Transient;
+import java.util.GregorianCalendar;
+
 @Entity
-public class Persona implements Serializable {
+public class Persona implements Serializable{
 
-    private static final long serialVersionUID = 1L;
+   
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
-    private String nombre;
-    private String apellido;
-    @Temporal(TemporalType.DATE)
-    private GregorianCalendar fechaNacimiento;
+    private int per_id;
+    private String  per_nombre;
+    private String per_apellido;
+    private String per_clave;
+    private String per_cedula;
+    private String per_direccion;
+    private String per_email;
+    private String per_telefono;
+    @Transient
+    private boolean editable;
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "persona")
+    private Rols rol;
 
-    public Persona(int id, String nombre, String apellido, GregorianCalendar fechaNacimiento) {
-        this.id = id;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.fechaNacimiento = fechaNacimiento;
+    public Persona() {
     }
-    
-    public Persona(){
+
+    public Persona(int id, String nombre, String apellido, String clave, String cedula, String direccion, String email, String telefono) {
+        this.per_id = id;
+        this.per_nombre = nombre;
+        this.per_apellido = apellido;
+        this.per_clave = clave;
+        this.per_cedula = cedula;
+        this.per_direccion = direccion;
+        this.per_email = email;
+        this.per_telefono = telefono;
         
+        this.editable = editable;
+        this.rol = rol;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setPer_apellido(String per_apellido) {
+        this.per_apellido = per_apellido;
     }
 
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
+    public void setPer_cedula(String per_cedula) {
+        this.per_cedula = per_cedula;
     }
 
-    public void setFechaNacimiento(GregorianCalendar fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
+    public void setPer_clave(String per_clave) {
+        this.per_clave = per_clave;
     }
 
-    public String getNombre() {
-        return nombre;
+    public void setPer_direccion(String per_direccion) {
+        this.per_direccion = per_direccion;
     }
 
-    public static long getSerialVersionUID() {
+    public void setPer_email(String per_email) {
+        this.per_email = per_email;
+    }
+
+    public void setPer_id(int per_id) {
+        this.per_id = per_id;
+    }
+
+    public void setPer_nombre(String per_nombre) {
+        this.per_nombre = per_nombre;
+    }
+
+    public void setPer_rol(Rols per_rol) {
+        this.rol = per_rol;
+    }
+
+    public void setPer_telefono(String per_telefono) {
+        this.per_telefono = per_telefono;
+    }
+
+    public String getPer_apellido() {
+        return per_apellido;
+    }
+
+    public String getPer_cedula() {
+        return per_cedula;
+    }
+
+    public String getPer_clave() {
+        return per_clave;
+    }
+
+    public String getPer_direccion() {
+        return per_direccion;
+    }
+
+    public String getPer_email() {
+        return per_email;
+    }
+
+    public int getPer_id() {
+        return per_id;
+    }
+
+    public String getPer_nombre() {
+        return per_nombre;
+    }
+
+    public Rols getPer_rol() {
+        return rol;
+    }
+
+    public String getPer_telefono() {
+        return per_telefono;
+    }
+
+  
+
+   
+    /*public static long getSerialVersionUID() {
         return serialVersionUID;
-    }
-
-    public String getApellido() {
-        return apellido;
-    }
-
-    public GregorianCalendar getFechaNacimiento() {
-        return fechaNacimiento;
-    }
+    }*/
     
-
-    public int getId() {
-        return id;
+    
+    
+   
+    public boolean isEditable() {
+        return editable;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+    public void setEditable(boolean editable) {
+        this.editable = editable;
+    } 
 
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (int) id;
+        hash += (int) per_id;
         return hash;
     }
 
@@ -92,7 +163,7 @@ public class Persona implements Serializable {
             return false;
         }
         Persona other = (Persona) object;
-        if (this.id != other.id) {
+        if (this.per_id != other.per_id) {
             return false;
         }
         return true;
@@ -100,9 +171,6 @@ public class Persona implements Serializable {
 
     @Override
     public String toString() {
-        return "Persona{" + "id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", fechaNacimiento=" + fechaNacimiento + '}';
-    }
-
-   
-    
-}
+        return "Persona{" + "id=" + per_id + ", nombre=" + per_nombre + ", apellido=" + per_apellido + '}';
+        }
+     }

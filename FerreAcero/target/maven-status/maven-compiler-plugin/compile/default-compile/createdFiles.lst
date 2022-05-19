@@ -4,6 +4,7 @@ ec\edu\ups\ejb\CategoriaFacade.class
 ec\edu\ups\ejb\AbstractFacade.class
 ec\edu\ups\entidades\Persona.class
 ec\edu\ups\entidades\Producto.class
+ec\edu\ups\entidades\Sucursal.class
 ec\edu\ups\ejb\PersonaFacade.class
 ec\edu\ups\ferreacero\JakartaRestConfiguration.class
 ec\edu\ups\ferreacero\resources\JakartaEE9Resource.class
