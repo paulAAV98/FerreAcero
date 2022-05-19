@@ -6,10 +6,7 @@ ec\edu\ups\entidades\Persona.class
 ec\edu\ups\entidades\Sucursal.class
 ec\edu\ups\ferreacero\JakartaRestConfiguration.class
 ec\edu\ups\ferreacero\resources\JakartaEE9Resource.class
-<<<<<<< HEAD
-=======
 ec\edu\ups\beans\CollectionBeanFacturaCabecera.class
->>>>>>> edd6942ddfbeba5bf0356502deffe30ff6a46abb
 ec\edu\ups\entidades\Categoria.class
 ec\edu\ups\entidades\CarritoDetalle.class
 ec\edu\ups\ejb\PersonaFacade.class
@@ -20,11 +17,8 @@ ec\edu\ups\ejb\AbstractFacade.class
 ec\edu\ups\entidades\Producto.class
 ec\edu\ups\beans\PersonaBean.class
 ec\edu\ups\ejb\ProductoFacade.class
-<<<<<<< HEAD
-=======
 ec\edu\ups\entidades\FormaPago.class
 ec\edu\ups\entidades\FacturaCabecera.class
->>>>>>> edd6942ddfbeba5bf0356502deffe30ff6a46abb
 ec\edu\ups\pojos\RowProducto.class
 ec\edu\ups\beans\CollectionBeanProducto.class
 ec\edu\ups\entidades\Rols.class
