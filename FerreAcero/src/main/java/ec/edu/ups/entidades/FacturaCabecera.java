@@ -35,7 +35,7 @@ public class FacturaCabecera implements Serializable {
     private Set<FacturaDetalle> facturadetalles = new HashSet<FacturaDetalle>();
     @ManyToOne
     @JoinColumn
-    private Persona per;
+    private Persona per; 
 
     public void setPer(Persona per) {
         this.per = per;
