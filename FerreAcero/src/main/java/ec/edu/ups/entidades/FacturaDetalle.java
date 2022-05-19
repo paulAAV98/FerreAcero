@@ -40,40 +40,7 @@ public class FacturaDetalle implements Serializable {
         this.total = total;
         this.factura = factura;
     }
-    
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public int getCantidad() {
-        return cantidad;
-    }
-
-    public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
-    }
-
-    public double getTotal() {
-        return total;
-    }
-
-    public void setTotal(double total) {
-        this.total = total;
-    }
-
-    public FacturaCabecera getFactura() {
-        return factura;
-    }
-
-    public void setFactura(FacturaCabecera factura) {
-        this.factura = factura;
-    }
-
-    @Override
+     @Override
     public int hashCode() {
         return id;
     }
@@ -84,15 +51,10 @@ public class FacturaDetalle implements Serializable {
         if (other == null) {
             return false;
         }
-        if (getClass()!= other.getClass()) {
-            return false;
+        if(getClass() != other.getClass()){
+           return false; 
         }
         return other.hashCode() == this.hashCode();
-    }
-
-    @Override
-    public String toString() {
-        return "ec.edu.ups.entidades.FacturaDetalle[ id=" + id + " ]";
     }
     
 }

@@ -43,13 +43,18 @@ public class Persona implements Serializable{
     private String per_direccion;
     private String per_email;
     private String per_telefono;
-    @Transient
-    private boolean editable;
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "persona")
     private Rols rol;
+<<<<<<< HEAD
 
    @OneToMany(cascade = CascadeType.ALL, mappedBy = "persona")
     private Set<FacturaCabecera> facturas = new HashSet<FacturaCabecera>();
+=======
+   @OneToMany(cascade = CascadeType.ALL, mappedBy = "persona")
+    private Set<FacturaCabecera> facturacabecera = new HashSet<FacturaCabecera>();
+   @Transient
+    private boolean editable;
+>>>>>>> cb232f7c9a33b7d0d42c3ba35c7bc69c11c1c5d6
    
     public Persona() {
     }
@@ -142,12 +147,12 @@ public class Persona implements Serializable{
     }
 
 
- public void addFacturas(FacturaCabecera factura){
-        this.facturas.add(factura);
+ public void addFacturaCabecera(FacturaCabecera factura){
+        this.facturacabecera.add(factura);
     }
     
-    public void removeFacturas(FacturaCabecera factura){
-        this.facturas.remove(factura);
+    public void removeFacturaCabecera(FacturaCabecera factura){
+        this.facturacabecera.remove(factura);
     }
    
     /*public static long getSerialVersionUID() {

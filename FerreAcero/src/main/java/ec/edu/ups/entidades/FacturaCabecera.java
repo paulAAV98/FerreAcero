@@ -35,15 +35,9 @@ public class FacturaCabecera implements Serializable {
     private Set<FacturaDetalle> facturadetalles = new HashSet<FacturaDetalle>();
     @ManyToOne
     @JoinColumn
-    private Persona per; 
+    private Persona persona; 
 
-    public void setPer(Persona per) {
-        this.per = per;
-    }
 
-    public Persona getPer() {
-        return per;
-    }
     
     
     
@@ -51,85 +45,38 @@ public class FacturaCabecera implements Serializable {
         super();
     }
 
-    public FacturaCabecera(int id, double subtotal, int iva, double total) {
+    public FacturaCabecera(int id, double subtotal, int iva, double total, Persona per) {
         super();
         this.id = id;
         this.subtotal = subtotal;
         this.iva = iva;
         this.total = total;
+        this.persona = persona;
     }
-    public int getId() {
+
+    
+     public void addFacturaDetalle(FacturaDetalle facturadetalle){
+        this.facturadetalles.add(facturadetalle);
+    }
+    
+    public void removeProduct(FacturaDetalle facturadetalle){
+        this.facturadetalles.remove(facturadetalle);
+    }
+    
+     @Override
+    public int hashCode() {
         return id;
     }
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public double getSubtotal() {
-        return subtotal;
-    }
-
-    public void setSubtotal(double subtotal) {
-        this.subtotal = subtotal;
-    }
-
-    public int getIva() {
-        return iva;
-    }
-
-    public void setIva(int iva) {
-        this.iva = iva;
-    }
-
-    public double getTotal() {
-        return total;
-    }
-
-    public void setTotal(double total) {
-        this.total = total;
-    }
-
-    
-    public Set<FacturaDetalle> getFacturadetalles() {
-        return facturadetalles;
-    }
-
-    public void setFacturadetalles(Set<FacturaDetalle> facturadetalles) {
-        this.facturadetalles = facturadetalles;
-    }
-    
-   
-    public void addFacturaDetalle(FacturaDetalle detalle){
-        this.facturadetalles.add(detalle);
-    }
-    public void removeFacturaDetalle(FacturaDetalle detalle){
-        this.facturadetalles.remove(detalle);
-    }
-    
 
     @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (int) id;
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
+    public boolean equals(Object other) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof FacturaCabecera)) {
+        if (other == null) {
             return false;
         }
-        FacturaCabecera other = (FacturaCabecera) object;
-        if (this.id != other.id) {
-            return false;
+        if(getClass() != other.getClass()){
+           return false; 
         }
-        return true;  
+        return other.hashCode() == this.hashCode();
     }
-
-    @Override
-    public String toString() {
-        return "ec.edu.ups.entidades.FacturaCabecera[ id=" + id + " ]";
-    }
-    
 }
