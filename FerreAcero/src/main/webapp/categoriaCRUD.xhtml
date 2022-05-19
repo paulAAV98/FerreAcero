@@ -3,63 +3,62 @@
 Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
 Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit this template
 -->
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:h="http://xmlns.jcp.org/jsf/html"
-	xmlns:f="http://xmlns.jcp.org/jsf/core">
-<h:head>
-	<title>Persona Management</title>
-	<style>
-		.tabla {
-			border-collapse: collapse;
-		}
-		
-		.cabeceraTabla {
-			text-align: center;
-			background: none repeat scroll 0 0 #E5E5E5;
-			border-bottom: 1px solid #BBBBBB;
-			padding: 8px;
-		}
-		
-		.filaPar {
-			text-align: center;
-			background: none repeat scroll 0 0 #FFFFFFF;
-			border-top: 1px solid #BBBBBB;
-		}
-		
-		.filaImpar {
-			text-align: center;
-			background: none repeat scroll 0 0 #F9F9F9;
-			border-top: 1px solid #BBBBBB;
-		}
-	</style>
-</h:head>
-<h:body>
-	<h3>Productos</h3>
-	<h:form>
-            <h:dataTable class="tabla" value="#{categoriaBean.list}" var="o" styleClass="tabla"
-			headerClass="cabeceraTabla" rowClasses="filaPar,filaImpar">
-			<h:column>
-                            <f:facet name="header" class="cabeceraTabla">Id</f:facet>
-                            <h:inputText value="#{o.id}" size="10" rendered="#{o.editable}" />
-                            <h:outputText value="#{o.id}" rendered="#{not o.editable}" />
-                        </h:column>
-                        <h:column>
-				<f:facet name="header">Nombre</f:facet>
-				<h:inputText value="#{o.nombre}" size="10" rendered="#{o.editable}" />
-				<h:outputText value="#{o.nombre}" rendered="#{not o.editable}" />
-			</h:column>            
-			
-				<f:facet name="header">Action</f:facet>
-				<h:commandLink value="Edit" action="#{categoriaBean.edit(o)}" rendered="#{not o.editable}" />
-				<h:commandLink value="Save" action="#{categoriaBean.save(o)}" rendered="#{o.editable}" />
-			</h:column>
-		</h:dataTable>
-		<ul>
-			<li>Id:<h:inputText size="10" value="#{categoriaBean.id}" /></li>
-                        <li>Nombre:<h:inputText size="10" value="#{categoriaBean.nombre}" /></li>
-		</ul>
-		<h:commandButton value="Add" action="#{categoriaBean.add}" />
-	</h:form>
-</h:body>
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Categorias</title>
+        <style>
+            .tabla {
+                border-collapse: collapse;
+            }
+
+            .cabeceraTabla {
+                text-align: center;
+                background: none repeat scroll 0 0 #E5E5E5;
+                border-bottom: 1px solid #BBBBBB;
+                padding: 8px;
+            }
+
+            .filaPar {
+                text-align: center;
+                background: none repeat scroll 0 0 #FFFFFFF;
+                border-top: 1px solid #BBBBBB;
+            }
+
+            .filaImpar {
+                text-align: center;
+                background: none repeat scroll 0 0 #F9F9F9;
+                border-top: 1px solid #BBBBBB;
+            }
+        </style>
+     </h:head>
+    <h:body>
+        <h3>Producto</h3>
+        <h:form>
+            <h:dataTable value="#{categoriaBean.list}" var="o" styleClass="tabla"
+                         headerClass="cabeceraTabla" rowClasses="filaPar,filaImpar">
+                <h:column>
+                    <f:facet name="header">Id</f:facet>
+                        #{o.id}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Nombre</f:facet>
+                    <h:inputText value="#{o.nombre}" size="10" rendered="#{o.editable}" />
+                    <h:outputText value="#{o.nombre}" rendered="#{not o.editable}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Action</f:facet>
+                    <h:commandLink value="Editar" action="#{productoBean.edit(o)}" rendered="#{not o.editable}" />
+                    <h:commandLink value="Guardar" action="#{productoBean.save(o)}" rendered="#{o.editable}" />
+                </h:column>
+            </h:dataTable>
+            <ul>
+                <li>Id:<h:inputText size="10" value="#{categoriaBean.id}" /></li>
+                <li>Nombre:<h:inputText size="10" value="#{categoriaBean.nombre}" /></li>
+            </ul>
+            <h:commandButton value="Add" action="#{categoriaBean.add}" />
+        </h:form>
+    </h:body>
 </html>

@@ -56,7 +56,7 @@ public class Producto implements Serializable {
         this.editable = editable;
     }
 
-    
+        
     
     @Override
     public int hashCode() {
