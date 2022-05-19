@@ -43,13 +43,12 @@ public class Persona implements Serializable{
     private String per_direccion;
     private String per_email;
     private String per_telefono;
-    @Transient
-    private boolean editable;
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "persona")
     private Rols rol;
-
    @OneToMany(cascade = CascadeType.ALL, mappedBy = "persona")
-    private Set<FacturaCabecera> facturas = new HashSet<FacturaCabecera>();
+    private Set<FacturaCabecera> facturacabecera = new HashSet<FacturaCabecera>();
+   @Transient
+    private boolean editable;
    
     public Persona() {
     }
@@ -142,12 +141,12 @@ public class Persona implements Serializable{
     }
 
 
- public void addFacturas(FacturaCabecera factura){
-        this.facturas.add(factura);
+ public void addFacturaCabecera(FacturaCabecera factura){
+        this.facturacabecera.add(factura);
     }
     
-    public void removeFacturas(FacturaCabecera factura){
-        this.facturas.remove(factura);
+    public void removeFacturaCabecera(FacturaCabecera factura){
+        this.facturacabecera.remove(factura);
     }
    
     /*public static long getSerialVersionUID() {
