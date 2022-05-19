@@ -33,19 +33,23 @@ public class Producto implements Serializable {
     @ManyToOne
     @JoinColumn
     private Categoria categoria;
+    @ManyToOne
+    @JoinColumn
+    private Sucursal sucursal;
     private boolean editable;
 
        public Producto() {
         super();
     }
     
-    public Producto(int id, String nombre, String marca, double precio, int stock, Categoria categoria) {
+    public Producto(int id, String nombre, String marca, double precio, int stock, Categoria categoria, Sucursal sucursal) {
         this.id = id;
         this.nombre = nombre;
         this.marca = marca;
         this.precio = precio;
         this.stock = stock;
         this.categoria = categoria;
+        this.sucursal = sucursal;
     }
 
     public boolean isEditable() {

@@ -29,7 +29,7 @@ public class Categoria implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String nombre;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "Categoria")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "categoria")
     private Set<Producto> productos = new HashSet<Producto>();
     private boolean editable;
     

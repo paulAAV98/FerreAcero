@@ -69,6 +69,11 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit t
 				<h:inputText value="#{o.categoria}" size="10" rendered="#{o.editable}" />
 				<h:outputText value="#{o.categoria}" rendered="#{not o.editable}" />
 			</h:column>
+                        <h:column>
+				<f:facet name="header">Sucursal</f:facet>
+				<h:inputText value="#{o.sucursal}" size="10" rendered="#{o.editable}" />
+				<h:outputText value="#{o.sucursal}" rendered="#{not o.editable}" />
+			</h:column>
 				<f:facet name="header">Action</f:facet>
 				<h:commandLink value="Edit" action="#{productoBean.edit(o)}" rendered="#{not o.editable}" />
 				<h:commandLink value="Save" action="#{productoBean.save(o)}" rendered="#{o.editable}" />
@@ -81,6 +86,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit t
 			<li>Precio:<h:inputText size="10" value="#{productoBean.precio}" /></li>
                         <li>Stock:<h:inputText size="10" value="#{productoBean.stock}" /></li>
 			<li>Categoria:<h:inputText size="10" value="#{productoBean.categoria}" /></li>
+                        <li>Sucursal:<h:inputText size="10" value="#{productoBean.sucursal}" /></li>
 		</ul>
 		<h:commandButton value="Add" action="#{productoBean.add}" />
 	</h:form>

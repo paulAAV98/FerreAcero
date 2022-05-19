@@ -9,10 +9,10 @@ import jakarta.persistence.OneToMany;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 /**
  *
@@ -28,10 +28,11 @@ public class Sucursal implements Serializable {
     private String nombre;
     private String latitud;
     private String longitud;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "Sucursal")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "sucursal")
     private Set<Producto> productos = new HashSet<Producto>();
 
     public Sucursal() {
+        super();
     }
 
     public Sucursal(int id, String nombre, String latitud, String longitud) {
