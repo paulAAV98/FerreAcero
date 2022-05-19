@@ -31,6 +31,8 @@ public class Categoria implements Serializable {
     private String nombre;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "Categoria")
     private Set<Producto> productos = new HashSet<Producto>();
+    private boolean editable;
+    
     
     public Categoria() {
         super();
@@ -42,6 +44,14 @@ public class Categoria implements Serializable {
         this.nombre = nombre;
     }
 
+    public boolean isEditable() {
+        return editable;
+    }
+
+    public void setEditable(boolean editable) {
+        this.editable = editable;
+    }
+
     
     
     public void addProductos(Producto producto){
@@ -51,5 +61,7 @@ public class Categoria implements Serializable {
     public void removeProduct(Producto producto){
         this.productos.remove(producto);
     }
+    
+    
 
 }
