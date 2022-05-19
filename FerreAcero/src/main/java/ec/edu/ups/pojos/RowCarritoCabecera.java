@@ -4,8 +4,11 @@
  */
 package ec.edu.ups.pojos;
 
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 /**
  *
@@ -16,12 +19,17 @@ public class RowCarritoCabecera implements Serializable {
     private static final long serialVersionUID = 1L;
     
     private int carr_id;
-    private Date  carr_fecha;
+    @Temporal(TemporalType.DATE)
+    private GregorianCalendar carr_fecha;
+    
+    private boolean editable;
 
-    public RowCarritoCabecera(int carr_id, Date carr_fecha) {
+    public RowCarritoCabecera(int carr_id, GregorianCalendar carr_fecha) {
         this.carr_id = carr_id;
         this.carr_fecha = carr_fecha;
     }
+
+   
 
     public int getCarr_id() {
         return carr_id;
@@ -31,13 +39,25 @@ public class RowCarritoCabecera implements Serializable {
         this.carr_id = carr_id;
     }
 
-    public Date getCarr_fecha() {
+    public GregorianCalendar getCarr_fecha() {
         return carr_fecha;
     }
 
-    public void setCarr_fecha(Date carr_fecha) {
+    public void setCarr_fecha(GregorianCalendar carr_fecha) {
         this.carr_fecha = carr_fecha;
     }
+
+ 
+
+    public boolean isEditable() {
+        return editable;
+    }
+
+    public void setEditable(boolean editable) {
+        this.editable = editable;
+    }
+    
+    
 
   
 }
