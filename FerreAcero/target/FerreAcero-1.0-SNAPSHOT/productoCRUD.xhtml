@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit this template
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+	<title>Persona Management</title>
+	<style>
+		.tabla {
+			border-collapse: collapse;
+		}
+		
+		.cabeceraTabla {
+			text-align: center;
+			background: none repeat scroll 0 0 #E5E5E5;
+			border-bottom: 1px solid #BBBBBB;
+			padding: 8px;
+		}
+		
+		.filaPar {
+			text-align: center;
+			background: none repeat scroll 0 0 #FFFFFFF;
+			border-top: 1px solid #BBBBBB;
+		}
+		
+		.filaImpar {
+			text-align: center;
+			background: none repeat scroll 0 0 #F9F9F9;
+			border-top: 1px solid #BBBBBB;
+		}
+	</style>
+</h:head>
+<h:body>
+	<h3>Productos</h3>
+	<h:form>
+            <h:dataTable class="tabla" value="#{productoBean.list}" var="o" styleClass="tabla"
+			headerClass="cabeceraTabla" rowClasses="filaPar,filaImpar">
+			<h:column>
+                            <f:facet name="header" class="cabeceraTabla">Id</f:facet>
+                            #{o.id}
+                        </h:column>
+                        <h:column>
+				<f:facet name="header">Nombre</f:facet>
+				<h:inputText value="#{o.nombre}" size="10" rendered="#{o.editable}" />
+				<h:outputText value="#{o.nombre}" rendered="#{not o.editable}" />
+			</h:column>            
+			<h:column>
+				<f:facet name="header">Marca</f:facet>
+				<h:inputText value="#{o.marca}" size="10" rendered="#{o.editable}" />
+				<h:outputText value="#{o.marca}" rendered="#{not o.editable}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">Precio</f:facet>
+				<h:inputText value="#{o.per_apellido}" size="10" rendered="#{o.editable}" />
+				<h:outputText value="#{o.per_apellido}" rendered="#{not o.editable}" />
+			</h:column>
+                        <h:column>
+				<f:facet name="header">>Stock</f:facet>
+				<h:inputText value="#{o.stock}" size="10" rendered="#{o.editable}" />
+				<h:outputText value="#{o.stock}" rendered="#{not o.editable}" />
+			</h:column>
+                        <h:column>
+				<f:facet name="header">Categoria</f:facet>
+				<h:inputText value="#{o.categoria}" size="10" rendered="#{o.editable}" />
+				<h:outputText value="#{o.categoria}" rendered="#{not o.editable}" />
+			</h:column>
+				<f:facet name="header">Action</f:facet>
+				<h:commandLink value="Edit" action="#{productoBean.edit(o)}" rendered="#{not o.editable}" />
+				<h:commandLink value="Save" action="#{productoBean.save(o)}" rendered="#{o.editable}" />
+			</h:column>
+		</h:dataTable>
+		<ul>
+			<li>Id:<h:inputText size="10" value="#{productoBean.id}" /></li>
+                        <li>Nombre:<h:inputText size="10" value="#{productoBean.nombre}" /></li>
+			<li>Marca:<h:inputText size="10" value="#{productoBean.marca}" /></li>
+			<li>Precio:<h:inputText size="10" value="#{productoBean.precio}" /></li>
+                        <li>Stock:<h:inputText size="10" value="#{productoBean.stock}" /></li>
+			<li>Categoria:<h:inputText size="10" value="#{productoBean.categoria}" /></li>
+		</ul>
+		<h:commandButton value="Add" action="#{productoBean.add}" />
+	</h:form>
+</h:body>
+</html>
