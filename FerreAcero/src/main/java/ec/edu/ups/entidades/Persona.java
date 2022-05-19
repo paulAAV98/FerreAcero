@@ -11,7 +11,7 @@ import java.io.Serializable;
 
 /**
  *
- * @author Bernardo
+ * @author Bernardo ct
  */
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
