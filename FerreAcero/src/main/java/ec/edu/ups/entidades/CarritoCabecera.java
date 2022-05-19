@@ -4,7 +4,11 @@
  */
 package ec.edu.ups.entidades;
 
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Transient;
 import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,6 +23,45 @@ public class CarritoCabecera implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
+    private int carr_id;
+    private Date  carr_fecha;
+   
+    
+    @Transient
+    private boolean editable;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "CarritoCabecera")
+    private CarritoDetalle CarritoDetalle;
+    
+
+    public int getCarr_id() {
+        return carr_id;
+    }
+
+    public void setCarr_id(int carr_id) {
+        this.carr_id = carr_id;
+    }
+
+    public Date getCarr_fecha() {
+        return carr_fecha;
+    }
+
+    public void setCarr_fecha(Date carr_fecha) {
+        this.carr_fecha = carr_fecha;
+    }
+
+    public CarritoDetalle getCarritoDetalle() {
+        return CarritoDetalle;
+    }
+
+    public void setCarritoDetalle(CarritoDetalle CarritoDetalle) {
+        this.CarritoDetalle = CarritoDetalle;
+    }
+
+    
+    
+    
+    
+    
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
