@@ -12,18 +12,17 @@ import javax.persistence.Id;
 
 /**
  *
- * @author Bernardo
+ * @author USUARIO
  */
 @Entity
-public class TarjetaCredito implements Serializable {
+public class FormaPago implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     private int codigo;
-    private String tipoTarjeta;
+    private String tipoPago;
     
-    private Persona persona ;
-    private FormaPago formaPago;
+    private Persona persona;
 
     public int getCodigo() {
         return codigo;
@@ -33,12 +32,12 @@ public class TarjetaCredito implements Serializable {
         this.codigo = codigo;
     }
 
-    public String getTipoTarjeta() {
-        return tipoTarjeta;
+    public String getTipoPago() {
+        return tipoPago;
     }
 
-    public void setTipoTarjeta(String tipoTarjeta) {
-        this.tipoTarjeta = tipoTarjeta;
+    public void setTipoPago(String tipoPago) {
+        this.tipoPago = tipoPago;
     }
 
     public Persona getPersona() {
@@ -74,10 +73,10 @@ public class TarjetaCredito implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof TarjetaCredito)) {
+        if (!(object instanceof FormaPago)) {
             return false;
         }
-        TarjetaCredito other = (TarjetaCredito) object;
+        FormaPago other = (FormaPago) object;
         if (this.id != other.id) {
             return false;
         }
@@ -86,7 +85,7 @@ public class TarjetaCredito implements Serializable {
 
     @Override
     public String toString() {
-        return "ec.edu.ups.entidades.TarjetaCredito[ id=" + id + " ]";
+        return "ec.edu.ups.entidades.FormaPago[ id=" + id + " ]";
     }
     
 }
