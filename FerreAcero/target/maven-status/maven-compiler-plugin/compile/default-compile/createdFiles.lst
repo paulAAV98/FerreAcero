@@ -1,4 +1,5 @@
 ec\edu\ups\pojos\Row.class
+ec\edu\ups\beans\FacturaCabecera.class
 ec\edu\ups\beans\ProductoBean.class
 ec\edu\ups\beans\CollectionBean.class
 ec\edu\ups\ejb\CategoriaFacade.class
@@ -17,4 +18,5 @@ ec\edu\ups\beans\CollectionBeanProducto.class
 ec\edu\ups\ejb\PersonaFacade.class
 ec\edu\ups\entidades\TarjetaCredito.class
 ec\edu\ups\entidades\Rols.class
+ec\edu\ups\entidades\FacturaDetalle.class
 ec\edu\ups\entidades\CarritoCabecera.class

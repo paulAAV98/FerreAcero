@@ -1,45 +1,22 @@
-<<<<<<< HEAD
-C:\Users\Usuario R\Documents\GitHub\ProyectoLeon\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\ejb\PersonaFacade.java
-C:\Users\Usuario R\Documents\GitHub\ProyectoLeon\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\entidades\CarritoDetalle.java
-C:\Users\Usuario R\Documents\GitHub\ProyectoLeon\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\ferreacero\resources\JakartaEE9Resource.java
-C:\Users\Usuario R\Documents\GitHub\ProyectoLeon\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\entidades\FacturaDetalle.java
-C:\Users\Usuario R\Documents\GitHub\ProyectoLeon\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\entidades\CarritoCabecera.java
-C:\Users\Usuario R\Documents\GitHub\ProyectoLeon\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\entidades\Rols.java
-C:\Users\Usuario R\Documents\GitHub\ProyectoLeon\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\entidades\Sucursal.java
-C:\Users\Usuario R\Documents\GitHub\ProyectoLeon\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\pojos\Row.java
-C:\Users\Usuario R\Documents\GitHub\ProyectoLeon\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\entidades\Producto.java
-C:\Users\Usuario R\Documents\GitHub\ProyectoLeon\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\entidades\Categoria.java
-C:\Users\Usuario R\Documents\GitHub\ProyectoLeon\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\ferreacero\JakartaRestConfiguration.java
-C:\Users\Usuario R\Documents\GitHub\ProyectoLeon\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\ejb\ProductoFacade.java
-C:\Users\Usuario R\Documents\GitHub\ProyectoLeon\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\beans\CollectionBean.java
-C:\Users\Usuario R\Documents\GitHub\ProyectoLeon\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\ejb\AbstractFacade.java
-C:\Users\Usuario R\Documents\GitHub\ProyectoLeon\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\beans\PersonaBean.java
-C:\Users\Usuario R\Documents\GitHub\ProyectoLeon\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\ejb\CategoriaFacade.java
-C:\Users\Usuario R\Documents\GitHub\ProyectoLeon\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\ejb\FacturaCabeceraFacade.java
-C:\Users\Usuario R\Documents\GitHub\ProyectoLeon\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\entidades\FacturaCabecera.java
-C:\Users\Usuario R\Documents\GitHub\ProyectoLeon\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\entidades\Persona.java
-C:\Users\Usuario R\Documents\GitHub\ProyectoLeon\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\beans\ProductoBean.java
-C:\Users\Usuario R\Documents\GitHub\ProyectoLeon\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\ejb\FacturaDetalleFacade.java
-C:\Users\Usuario R\Documents\GitHub\ProyectoLeon\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\entidades\TarjetaCredito.java
-=======
-C:\Users\Usuario\Documents\GitHub\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\ejb\PersonaFacade.java
-C:\Users\Usuario\Documents\GitHub\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\ejb\AbstractFacade.java
-C:\Users\Usuario\Documents\GitHub\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\entidades\Persona.java
-C:\Users\Usuario\Documents\GitHub\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\beans\CollectionBeanProducto.java
-C:\Users\Usuario\Documents\GitHub\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\ejb\ProductoFacade.java
-C:\Users\Usuario\Documents\GitHub\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\pojos\Row.java
-C:\Users\Usuario\Documents\GitHub\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\entidades\Categoria.java
-C:\Users\Usuario\Documents\GitHub\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\pojos\RowProducto.java
-C:\Users\Usuario\Documents\GitHub\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\beans\ProductoBean.java
-C:\Users\Usuario\Documents\GitHub\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\ejb\CategoriaFacade.java
-C:\Users\Usuario\Documents\GitHub\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\entidades\CarritoCabecera.java
-C:\Users\Usuario\Documents\GitHub\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\beans\PersonaBean.java
-C:\Users\Usuario\Documents\GitHub\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\ferreacero\JakartaRestConfiguration.java
-C:\Users\Usuario\Documents\GitHub\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\ferreacero\resources\JakartaEE9Resource.java
-C:\Users\Usuario\Documents\GitHub\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\entidades\CarritoDetalle.java
-C:\Users\Usuario\Documents\GitHub\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\entidades\Sucursal.java
-C:\Users\Usuario\Documents\GitHub\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\beans\CollectionBean.java
-C:\Users\Usuario\Documents\GitHub\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\entidades\TarjetaCredito.java
-C:\Users\Usuario\Documents\GitHub\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\entidades\Producto.java
-C:\Users\Usuario\Documents\GitHub\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\entidades\Rols.java
->>>>>>> d015158ba0ebce67c7a5610aa55fc232d87e9999
+C:\Users\Bernardo\Documents\NetBeansProjects\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\beans\FacturaCabecera.java
+C:\Users\Bernardo\Documents\NetBeansProjects\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\beans\CollectionBean.java
+C:\Users\Bernardo\Documents\NetBeansProjects\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\ferreacero\JakartaRestConfiguration.java
+C:\Users\Bernardo\Documents\NetBeansProjects\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\ejb\AbstractFacade.java
+C:\Users\Bernardo\Documents\NetBeansProjects\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\ejb\ProductoFacade.java
+C:\Users\Bernardo\Documents\NetBeansProjects\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\beans\CollectionBeanProducto.java
+C:\Users\Bernardo\Documents\NetBeansProjects\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\beans\PersonaBean.java
+C:\Users\Bernardo\Documents\NetBeansProjects\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\entidades\CarritoCabecera.java
+C:\Users\Bernardo\Documents\NetBeansProjects\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\beans\ProductoBean.java
+C:\Users\Bernardo\Documents\NetBeansProjects\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\ejb\CategoriaFacade.java
+C:\Users\Bernardo\Documents\NetBeansProjects\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\entidades\Rols.java
+C:\Users\Bernardo\Documents\NetBeansProjects\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\entidades\Sucursal.java
+C:\Users\Bernardo\Documents\NetBeansProjects\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\entidades\Persona.java
+C:\Users\Bernardo\Documents\NetBeansProjects\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\ferreacero\resources\JakartaEE9Resource.java
+C:\Users\Bernardo\Documents\NetBeansProjects\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\ejb\PersonaFacade.java
+C:\Users\Bernardo\Documents\NetBeansProjects\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\entidades\Categoria.java
+C:\Users\Bernardo\Documents\NetBeansProjects\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\pojos\Row.java
+C:\Users\Bernardo\Documents\NetBeansProjects\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\entidades\TarjetaCredito.java
+C:\Users\Bernardo\Documents\NetBeansProjects\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\pojos\RowProducto.java
+C:\Users\Bernardo\Documents\NetBeansProjects\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\entidades\Producto.java
+C:\Users\Bernardo\Documents\NetBeansProjects\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\entidades\CarritoDetalle.java
+C:\Users\Bernardo\Documents\NetBeansProjects\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\entidades\FacturaDetalle.java

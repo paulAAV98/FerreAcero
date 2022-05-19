@@ -4,7 +4,7 @@
  */
 package ec.edu.ups.entidades;
 
-import ec.edu.ups.beans.FacturaCabecera;
+
 import jakarta.persistence.ManyToOne;
 import java.io.Serializable;
 import jakarta.persistence.Entity;
