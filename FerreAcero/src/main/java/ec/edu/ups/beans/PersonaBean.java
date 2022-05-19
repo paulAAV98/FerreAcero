@@ -5,7 +5,7 @@
 package ec.edu.ups.beans;
 
 import ec.edu.ups.ejb.PersonaFacade;
-import ec.edu.ups.entidades.FacturaCabecera;
+
 import ec.edu.ups.entidades.Persona;
 import jakarta.annotation.PostConstruct;
 import jakarta.ejb.EJB;

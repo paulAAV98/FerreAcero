@@ -4,6 +4,7 @@
  */
 package ec.edu.ups.entidades;
 
+import ec.edu.ups.beans.FacturaCabecera;
 import jakarta.persistence.CascadeType;
 import java.io.Serializable;
 
@@ -11,7 +12,7 @@ import java.io.Serializable;
 
 /**
  *
- * @author Bernardo
+ * @author Bernardo ct
  */
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
