@@ -10,5 +10,7 @@ ec\edu\ups\ferreacero\JakartaRestConfiguration.class
 ec\edu\ups\ferreacero\resources\JakartaEE9Resource.class
 ec\edu\ups\ejb\ProductoFacade.class
 ec\edu\ups\entidades\Categoria.class
+ec\edu\ups\entidades\CarritoDetalle.class
 ec\edu\ups\ejb\PersonaFacade.class
 ec\edu\ups\entidades\Rols.class
+ec\edu\ups\entidades\CarritoCabecera.class
