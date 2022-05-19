@@ -69,6 +69,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit t
 				<h:inputText value="#{o.total}" size="10" rendered="#{o.editable}" />
 				<h:outputText value="#{o.total}" rendered="#{not o.editable}" />
 			</h:column>
+                        <h:column>
 				<f:facet name="header">Action</f:facet>
 				<h:commandLink value="Edit" action="#{CarritoDetalleBean.edit(o)}" rendered="#{not o.editable}" />
 				<h:commandLink value="Save" action="#{CarritoDetalleBean.save(o)}" rendered="#{o.editable}" />
