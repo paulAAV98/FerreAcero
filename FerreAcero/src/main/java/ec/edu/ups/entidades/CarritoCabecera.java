@@ -6,9 +6,12 @@ package ec.edu.ups.entidades;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 import jakarta.persistence.Transient;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Entity;
@@ -26,7 +29,8 @@ public class CarritoCabecera implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     private int carr_id;
-    private Date  carr_fecha;
+    @Temporal(TemporalType.DATE)
+    private GregorianCalendar carr_fecha;
    
     
     @Transient
@@ -37,12 +41,13 @@ public class CarritoCabecera implements Serializable {
     public CarritoCabecera() {
     }
 
-    public CarritoCabecera(int carr_id, Date carr_fecha) {
+    public CarritoCabecera(int carr_id, GregorianCalendar carr_fecha, boolean editable) {
         this.carr_id = carr_id;
         this.carr_fecha = carr_fecha;
-    
+        this.editable = editable;
     }
-   
+
+ 
 
     public void addCarritoDetalle(CarritoDetalle carritodetalle){
         this.carritodetalle.add(carritodetalle);
