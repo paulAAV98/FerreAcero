@@ -21,6 +21,7 @@ public class RowProducto implements Serializable {
     private double precio;
     private int stock;
     private Categoria categoria;
+    private boolean editable;
 
     public RowProducto(int id, String nombre, String marca, double precio, int stock, Categoria categoria) {
         this.id = id;
@@ -80,6 +81,16 @@ public class RowProducto implements Serializable {
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
     }
+
+    public boolean isEditable() {
+        return editable;
+    }
+
+    public void setEditable(boolean editable) {
+        this.editable = editable;
+    }
+    
+    
 
 
     

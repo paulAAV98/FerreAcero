@@ -17,6 +17,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Persistence;
 import jakarta.persistence.Temporal;
@@ -41,11 +43,14 @@ public class Persona implements Serializable{
     private boolean editable;
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "persona")
     private Rols rol;
+    @ManyToOne
+    @JoinColumn
+    private FacturaCabecera factura;
 
     public Persona() {
     }
 
-    public Persona(int id, String nombre, String apellido, String clave, String cedula, String direccion, String email, String telefono) {
+    public Persona(int id, String nombre, String apellido, String clave, String cedula, String direccion, String email, String telefono, FacturaCabecera factura) {
         this.per_id = id;
         this.per_nombre = nombre;
         this.per_apellido = apellido;
@@ -54,6 +59,7 @@ public class Persona implements Serializable{
         this.per_direccion = direccion;
         this.per_email = email;
         this.per_telefono = telefono;
+        this.factura = factura;
         
         this.editable = editable;
         this.rol = rol;
@@ -129,6 +135,14 @@ public class Persona implements Serializable{
 
     public String getPer_telefono() {
         return per_telefono;
+    }
+
+    public FacturaCabecera getFactura() {
+        return factura;
+    }
+
+    public void setFactura(FacturaCabecera factura) {
+        this.factura = factura;
     }
 
   
