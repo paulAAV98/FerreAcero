@@ -41,7 +41,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit t
 			headerClass="cabeceraTabla" rowClasses="filaPar,filaImpar">
 			<h:column>
                             <f:facet name="header" class="cabeceraTabla">Id</f:facet>
-                            #{o.id}
+                            <h:inputText value="#{o.id}" size="10" rendered="#{o.editable}" />
+                            <h:outputText value="#{o.id}" rendered="#{not o.editable}" />
                         </h:column>
                         <h:column>
 				<f:facet name="header">Nombre</f:facet>

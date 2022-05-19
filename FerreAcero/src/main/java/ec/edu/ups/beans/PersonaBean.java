@@ -4,8 +4,8 @@
  */
 package ec.edu.ups.beans;
 
-
 import ec.edu.ups.ejb.PersonaFacade;
+import ec.edu.ups.entidades.FacturaCabecera;
 import ec.edu.ups.entidades.Persona;
 import jakarta.annotation.PostConstruct;
 import jakarta.ejb.EJB;
@@ -35,6 +35,7 @@ public class PersonaBean implements Serializable {
     private String per_direccion;
     private String per_email;
     private String per_telefono;
+    private FacturaCabecera factura;
 
     @PostConstruct
     public void init() {	
@@ -42,7 +43,7 @@ public class PersonaBean implements Serializable {
     }
     
     public String add() {	
-        personaFacade.create(new Persona(per_id,per_nombre, per_apellido, per_clave, per_cedula, per_direccion, per_email, per_telefono));
+        personaFacade.create(new Persona(per_id,per_nombre, per_apellido, per_clave, per_cedula, per_direccion, per_email, per_telefono, factura));
         list = personaFacade.findAll();
 	return null;
     }
@@ -115,11 +116,6 @@ public class PersonaBean implements Serializable {
 
     public void setPersonaFacade(PersonaFacade personaFacade) {
         this.personaFacade = personaFacade;
-    }
-
-   
-    
-    
-     
+    }    
     
 }
