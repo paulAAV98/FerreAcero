@@ -32,6 +32,7 @@ public class FacturaCabecera implements Serializable {
     private Set<FacturaDetalle> facturadetalles = new HashSet<FacturaDetalle>();
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "factura")
     private Set<Persona> personas = new HashSet<Persona>();
+    ////persoan
     
     public FacturaCabecera(){
         super();
