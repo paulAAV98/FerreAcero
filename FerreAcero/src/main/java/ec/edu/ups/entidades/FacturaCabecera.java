@@ -35,7 +35,7 @@ public class FacturaCabecera implements Serializable {
     private Set<FacturaDetalle> facturadetalles = new HashSet<FacturaDetalle>();
     @ManyToOne
     @JoinColumn
-    private Persona per;
+    private Persona per; 
 
     public void setPer(Persona per) {
         this.per = per;
@@ -124,7 +124,7 @@ public class FacturaCabecera implements Serializable {
         if (this.id != other.id) {
             return false;
         }
-        return true;
+        return true;  
     }
 
     @Override
