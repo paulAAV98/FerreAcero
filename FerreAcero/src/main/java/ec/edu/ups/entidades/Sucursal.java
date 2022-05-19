@@ -4,7 +4,11 @@
  */
 package ec.edu.ups.entidades;
 
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.OneToMany;
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,38 +25,28 @@ public class Sucursal implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+    private String nombre;
+    private String latitud;
+    private String longitud;
+     @OneToMany(cascade = CascadeType.ALL, mappedBy = "Sucursal")
+    private Set<Producto> productos = new HashSet<Producto>();
 
-    public int getId() {
-        return id;
+    public Sucursal() {
     }
 
-    public void setId(int id) {
+    public Sucursal(int id, String nombre, String latitud, String longitud) {
+        super();
         this.id = id;
+        this.nombre = nombre;
+        this.latitud = latitud;
+        this.longitud = longitud;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (int) id;
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Sucursal)) {
-            return false;
-        }
-        Sucursal other = (Sucursal) object;
-        if (this.id != other.id) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "ec.edu.ups.entidades.Sucursal[ id=" + id + " ]";
+    public void addProductos(Producto producto){
+        this.productos.add(producto);
     }
     
+    public void removeProduct(Producto producto){
+        this.productos.remove(producto);
+    }
 }
