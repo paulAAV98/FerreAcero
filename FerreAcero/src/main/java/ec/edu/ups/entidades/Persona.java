@@ -4,6 +4,7 @@
  */
 package ec.edu.ups.entidades;
 
+import ec.edu.ups.beans.FacturaCabecera;
 import jakarta.persistence.CascadeType;
 import java.io.Serializable;
 
