@@ -133,7 +133,6 @@ public class ProductoBean implements Serializable {
         this.categoria = categoria;
     }
 
-<<<<<<< HEAD
     public Sucursal getSucursal() {
         
         return sucursal;
@@ -142,17 +141,6 @@ public class ProductoBean implements Serializable {
     public void setSucursal(Sucursal sucursal) {
         this.sucursal = sucursal;
     }
-    
-    
-=======
-    public void setSucursal(Sucursal sucursal) {
-        this.sucursal = sucursal;
-    }
-
-    public Sucursal getSucursal() {
-        return sucursal;
-    }
->>>>>>> 5be87a89426fed859d65f74fd3464dd5b614e059
-    
+     
     
 }
