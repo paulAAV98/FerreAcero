@@ -49,9 +49,13 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit t
                     <h:outputText value="#{o.nombre}" rendered="#{not o.editable}" />
                 </h:column>
                 <h:column>
+				<f:facet name="header">Action</f:facet>
+				<h:commandLink value="Delete" action="#{categoriaBean.delete(o)}" />
+			</h:column>
+                <h:column>
                     <f:facet name="header">Action</f:facet>
-                    <h:commandLink value="Editar" action="#{productoBean.edit(o)}" rendered="#{not o.editable}" />
-                    <h:commandLink value="Guardar" action="#{productoBean.save(o)}" rendered="#{o.editable}" />
+                    <h:commandLink value="Editar" action="#{categoriaBean.edit(o)}" rendered="#{not o.editable}" />
+                    <h:commandLink value="Guardar" action="#{categoriaBean.save(o)}" rendered="#{o.editable}" />
                 </h:column>
             </h:dataTable>
             <ul>

@@ -8,7 +8,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit t
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:f="http://xmlns.jcp.org/jsf/core">
 <h:head>
-	<title>Persona Management</title>
+	<title>Producto Management</title>
 	<style>
 		.tabla {
 			border-collapse: collapse;
@@ -41,8 +41,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit t
 			headerClass="cabeceraTabla" rowClasses="filaPar,filaImpar">
 			<h:column>
                             <f:facet name="header" class="cabeceraTabla">Id</f:facet>
-                            <h:inputText value="#{o.id}" size="10" rendered="#{o.editable}" />
-                            <h:outputText value="#{o.id}" rendered="#{not o.editable}" />
+                            #{o.id}
                         </h:column>
                         <h:column>
 				<f:facet name="header">Nombre</f:facet>
@@ -74,6 +73,11 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit t
 				<h:inputText value="#{o.sucursal}" size="10" rendered="#{o.editable}" />
 				<h:outputText value="#{o.sucursal}" rendered="#{not o.editable}" />
 			</h:column>
+                       <h:column>
+				<f:facet name="header">Action</f:facet>
+				<h:commandLink value="Delete" action="#{productoBean.delete(o)}" />
+			</h:column>
+			<h:column>
 				<f:facet name="header">Action</f:facet>
 				<h:commandLink value="Edit" action="#{productoBean.edit(o)}" rendered="#{not o.editable}" />
 				<h:commandLink value="Save" action="#{productoBean.save(o)}" rendered="#{o.editable}" />

@@ -12,6 +12,7 @@ import ec.edu.ups.entidades.Sucursal;
 import jakarta.annotation.PostConstruct;
 import jakarta.ejb.EJB;
 import jakarta.enterprise.context.SessionScoped;
+import jakarta.faces.annotation.FacesConfig;
 import jakarta.inject.Named;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -21,6 +22,7 @@ import java.util.List;
  *
  * @author Usuario
  */
+@FacesConfig(version = FacesConfig.Version.JSF_2_3)
 @Named
 @SessionScoped
 public class ProductoBean implements Serializable {
@@ -131,6 +133,7 @@ public class ProductoBean implements Serializable {
         this.categoria = categoria;
     }
 
+<<<<<<< HEAD
     public Sucursal getSucursal() {
         
         return sucursal;
@@ -141,6 +144,15 @@ public class ProductoBean implements Serializable {
     }
     
     
+=======
+    public void setSucursal(Sucursal sucursal) {
+        this.sucursal = sucursal;
+    }
+
+    public Sucursal getSucursal() {
+        return sucursal;
+    }
+>>>>>>> 5be87a89426fed859d65f74fd3464dd5b614e059
     
     
 }
