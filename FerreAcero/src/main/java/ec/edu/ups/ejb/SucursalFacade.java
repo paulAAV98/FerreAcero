@@ -4,10 +4,28 @@
  */
 package ec.edu.ups.ejb;
 
+import ec.edu.ups.entidades.Categoria;
+import ec.edu.ups.entidades.Sucursal;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+
 /**
  *
  * @author Usuario
  */
-public class SucursalFacade {
+public class SucursalFacade extends AbstractFacade<Sucursal> {
+    
+    @PersistenceContext(name="FerreAcero")
+    private EntityManager em;
+    
+    public SucursalFacade(){
+        super(Sucursal.class);
+    }
+    
+    @Override
+    protected EntityManager getEntityManager(){
+        return em;
+    }
+      
     
 }
