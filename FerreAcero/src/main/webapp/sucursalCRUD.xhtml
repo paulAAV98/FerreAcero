@@ -37,7 +37,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit t
     <h:body>
         <h3>Categorias</h3>
         <h:form>
-            <h:dataTable value="#{categoriaBean.list}" var="o" styleClass="tabla"
+            <h:dataTable value="#{sucursalBean.list}" var="o" styleClass="tabla"
                          headerClass="cabeceraTabla" rowClasses="filaPar,filaImpar">
                 <h:column>
                     <f:facet name="header">Id</f:facet>
@@ -49,20 +49,32 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit t
                     <h:outputText value="#{o.nombre}" rendered="#{not o.editable}" />
                 </h:column>
                 <h:column>
+                    <f:facet name="header">Latitud</f:facet>
+                    <h:inputText value="#{o.latitud}" size="10" rendered="#{o.editable}" />
+                    <h:outputText value="#{o.latitud}" rendered="#{not o.editable}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Longitud</f:facet>
+                    <h:inputText value="#{o.longitud}" size="10" rendered="#{o.editable}" />
+                    <h:outputText value="#{o.longitud}" rendered="#{not o.editable}" />
+                </h:column>
+                <h:column>
 				<f:facet name="header">Action</f:facet>
-				<h:commandLink value="Delete" action="#{categoriaBean.delete(o)}" />
+				<h:commandLink value="Delete" action="#{sucursalBean.delete(o)}" />
 			</h:column>
                 <h:column>
                     <f:facet name="header">Action</f:facet>
-                    <h:commandLink value="Editar" action="#{categoriaBean.edit(o)}" rendered="#{not o.editable}" />
-                    <h:commandLink value="Guardar" action="#{categoriaBean.save(o)}" rendered="#{o.editable}" />
+                    <h:commandLink value="Editar" action="#{sucursalBean.edit(o)}" rendered="#{not o.editable}" />
+                    <h:commandLink value="Guardar" action="#{sucursalBean.save(o)}" rendered="#{o.editable}" />
                 </h:column>
             </h:dataTable>
             <ul>
-                <li>Id:<h:inputText size="10" value="#{categoriaBean.id}" /></li>
-                <li>Nombre:<h:inputText size="10" value="#{categoriaBean.nombre}" /></li>
+                <li>Id:<h:inputText size="10" value="#{sucursalBean.id}" /></li>
+                <li>Nombre:<h:inputText size="10" value="#{sucursalBean.nombre}" /></li>
+                <li>Latitud:<h:inputText size="10" value="#{sucursalBean.latitud}" /></li>
+                <li>Longitud:<h:inputText size="10" value="#{sucursalBean.longitud}"/></li>
             </ul>
-            <h:commandButton value="Add" action="#{categoriaBean.add}" />
+            <h:commandButton value="Add" action="#{sucursalBean.add}" />
         </h:form>
     </h:body>
 </html>

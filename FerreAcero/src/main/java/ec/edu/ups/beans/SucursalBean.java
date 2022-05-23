@@ -63,14 +63,6 @@ public class SucursalBean implements Serializable {
             return null;
         }
 
-    public SucursalFacade getSucursalFacade() {
-        return sucursalFacade;
-    }
-
-    public void setSucursalFacade(SucursalFacade sucursalFacade) {
-        this.sucursalFacade = sucursalFacade;
-    }
-
     public Sucursal[] getList(){
         return list.toArray(new Sucursal[0]);
     }
@@ -111,7 +103,13 @@ public class SucursalBean implements Serializable {
         this.longitud = longitud;
     }
         
-        
+       public SucursalFacade getSucursalFacade() {
+        return sucursalFacade;
+    }
+
+    public void setSucursalFacade(SucursalFacade sucursalFacade) {
+        this.sucursalFacade = sucursalFacade;
+    }  
     
     
 }

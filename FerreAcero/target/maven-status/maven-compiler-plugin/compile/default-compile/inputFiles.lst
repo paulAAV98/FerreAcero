@@ -8,13 +8,16 @@ C:\Users\Usuario\Documents\GitHub\FerreAcero\FerreAcero\src\main\java\ec\edu\ups
 C:\Users\Usuario\Documents\GitHub\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\entidades\Categoria.java
 C:\Users\Usuario\Documents\GitHub\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\pojos\RowProducto.java
 C:\Users\Usuario\Documents\GitHub\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\beans\ProductoBean.java
+C:\Users\Usuario\Documents\GitHub\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\beans\SucursalBean.java
 C:\Users\Usuario\Documents\GitHub\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\ejb\CategoriaFacade.java
 C:\Users\Usuario\Documents\GitHub\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\beans\PersonaBean.java
 C:\Users\Usuario\Documents\GitHub\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\ferreacero\JakartaRestConfiguration.java
 C:\Users\Usuario\Documents\GitHub\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\ferreacero\resources\JakartaEE9Resource.java
 C:\Users\Usuario\Documents\GitHub\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\entidades\Sucursal.java
+C:\Users\Usuario\Documents\GitHub\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\pojos\RowSucursal.java
 C:\Users\Usuario\Documents\GitHub\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\beans\CollectionBean.java
 C:\Users\Usuario\Documents\GitHub\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\beans\CollectionBeanCategoria.java
 C:\Users\Usuario\Documents\GitHub\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\pojos\RowCategoria.java
 C:\Users\Usuario\Documents\GitHub\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\entidades\Producto.java
+C:\Users\Usuario\Documents\GitHub\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\ejb\SucursalFacade.java
 C:\Users\Usuario\Documents\GitHub\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\entidades\Rols.java
