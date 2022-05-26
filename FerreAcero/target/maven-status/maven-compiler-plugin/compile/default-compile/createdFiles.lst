@@ -11,8 +11,11 @@ ec\edu\ups\ferreacero\JakartaRestConfiguration.class
 ec\edu\ups\ejb\ProductoFacade.class
 ec\edu\ups\entidades\Categoria.class
 ec\edu\ups\pojos\RowProducto.class
+ec\edu\ups\pojos\RowSucursal.class
 ec\edu\ups\beans\CollectionBeanProducto.class
+ec\edu\ups\beans\SucursalBean.class
 ec\edu\ups\ejb\PersonaFacade.class
+ec\edu\ups\ejb\SucursalFacade.class
 ec\edu\ups\entidades\Rols.class
 ec\edu\ups\pojos\RowCategoria.class
 ec\edu\ups\beans\CategoriaBean.class
