@@ -39,6 +39,10 @@ public class Producto implements Serializable {
     private Sucursal sucursal;
     @Transient
     private boolean editable;
+     @Transient
+    private int cat;
+      @Transient
+    private int suc;
     
 
        public Producto() {
@@ -141,6 +145,24 @@ public class Producto implements Serializable {
     public void setSucursal(Sucursal sucursal) {
         this.sucursal = sucursal;
     }
+
+    public void setCat(int cat) {
+        this.cat = cat;
+    }
+
+    public int getCat() {
+        return cat;
+    }
+
+    public void setSuc(int suc) {
+        
+        this.suc = suc;
+    }
+
+    public int getSuc() {
+        return suc;
+    }
+    
     
     
 }

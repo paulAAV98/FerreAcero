@@ -6,7 +6,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit t
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
-	xmlns:f="http://xmlns.jcp.org/jsf/core">
+        xmlns:f="http://xmlns.jcp.org/jsf/core"
+        xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
 <h:head>
 	<title>Producto Management</title>
 	<style>
@@ -55,8 +56,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit t
 			</h:column>
 			<h:column>
 				<f:facet name="header">Precio</f:facet>
-				<h:inputText value="#{o.per_apellido}" size="10" rendered="#{o.editable}" />
-				<h:outputText value="#{o.per_apellido}" rendered="#{not o.editable}" />
+				<h:inputText value="#{o.precio}" size="10" rendered="#{o.editable}" />
+				<h:outputText value="#{o.precio}" rendered="#{not o.editable}" />
 			</h:column>
                         <h:column>
 				<f:facet name="header">>Stock</f:facet>
@@ -65,13 +66,13 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit t
 			</h:column>
                         <h:column>
 				<f:facet name="header">Categoria</f:facet>
-				<h:inputText value="#{o.categoria}" size="10" rendered="#{o.editable}" />
-				<h:outputText value="#{o.categoria}" rendered="#{not o.editable}" />
+				<h:inputText value="#{o.categoria.id}" size="10" rendered="#{o.editable}" />
+				<h:outputText value="#{o.categoria.id}" rendered="#{not o.editable}" />
 			</h:column>
                         <h:column>
 				<f:facet name="header">Sucursal</f:facet>
-				<h:inputText value="#{o.sucursal}" size="10" rendered="#{o.editable}" />
-				<h:outputText value="#{o.sucursal}" rendered="#{not o.editable}" />
+				<h:inputText value="#{o.sucursal.id}" size="10" rendered="#{o.editable}" />
+				<h:outputText value="#{o.sucursal.id}" rendered="#{not o.editable}" />
 			</h:column>
                        <h:column>
 				<f:facet name="header">Action</f:facet>
@@ -89,8 +90,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit t
 			<li>Marca:<h:inputText size="10" value="#{productoBean.marca}" /></li>
 			<li>Precio:<h:inputText size="10" value="#{productoBean.precio}" /></li>
                         <li>Stock:<h:inputText size="10" value="#{productoBean.stock}" /></li>
-			<li>Categoria:<h:inputText size="10" value="#{productoBean.categoria}" /></li>
-                        <li>Sucursal:<h:inputText size="10" value="#{productoBean.sucursal}" /></li>
+			<li>Categoria:<h:inputText size="10" value="#{productoBean.cat}" /></li>
+                       
+                        
+                        <li>Sucursal:<h:inputText size="10" value="#{productoBean.suc}" /></li>
 		</ul>
 		<h:commandButton value="Add" action="#{productoBean.add}" />
 	</h:form>

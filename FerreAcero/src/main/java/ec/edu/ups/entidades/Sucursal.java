@@ -56,4 +56,13 @@ public class Sucursal implements Serializable {
     public void removeProduct(Producto producto){
         this.productos.remove(producto);
     }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
+    
 }

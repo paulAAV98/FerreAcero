@@ -39,13 +39,23 @@ public class ProductoBean implements Serializable {
     private int stock;
     private Categoria categoria;
     private Sucursal sucursal;
+    private int cat;
+    private int suc;
+    
     @PostConstruct
     public void init() {	
 	list = productoFacade.findAll();
     }
     
-    public String add() {	
+    public String add() {
+         Categoria cat1=new Categoria();
+         cat1.setId(getCat());
+         Sucursal suc1=new Sucursal();
+         suc1.setId(getSuc());
+         this.sucursal=suc1;
+         this.categoria=cat1;
         productoFacade.create(new Producto(id, nombre, marca, precio, stock, categoria, sucursal));
+        System.out.println(categoria.getId());
         list = productoFacade.findAll();
 	return null;
     }
@@ -125,20 +135,45 @@ public class ProductoBean implements Serializable {
     }
 
     public Categoria getCategoria() {
+        
         return categoria;
     }
 
     public void setCategoria(Categoria categoria) {
+        categoria.setId(getCat());
         this.categoria = categoria;
     }
 
     public void setSucursal(Sucursal sucursal) {
+        sucursal.setId(getSuc());
         this.sucursal = sucursal;
     }
 
     public Sucursal getSucursal() {
         return sucursal;
     }
+
+    public void setCat(int cat) {
+ 
+        this.cat = cat;
+       
+    }
+
+    public int getCat() {
+        return cat;
+    }
+
+    public void setSuc(int suc) {
+        
+        this.suc = suc;
+        
+        
+    }
+
+    public int getSuc() {
+        return suc;
+    }
+    
     
     
 }
