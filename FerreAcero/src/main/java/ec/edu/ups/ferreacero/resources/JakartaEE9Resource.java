@@ -16,6 +16,7 @@ import java.util.GregorianCalendar;
  *
  * @author 
  */
+/*
 @Path("jakartaee9")
 public class JakartaEE9Resource {
    
@@ -34,7 +35,7 @@ public class JakartaEE9Resource {
                 .ok("Persona creada con Jakarta EE")
                 .build();
 */
-    
+    /*
     @EJB
     private ProductoFacade ejbProducto;
     
@@ -65,3 +66,4 @@ public class JakartaEE9Resource {
     
     }
 }
+*/

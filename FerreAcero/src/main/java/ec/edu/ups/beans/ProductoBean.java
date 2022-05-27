@@ -8,9 +8,11 @@ import ec.edu.ups.ejb.ProductoFacade;
 import ec.edu.ups.entidades.Categoria;
 import ec.edu.ups.entidades.Persona;
 import ec.edu.ups.entidades.Producto;
+import ec.edu.ups.entidades.Sucursal;
 import jakarta.annotation.PostConstruct;
 import jakarta.ejb.EJB;
 import jakarta.enterprise.context.SessionScoped;
+import jakarta.faces.annotation.FacesConfig;
 import jakarta.inject.Named;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -20,6 +22,7 @@ import java.util.List;
  *
  * @author Usuario
  */
+@FacesConfig(version = FacesConfig.Version.JSF_2_3)
 @Named
 @SessionScoped
 public class ProductoBean implements Serializable {
@@ -35,13 +38,24 @@ public class ProductoBean implements Serializable {
     private double precio;
     private int stock;
     private Categoria categoria;
+    private Sucursal sucursal;
+    private int cat;
+    private int suc;
+    
     @PostConstruct
     public void init() {	
 	list = productoFacade.findAll();
     }
     
-    public String add() {	
-        productoFacade.create(new Producto(id, nombre, marca, precio, stock, categoria));
+    public String add() {
+         Categoria cat1=new Categoria();
+         cat1.setId(getCat());
+         Sucursal suc1=new Sucursal();
+         suc1.setId(getSuc());
+         this.sucursal=suc1;
+         this.categoria=cat1;
+        productoFacade.create(new Producto(id, nombre, marca, precio, stock, categoria, sucursal));
+        System.out.println(categoria.getId());
         list = productoFacade.findAll();
 	return null;
     }
@@ -121,12 +135,50 @@ public class ProductoBean implements Serializable {
     }
 
     public Categoria getCategoria() {
+
         return categoria;
     }
 
     public void setCategoria(Categoria categoria) {
+        categoria.setId(getCat());
         this.categoria = categoria;
     }
+
+    public Sucursal getSucursal() {
+        
+        return sucursal;
+    }
+
+    public void setSucursal(Sucursal sucursal) {
+        sucursal.setId(getSuc());
+        this.sucursal = sucursal;
+    }
+
+
     
+
+    public void setCat(int cat) {
+ 
+        this.cat = cat;
+       
+    }
+
+    public int getCat() {
+        return cat;
+    }
+
+    public void setSuc(int suc) {
+        
+        this.suc = suc;
+        
+        
+    }
+
+    public int getSuc() {
+        return suc;
+    }
+    
+    
+
     
 }

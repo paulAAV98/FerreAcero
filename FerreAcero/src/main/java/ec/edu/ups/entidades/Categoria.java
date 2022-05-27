@@ -10,6 +10,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.Transient;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
@@ -26,11 +27,14 @@ public class Categoria implements Serializable {
     
     private static final long serialVersionUID = 1L;
     @Id
+     private int id;
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+   
     private String nombre;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "Categoria")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "categoria")
     private Set<Producto> productos = new HashSet<Producto>();
+    @Transient
+    
     private boolean editable;
     
     
@@ -61,6 +65,23 @@ public class Categoria implements Serializable {
     public void removeProduct(Producto producto){
         this.productos.remove(producto);
     }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+    
     
     
 

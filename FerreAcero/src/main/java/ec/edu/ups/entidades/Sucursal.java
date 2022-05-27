@@ -5,14 +5,21 @@
 package ec.edu.ups.entidades;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Transient;
 
 /**
  *
@@ -28,10 +35,14 @@ public class Sucursal implements Serializable {
     private String nombre;
     private String latitud;
     private String longitud;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "Sucursal")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "sucursal")
     private Set<Producto> productos = new HashSet<Producto>();
-
+    @Transient
+    private boolean editable;
+    
+    
     public Sucursal() {
+        super();
     }
 
     public Sucursal(int id, String nombre, String latitud, String longitud) {
@@ -48,5 +59,50 @@ public class Sucursal implements Serializable {
     
     public void removeProduct(Producto producto){
         this.productos.remove(producto);
+        
+        
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getLatitud() {
+        return latitud;
+    }
+
+    public void setLatitud(String latitud) {
+        this.latitud = latitud;
+    }
+
+    public String getLongitud() {
+        return longitud;
+    }
+
+    public void setLongitud(String longitud) {
+        this.longitud = longitud;
+    }
+
+    public boolean isEditable() {
+        return editable;
+    }
+
+    public void setEditable(boolean editable) {
+        this.editable = editable;
+    }
+
+    
+    
 }

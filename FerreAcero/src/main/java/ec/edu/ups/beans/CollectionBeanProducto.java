@@ -5,6 +5,7 @@
 package ec.edu.ups.beans;
 
 import ec.edu.ups.entidades.Categoria;
+import ec.edu.ups.entidades.Sucursal;
 import ec.edu.ups.pojos.Row;
 import ec.edu.ups.pojos.RowProducto;
 import jakarta.enterprise.context.SessionScoped;
@@ -30,16 +31,18 @@ public class CollectionBeanProducto implements Serializable {
     private double precio;
     private int stock;
     private Categoria categoria;
+    private Sucursal sucursal;
     private boolean editable;
 
     public CollectionBeanProducto() {
         Categoria c = new Categoria();
-	this.list.add(new RowProducto(4, "Foco LED alta potencia ", "EVLITE", 3.91, 15, c));
-        this.list.add(new RowProducto(5, "Reflector Led Slim ", "EVLITE", 9.98, 4, c));
+        Sucursal s = new Sucursal();
+	this.list.add(new RowProducto(4, "Foco LED alta potencia ", "EVLITE", 3.91, 15, c, s));
+        this.list.add(new RowProducto(5, "Reflector Led Slim ", "EVLITE", 9.98, 4, c, s));
     }
 
     public String add() {
-	this.list.add(new RowProducto(id, nombre, marca, precio, stock, categoria));
+	this.list.add(new RowProducto(id, nombre, marca, precio, stock, categoria, sucursal));
 	return null;
     }
 
@@ -121,6 +124,16 @@ public class CollectionBeanProducto implements Serializable {
     public void setEditable(boolean editable) {
         this.editable = editable;
     }
+
+    public Sucursal getSucursal() {
+        return sucursal;
+    }
+
+    public void setSucursal(Sucursal sucursal) {
+        this.sucursal = sucursal;
+    }
+    
+    
     
     
 

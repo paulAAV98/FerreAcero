@@ -10,6 +10,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Transient;
 import java.io.Serializable;
 
 
@@ -33,19 +34,29 @@ public class Producto implements Serializable {
     @ManyToOne
     @JoinColumn
     private Categoria categoria;
+    @ManyToOne
+    @JoinColumn
+    private Sucursal sucursal;
+    @Transient
     private boolean editable;
+     @Transient
+    private int cat;
+      @Transient
+    private int suc;
+    
 
        public Producto() {
         super();
     }
     
-    public Producto(int id, String nombre, String marca, double precio, int stock, Categoria categoria) {
+    public Producto(int id, String nombre, String marca, double precio, int stock, Categoria categoria, Sucursal sucursal) {
         this.id = id;
         this.nombre = nombre;
         this.marca = marca;
         this.precio = precio;
         this.stock = stock;
         this.categoria = categoria;
+        this.sucursal = sucursal;
     }
 
     public boolean isEditable() {
@@ -74,5 +85,85 @@ public class Producto implements Serializable {
         }
         return other.hashCode() == this.hashCode();
     }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public double getPrecio() {
+        return precio;
+    }
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
+
+    public int getStock() {
+        return stock;
+    }
+
+    public Sucursal getSucursal() {
+        return sucursal;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
+    }
+
+    public void setSucursal(Sucursal sucursal) {
+        this.sucursal = sucursal;
+    }
+
+    public void setCat(int cat) {
+        this.cat = cat;
+    }
+
+    public int getCat() {
+        return cat;
+    }
+
+    public void setSuc(int suc) {
+        
+        this.suc = suc;
+    }
+
+    public int getSuc() {
+        return suc;
+    }
+    
+    
+    
 }
 

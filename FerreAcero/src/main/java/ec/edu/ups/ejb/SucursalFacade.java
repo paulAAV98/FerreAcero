@@ -4,29 +4,30 @@
  */
 package ec.edu.ups.ejb;
 
-import ec.edu.ups.entidades.CarritoDetalle;
+import ec.edu.ups.entidades.Categoria;
+import ec.edu.ups.entidades.Sucursal;
 import jakarta.ejb.Stateless;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 
 /**
  *
- * @author USUARIO
+ * @author Usuario
  */
-
 @Stateless
-public class CarritoDetalleFacade extends AbstractFacade<CarritoDetalle> {
+public class SucursalFacade extends AbstractFacade<Sucursal> {
     
     @PersistenceContext(name="FerreAcero")
     private EntityManager em;
     
-    public CarritoDetalleFacade(){
-        super(CarritoDetalle.class);
+    public SucursalFacade(){
+        super(Sucursal.class);
     }
     
     @Override
     protected EntityManager getEntityManager(){
         return em;
     }
+      
     
 }

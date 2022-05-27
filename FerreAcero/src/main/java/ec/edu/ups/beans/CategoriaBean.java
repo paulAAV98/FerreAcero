@@ -10,6 +10,7 @@ import ec.edu.ups.entidades.Producto;
 import jakarta.annotation.PostConstruct;
 import jakarta.ejb.EJB;
 import jakarta.enterprise.context.SessionScoped;
+import jakarta.faces.annotation.FacesConfig;
 import jakarta.inject.Named;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -19,6 +20,7 @@ import java.util.List;
  *
  * @author Usuario
  */
+@FacesConfig(version = FacesConfig.Version.JSF_2_3)
 @Named
 @SessionScoped
 public class CategoriaBean implements Serializable {
