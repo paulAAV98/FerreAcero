@@ -52,6 +52,8 @@ public class FormaPago implements Serializable {
     
     
     
+    
+    
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
