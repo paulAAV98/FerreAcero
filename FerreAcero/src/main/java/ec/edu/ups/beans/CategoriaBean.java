@@ -30,7 +30,7 @@ public class CategoriaBean implements Serializable {
     @EJB
     private CategoriaFacade categoriaFacade;
     private List<Categoria> list = new ArrayList<>();
-    private int id;
+    private Long id;
     private String nombre;
     
     @PostConstruct
@@ -50,17 +50,7 @@ public class CategoriaBean implements Serializable {
 	return null;
     }
 
-    public String edit(Categoria c) {
-	c.setEditable(true);
-	return null;
-    }
-
-    public String save(Categoria c) {
-        categoriaFacade.edit(c);
-        list = categoriaFacade.findAll();
-	c.setEditable(false);
-	return null;
-    }
+    
 
     public Categoria[] getList() {
 	return list.toArray(new Categoria[0]);
@@ -78,11 +68,11 @@ public class CategoriaBean implements Serializable {
         this.categoriaFacade = categoriaFacade;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
