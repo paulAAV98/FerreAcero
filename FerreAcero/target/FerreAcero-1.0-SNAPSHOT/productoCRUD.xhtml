@@ -78,6 +78,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit t
 				<f:facet name="header">Action</f:facet>
 				<h:commandLink value="Delete" action="#{productoBean.delete(o)}" />
 			</h:column>
+                        
 			<h:column>
 				<f:facet name="header">Action</f:facet>
 				<h:commandLink value="Edit" action="#{productoBean.edit(o)}" rendered="#{not o.editable}" />
@@ -91,8 +92,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit t
 			<li>Precio:<h:inputText size="10" value="#{productoBean.precio}" /></li>
                         <li>Stock:<h:inputText size="10" value="#{productoBean.stock}" /></li>
 			<li>Categoria:<h:inputText size="10" value="#{productoBean.cat}" /></li>
-                       
-                        
                         <li>Sucursal:<h:inputText size="10" value="#{productoBean.suc}" /></li>
 		</ul>
 		<h:commandButton value="Add" action="#{productoBean.add}" />

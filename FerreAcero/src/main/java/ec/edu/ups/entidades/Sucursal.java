@@ -102,13 +102,5 @@ public class Sucursal implements Serializable {
     public void setEditable(boolean editable) {
         this.editable = editable;
     }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public int getId() {
-        return id;
-    }
-    
+  
 }

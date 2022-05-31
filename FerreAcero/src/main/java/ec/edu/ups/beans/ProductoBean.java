@@ -135,11 +135,7 @@ public class ProductoBean implements Serializable {
     }
 
     public Categoria getCategoria() {
-<<<<<<< HEAD
-        
-=======
-       
->>>>>>> 877df2beee0a1061d6dc849cd92df71cb29cc64c
+
         return categoria;
     }
 
@@ -157,11 +153,7 @@ public class ProductoBean implements Serializable {
         sucursal.setId(getSuc());
         this.sucursal = sucursal;
     }
-<<<<<<< HEAD
 
-    public Sucursal getSucursal() {
-        return sucursal;
-    }
 
     public void setCat(int cat) {
  
@@ -184,9 +176,5 @@ public class ProductoBean implements Serializable {
         return suc;
     }
     
-    
-=======
-     
->>>>>>> 877df2beee0a1061d6dc849cd92df71cb29cc64c
     
 }
