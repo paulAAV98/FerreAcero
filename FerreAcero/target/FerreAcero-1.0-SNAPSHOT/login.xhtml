@@ -5,16 +5,29 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit t
 -->
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-    xmlns:h="http://java.sun.com/jsf/html"
-    xmlns:f="http://java.sun.com/jsf/core"
-    xmlns:p="http://primefaces.org/ui">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
 
     <h:head>
     </h:head>
 
     <h:body>
-        <p:outputLabel value="Hola Mundo con Primefaces"/>
-        <br/>
-        
+        <h:form id="formLogin">
+            <p:panel id="pnlLogin" header="Inicio de Sesion" style="width: 25%">
+                <p:panelGrid id="pnlGridLogin" layout="grid" columns="1">
+
+                    <p:outputLabel id="lblUsuario" value="Usuario: "></p:outputLabel>
+                    <p:inputText id="txtUsuario" required="true" requiredMessage="El Usuario es requerido" style="width: 100%"></p:inputText>
+
+                    <p:outputLabel id="lblPassword" value="Contraseña"></p:outputLabel>
+                    <p:password id="txtPassword" required="true" requiredMessage="La contraseña es requerido" style="width: 100%"></p:password>
+
+                    <p:commandButton id="btnIniciarSesion" value="Iniciar Sesión" style="width: 100%"></p:commandButton>
+                    <p:commandButton id="btnRegistrarse" value="Registrarse" style="width: 100%"></p:commandButton>
+
+                </p:panelGrid>    
+            </p:panel>  
+        </h:form>
     </h:body>
 </html>

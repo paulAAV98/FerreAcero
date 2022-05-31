@@ -154,11 +154,7 @@ public class ProductoBean implements Serializable {
         this.sucursal = sucursal;
     }
 
-<<<<<<< HEAD
-=======
 
-    
->>>>>>> 00320e67ed36cbc574e164704a6531e347b0f22b
 
     public void setCat(int cat) {
  
@@ -182,9 +178,4 @@ public class ProductoBean implements Serializable {
     }
     
     
-<<<<<<< HEAD
-=======
-
-    
->>>>>>> 00320e67ed36cbc574e164704a6531e347b0f22b
 }
