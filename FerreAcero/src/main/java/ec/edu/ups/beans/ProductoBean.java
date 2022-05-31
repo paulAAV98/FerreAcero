@@ -175,7 +175,6 @@ public class ProductoBean implements Serializable {
     }
 
 
-    
 
     public void setCat(int cat) {
  
@@ -216,6 +215,7 @@ public class ProductoBean implements Serializable {
     }
     
     
+<<<<<<< HEAD
     
     public String extra(){
         String palabra=getCats();
@@ -290,4 +290,6 @@ public class ProductoBean implements Serializable {
     
 
     
+=======
+>>>>>>> d53051da0247ff2c08d225850ea7151c9c2b98e5
 }

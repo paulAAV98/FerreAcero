@@ -4,11 +4,19 @@
  */
 package ec.edu.ups.entidades;
 
-import java.io.Serializable;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import java.io.Serializable;
+<<<<<<< HEAD
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+=======
+
+>>>>>>> d53051da0247ff2c08d225850ea7151c9c2b98e5
 
 /**
  *
