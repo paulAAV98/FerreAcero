@@ -8,6 +8,7 @@ import ec.edu.ups.entidades.Categoria;
 import jakarta.ejb.Stateless;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
+import java.util.Optional;
 
 /**
  *
@@ -26,6 +27,30 @@ public class CategoriaFacade extends AbstractFacade<Categoria> {
     @Override
     protected EntityManager getEntityManager(){
         return em;
+    }
+    
+    public Optional<Categoria> opcional(Long id) {
+        return Optional.ofNullable(porId(id));
+    }
+    public Categoria porId(Long id) {
+        return em.find(Categoria.class, id);
+    }
+    public void eliminar(Long id) {
+        Categoria categoria = porId(id);
+        em.remove(categoria);
+    }
+    
+    public Categoria getCategoriaN(String nombre){
+        int idx=1;
+        System.out.println("Entro consulta-----------------------------------------------");
+        String jpql = "SELECT u FROM Categoria u WHERE u.nombre = '" +nombre+"'" ;
+        
+        Categoria user = (Categoria) em.createQuery(jpql).getSingleResult();
+        Categoria userx=new Categoria();
+        
+        userx.setId(user.getId());
+        
+        return userx;
     }
     
 }

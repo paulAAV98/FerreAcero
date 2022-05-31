@@ -4,7 +4,9 @@
  */
 package ec.edu.ups.beans;
 
+import ec.edu.ups.ejb.CategoriaFacade;
 import ec.edu.ups.ejb.ProductoFacade;
+import ec.edu.ups.ejb.SucursalFacade;
 import ec.edu.ups.entidades.Categoria;
 import ec.edu.ups.entidades.Persona;
 import ec.edu.ups.entidades.Producto;
@@ -31,7 +33,15 @@ public class ProductoBean implements Serializable {
     
     @EJB
     private ProductoFacade productoFacade;
+    
+    @EJB
+    private CategoriaFacade catf;
+    
+    @EJB
+    private SucursalFacade sucf;
+    
     private List<Producto> list = new ArrayList<>();
+    
     private int id;
     private String nombre;
     private String marca;
@@ -42,20 +52,30 @@ public class ProductoBean implements Serializable {
     private int cat;
     private int suc;
     
+    private String cats;
+    private String sucs;
+    
+    
     @PostConstruct
     public void init() {	
 	list = productoFacade.findAll();
+        
+        
     }
     
     public String add() {
-         Categoria cat1=new Categoria();
-         cat1.setId(getCat());
-         Sucursal suc1=new Sucursal();
-         suc1.setId(getSuc());
+         /*Categoria cat1=new Categoria();
+         cat1.setId(getCat());*/
+         //System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"+getSucs());
+         Categoria cat1=catf.getCategoriaN(extra());
+         
+         Sucursal suc1=sucf.getSucursalN(extra1());
+         
+         //suc1.setId(getSuc());
          this.sucursal=suc1;
          this.categoria=cat1;
         productoFacade.create(new Producto(id, nombre, marca, precio, stock, categoria, sucursal));
-        System.out.println(categoria.getId());
+        
         list = productoFacade.findAll();
 	return null;
     }
@@ -140,7 +160,7 @@ public class ProductoBean implements Serializable {
     }
 
     public void setCategoria(Categoria categoria) {
-        categoria.setId(getCat());
+        //categoria.setId(getCat());
         this.categoria = categoria;
     }
 
@@ -150,7 +170,7 @@ public class ProductoBean implements Serializable {
     }
 
     public void setSucursal(Sucursal sucursal) {
-        sucursal.setId(getSuc());
+        //sucursal.setId(getSuc());
         this.sucursal = sucursal;
     }
 
@@ -176,6 +196,100 @@ public class ProductoBean implements Serializable {
     public int getSuc() {
         return suc;
     }
+
+    public void setCats(String cats) {
+        
+        this.cats = cats;
+    }
+
+    public String getCats() {
+        return cats;
+    }
+
+    public void setSucs(String sucs) {
+        this.sucs = sucs;
+    }
+
+    public String getSucs() {
+        return sucs;
+    }
     
     
+<<<<<<< HEAD
+    
+    public String extra(){
+        String palabra=getCats();
+        int acum=1;
+        int acum1=0;
+        String nue="";
+        for (int i = 0; i < palabra.length(); i++) {
+            
+            if(palabra.substring(i, i+1).equals("}")){
+                acum1=1;
+                
+                
+            
+            }
+            
+            if(acum==3 && acum1==0){
+                nue=nue.concat(palabra.substring(i,i+1));
+                
+            
+            }
+            if(palabra.substring(i, i+1).equals("=")){
+                
+                acum++;
+            
+            
+            }
+            
+            
+            
+            
+        }
+        
+        
+     return nue;   
+    }
+    
+    
+    public String extra1(){
+        String palabra=getSucs();
+        int acum=1;
+        int acum1=0;
+        String nue="";
+        for (int i = 0; i < palabra.length(); i++) {
+            
+            if(palabra.substring(i, i+1).equals("}")){
+                acum1=1;
+                
+                
+            
+            }
+            
+            if(acum==3 && acum1==0){
+                nue=nue.concat(palabra.substring(i,i+1));
+                
+            
+            }
+            if(palabra.substring(i, i+1).equals("=")){
+                
+                acum++;
+            
+            
+            }
+            
+            
+            
+            
+        }
+        
+        
+     return nue;   
+    }
+    
+
+    
+=======
+>>>>>>> d53051da0247ff2c08d225850ea7151c9c2b98e5
 }

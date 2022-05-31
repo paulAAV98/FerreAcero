@@ -10,6 +10,7 @@ ec\edu\ups\beans\PersonaBean.class
 ec\edu\ups\ferreacero\JakartaRestConfiguration.class
 ec\edu\ups\ejb\ProductoFacade.class
 ec\edu\ups\entidades\Categoria.class
+ec\edu\ups\entidades\FormaPago.class
 ec\edu\ups\pojos\RowProducto.class
 ec\edu\ups\pojos\RowSucursal.class
 ec\edu\ups\beans\CollectionBeanProducto.class
