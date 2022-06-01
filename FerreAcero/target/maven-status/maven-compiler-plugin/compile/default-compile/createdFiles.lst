@@ -6,11 +6,6 @@ ec\edu\ups\entidades\Persona.class
 ec\edu\ups\entidades\Sucursal.class
 ec\edu\ups\ferreacero\JakartaRestConfiguration.class
 ec\edu\ups\entidades\Categoria.class
-<<<<<<< HEAD
-ec\edu\ups\entidades\FormaPago.class
-ec\edu\ups\pojos\RowProducto.class
-=======
->>>>>>> 366f72c2369b051183244c489d5e6c9593b65112
 ec\edu\ups\pojos\RowSucursal.class
 ec\edu\ups\ejb\PersonaFacade.class
 ec\edu\ups\pojos\RowCategoria.class
