@@ -66,18 +66,21 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit t
 			</h:column>
                         <h:column>
 				<f:facet name="header">Categoria</f:facet>
-				<h:inputText value="#{o.categoria.id}" size="10" rendered="#{o.editable}" />
-				<h:outputText value="#{o.categoria.id}" rendered="#{not o.editable}" />
+				<h:inputText value="#{o.categoria.nombre}" size="10" rendered="#{o.editable}" />
+				<h:outputText value="#{o.categoria.nombre}" rendered="#{not o.editable}" />
 			</h:column>
+                
+               
                         <h:column>
 				<f:facet name="header">Sucursal</f:facet>
-				<h:inputText value="#{o.sucursal.id}" size="10" rendered="#{o.editable}" />
-				<h:outputText value="#{o.sucursal.id}" rendered="#{not o.editable}" />
+				<h:inputText value="#{o.sucursal.nombre}" size="10" rendered="#{o.editable}" />
+				<h:outputText value="#{o.sucursal.nombre}" rendered="#{not o.editable}" />
 			</h:column>
                        <h:column>
 				<f:facet name="header">Action</f:facet>
 				<h:commandLink value="Delete" action="#{productoBean.delete(o)}" />
 			</h:column>
+                        
 			<h:column>
 				<f:facet name="header">Action</f:facet>
 				<h:commandLink value="Edit" action="#{productoBean.edit(o)}" rendered="#{not o.editable}" />
@@ -90,9 +93,27 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit t
 			<li>Marca:<h:inputText size="10" value="#{productoBean.marca}" /></li>
 			<li>Precio:<h:inputText size="10" value="#{productoBean.precio}" /></li>
                         <li>Stock:<h:inputText size="10" value="#{productoBean.stock}" /></li>
-			<li>Categoria:<h:inputText size="10" value="#{productoBean.cat}" /></li>
+			
+                        <li> <h:outputLabel value="Categoria" for="categoria" class="col-form-label"/>
+                    <h:selectOneMenu id="categoria" value="#{productoBean.cats}" class="form-select">
+                    <f:selectItem itemLabel="--- Seleccione una Categoria ---" itemValue="#{null}"/>
+                    <f:selectItems value="#{categoriaBean.list}" var="cat1" itemLabel="#{cat1.nombre}"/>
+                    
+                   
+                    
+                </h:selectOneMenu></li>
+                        
                        
                         
+                    <li> <h:outputLabel value="Sucursal" for="sucursal" class="col-form-label"/>
+                    <h:selectOneMenu id="sucursal" value="#{productoBean.sucs}" class="form-select">
+                    <f:selectItem itemLabel="--- Seleccione una Sucursal ---" itemValue="#{null}"/>
+                    <f:selectItems value="#{sucursalBean.list}" var="suc1" itemLabel="#{suc1.nombre}"/>
+                    
+                   
+                    
+                </h:selectOneMenu></li>
+			<li>Categoria:<h:inputText size="10" value="#{productoBean.cat}" /></li>
                         <li>Sucursal:<h:inputText size="10" value="#{productoBean.suc}" /></li>
 		</ul>
 		<h:commandButton value="Add" action="#{productoBean.add}" />

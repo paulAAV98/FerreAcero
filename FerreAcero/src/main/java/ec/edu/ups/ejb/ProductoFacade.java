@@ -28,4 +28,6 @@ public class ProductoFacade extends AbstractFacade<Producto> {
         return em;
     }
     
+    
+    
 }
