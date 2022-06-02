@@ -14,7 +14,6 @@ import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -30,8 +29,9 @@ public class Sucursal implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    
     private String nombre;
     private String latitud;
     private String longitud;
@@ -39,8 +39,7 @@ public class Sucursal implements Serializable {
     private Set<Producto> productos = new HashSet<Producto>();
     @Transient
     private boolean editable;
-    
-    
+
     public Sucursal() {
         super();
     }
@@ -53,14 +52,19 @@ public class Sucursal implements Serializable {
         this.longitud = longitud;
     }
 
-    public void addProductos(Producto producto){
-        this.productos.add(producto);
+    @Override
+    public Sucursal clone() {
+        return new Sucursal(getId(), getNombre(), getLatitud(), getLongitud());
     }
     
-    public void removeProduct(Producto producto){
+
+    public void addProductos(Producto producto) {
+        this.productos.add(producto);
+    }
+
+    public void removeProduct(Producto producto) {
         this.productos.remove(producto);
-        
-        
+
     }
 
     public int getId() {
@@ -105,7 +109,8 @@ public class Sucursal implements Serializable {
 
     @Override
     public String toString() {
-        return "Sucursal{" + "id=" + id + ", nombre=" + nombre + '}';
+        return "Sucursal{" + "id=" + id + ", nombre=" + nombre + ", latitud=" + latitud + ", longitud=" + longitud + '}';
     }
+
 
 }

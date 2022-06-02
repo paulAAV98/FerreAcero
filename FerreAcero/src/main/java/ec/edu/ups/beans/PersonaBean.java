@@ -5,16 +5,21 @@
 package ec.edu.ups.beans;
 
 import ec.edu.ups.ejb.PersonaFacade;
+import ec.edu.ups.entidades.Categoria;
 import ec.edu.ups.entidades.Persona;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.ejb.EJB;
 import jakarta.enterprise.context.SessionScoped;
 import jakarta.faces.annotation.FacesConfig;
+import jakarta.faces.application.FacesMessage;
+import jakarta.faces.context.FacesContext;
 import jakarta.inject.Named;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import org.primefaces.event.CellEditEvent;
+import org.primefaces.event.RowEditEvent;
 
 /**
  *
@@ -44,7 +49,7 @@ public class PersonaBean implements Serializable {
     }
     
     public String add() {	
-        personaFacade.create(new Persona(per_id,per_nombre, per_apellido, per_clave, per_cedula, per_direccion, per_email, per_telefono));
+        personaFacade.create(new Persona(per_id,per_nombre, per_apellido));
         list = personaFacade.findAll();
 	return null;
     }
@@ -153,5 +158,25 @@ public class PersonaBean implements Serializable {
     public void setPersonaFacade(PersonaFacade personaFacade) {
         this.personaFacade = personaFacade;
     }    
+     public void onRowEdit(RowEditEvent<Persona> event) {
+        FacesMessage msg = new FacesMessage("Product Edited", String.valueOf(event.getObject().getPer_nombre()));
+        FacesContext.getCurrentInstance().addMessage(null, msg);
+        
+    }
+
+    public void onRowCancel(RowEditEvent<Persona> event) {
+        FacesMessage msg = new FacesMessage("Edit Cancelled", String.valueOf(event.getObject().getPer_nombre()));
+        FacesContext.getCurrentInstance().addMessage(null, msg);
+    }
+
     
+    public void onCellEdit(CellEditEvent event) {
+        Object oldValue = event.getOldValue();
+        Object newValue = event.getNewValue();
+
+        if (newValue != null && !newValue.equals(oldValue)) {
+            FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO, "Cell Changed", "Old: " + oldValue + ", New:" + newValue);
+            FacesContext.getCurrentInstance().addMessage(null, msg);
+        }
+    }
 }

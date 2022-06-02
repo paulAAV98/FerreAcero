@@ -10,10 +10,16 @@ import jakarta.annotation.PostConstruct;
 import jakarta.ejb.EJB;
 import jakarta.enterprise.context.SessionScoped;
 import jakarta.faces.annotation.FacesConfig;
+import jakarta.faces.application.FacesMessage;
+import jakarta.faces.context.FacesContext;
 import jakarta.inject.Named;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import org.primefaces.event.CellEditEvent;
+import org.primefaces.event.RowEditEvent;
+
+
 
 /**
  *
@@ -23,51 +29,47 @@ import java.util.List;
 @Named
 @SessionScoped
 public class SucursalBean implements Serializable {
-   
+
     private static final long serialVersionUID = 1L;
-    
+
     @EJB
     private SucursalFacade sucursalFacade;
-    private List<Sucursal> list=new ArrayList<>();
+    private List<Sucursal> list = new ArrayList<>();
     private int id;
     private String nombre;
     private String latitud;
     private String longitud;
-    
+
     @PostConstruct
-    public void init(){
+    public void init() {
         list = sucursalFacade.findAll();
     }
-    
-    public String add(){
+
+    public String add() {
         sucursalFacade.create(new Sucursal(id, nombre, latitud, longitud));
         list = sucursalFacade.findAll();
         return null;
-       
-    }
-        public String delete(Sucursal s){
-         sucursalFacade.remove(s);
-         list = sucursalFacade.findAll();
-         return null;
-        }
-        
-        public String edit(Sucursal s){
-            s.setEditable(true);
-            return null;
-    }
-        
-        public String save(Sucursal s){
-            sucursalFacade.edit(s);
-            list = sucursalFacade.findAll();
-            s.setEditable(false);
-            return null;
-        }
 
-    public Sucursal[] getList(){
+    }
+
+    public String delete(Sucursal s) {
+        sucursalFacade.remove(s);
+        list = sucursalFacade.findAll();
+        return null;
+    }
+
+    public String edit(Sucursal s) {
+        sucursalFacade.edit(s);
+        list = sucursalFacade.findAll();
+        return null;
+    }
+
+
+    public Sucursal[] getList() {
         return list.toArray(new Sucursal[0]);
     }
-    
-    public void setList(List<Sucursal> list){
+
+    public void setList(List<Sucursal> list) {
         this.list = list;
     }
 
@@ -102,14 +104,34 @@ public class SucursalBean implements Serializable {
     public void setLongitud(String longitud) {
         this.longitud = longitud;
     }
-        
-       public SucursalFacade getSucursalFacade() {
+
+    public SucursalFacade getSucursalFacade() {
         return sucursalFacade;
     }
 
     public void setSucursalFacade(SucursalFacade sucursalFacade) {
         this.sucursalFacade = sucursalFacade;
-    }  
+    }
+
+     public void onRowEdit(RowEditEvent<Sucursal> event) {
+        FacesMessage msg = new FacesMessage("Product Edited", String.valueOf(event.getObject().getNombre()));
+        FacesContext.getCurrentInstance().addMessage(null, msg);
+        
+    }
+
+    public void onRowCancel(RowEditEvent<Sucursal> event) {
+        FacesMessage msg = new FacesMessage("Edit Cancelled", String.valueOf(event.getObject().getNombre()));
+        FacesContext.getCurrentInstance().addMessage(null, msg);
+    }
+   
     
-    
+    public void onCellEdit(CellEditEvent event) {
+        Object oldValue = event.getOldValue();
+        Object newValue = event.getNewValue();
+
+        if (newValue != null && !newValue.equals(oldValue)) {
+            FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO, "Cell Changed", "Old: " + oldValue + ", New:" + newValue);
+            FacesContext.getCurrentInstance().addMessage(null, msg);
+        }
+    }
 }

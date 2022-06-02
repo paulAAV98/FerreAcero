@@ -57,12 +57,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit t
                     <h:commandLink value="Editar" action="#{categoriaBean.edit(o)}" rendered="#{not o.editable}" />
                     <h:commandLink value="Guardar" action="#{categoriaBean.save(o)}" rendered="#{o.editable}" />
                 </h:column>
-            </h:dataTable>
-            <ul>
-                <li>Id:<h:inputText size="10" value="#{categoriaBean.id}" /></li>
-                <li>Nombre:<h:inputText size="10" value="#{categoriaBean.nombre}" /></li>
-            </ul>
-            <h:commandButton value="Add" action="#{categoriaBean.add}" />
+            </h:dataTable>  
         </h:form>
     </h:body>
 </html>

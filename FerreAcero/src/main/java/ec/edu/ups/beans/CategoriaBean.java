@@ -11,10 +11,15 @@ import jakarta.annotation.PostConstruct;
 import jakarta.ejb.EJB;
 import jakarta.enterprise.context.SessionScoped;
 import jakarta.faces.annotation.FacesConfig;
+import jakarta.faces.application.FacesMessage;
+import jakarta.faces.context.FacesContext;
 import jakarta.inject.Named;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
+import org.primefaces.event.CellEditEvent;
+import org.primefaces.event.RowEditEvent;
 
 /**
  *
@@ -30,7 +35,7 @@ public class CategoriaBean implements Serializable {
     @EJB
     private CategoriaFacade categoriaFacade;
     private List<Categoria> list = new ArrayList<>();
-    private Long id;
+    private int id;
     private String nombre;
     
     @PostConstruct
@@ -48,6 +53,12 @@ public class CategoriaBean implements Serializable {
 	categoriaFacade.remove(c);
         list = categoriaFacade.findAll();
 	return null;
+    }
+    
+    public String edit(Categoria c){
+        categoriaFacade.edit(c);
+        list = categoriaFacade.findAll();
+        return null;
     }
 
     
@@ -68,11 +79,11 @@ public class CategoriaBean implements Serializable {
         this.categoriaFacade = categoriaFacade;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -82,8 +93,29 @@ public class CategoriaBean implements Serializable {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    } 
+    
+    public void onRowEdit(RowEditEvent<Categoria> event) {
+        FacesMessage msg = new FacesMessage("Product Edited", String.valueOf(event.getObject().getNombre()));
+        FacesContext.getCurrentInstance().addMessage(null, msg);
+        
+    }
+
+    public void onRowCancel(RowEditEvent<Categoria> event) {
+        FacesMessage msg = new FacesMessage("Edit Cancelled", String.valueOf(event.getObject().getNombre()));
+        FacesContext.getCurrentInstance().addMessage(null, msg);
     }
 
     
-    
+    public void onCellEdit(CellEditEvent event) {
+        Object oldValue = event.getOldValue();
+        Object newValue = event.getNewValue();
+
+        if (newValue != null && !newValue.equals(oldValue)) {
+            FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO, "Cell Changed", "Old: " + oldValue + ", New:" + newValue);
+            FacesContext.getCurrentInstance().addMessage(null, msg);
+        }
+    }
 }
+    
+

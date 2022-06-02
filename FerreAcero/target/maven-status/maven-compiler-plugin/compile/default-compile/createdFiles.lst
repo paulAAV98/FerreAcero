@@ -13,11 +13,15 @@ ec\edu\ups\beans\CategoriaBean.class
 ec\edu\ups\beans\CollectionBeanCategoria.class
 ec\edu\ups\ejb\AbstractFacade.class
 ec\edu\ups\entidades\Producto.class
+ec\edu\ups\view\EditViewSucursal.class
 ec\edu\ups\beans\PersonaBean.class
 ec\edu\ups\ejb\ProductoFacade.class
+ec\edu\ups\service\CategoriaService.class
+ec\edu\ups\service\SucursalService.class
 ec\edu\ups\entidades\FormaPago.class
 ec\edu\ups\pojos\RowProducto.class
 ec\edu\ups\beans\CollectionBeanProducto.class
 ec\edu\ups\beans\SucursalBean.class
 ec\edu\ups\ejb\SucursalFacade.class
 ec\edu\ups\entidades\Rols.class
+ec\edu\ups\view\EditViewCategoria.class

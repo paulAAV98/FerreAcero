@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit this template
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title>Categorias</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"></link>
+    </h:head>
+
+    <h:body>
+        <h:form id="form">
+            <p:growl id="msgs" showDetail="true"/>
+
+            <div class="card">
+                <h5>Row Editing</h5>
+                <p:dataTable id="categorias" var="o" value="#{categoriaBean.list}" editable="true"
+                             style="margin-bottom:20px">
+
+                    <p:ajax event="rowEdit" listener="#{categoriaBean.edit(o)}" update=":form:msgs"/>
+                    <p:ajax event="rowEditCancel" listener="#{dtEditView.onRowCancel}" update=":form:msgs"/>
+
+                    <p:column headerText="Id">
+                        <p:cellEditor>
+                            <f:facet name="output">
+                                <h:outputText value="#{o.id}"/>
+                            </f:facet>
+                            <f:facet name="input">
+                                <p:inputText id="modelInput" value="#{o.id}" style="width:100%"/>
+                            </f:facet>
+                        </p:cellEditor>
+                    </p:column>
+
+                    <p:column headerText="Name">
+                        <p:cellEditor>
+                            <f:facet name="output">
+                                <h:outputText value="#{o.nombre}"/>
+                            </f:facet>  
+                            <f:facet name="input">
+                                <p:inputText value="#{o.nombre}" style="width:100%" label="Name"/>
+                            </f:facet>
+                        </p:cellEditor>
+                    </p:column>
+                    <p:column style="width:6rem">
+                        <p:rowEditor editTitle="Edit Row" cancelTitle="Cancel Edit" saveTitle="Save Row"/>
+                    </p:column>
+                    <p:column style="width:6rem">
+                         <p:commandButton id="btnEliminar" style="width: 50%"  type="button" icon="pi pi-trash" styleClass="rounded-button ui-button-flat ui-button-plain" action="#{categoriaBean.delete(o)}"></p:commandButton>
+                    </p:column>
+                </p:dataTable>
+            </div>  
+        </h:form>
+    </h:body>
+</html>

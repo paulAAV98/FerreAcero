@@ -6,75 +6,73 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit t
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
     <h:head>
-        <title>Categorias</title>
-        <style>
-            .tabla {
-                border-collapse: collapse;
-            }
-
-            .cabeceraTabla {
-                text-align: center;
-                background: none repeat scroll 0 0 #E5E5E5;
-                border-bottom: 1px solid #BBBBBB;
-                padding: 8px;
-            }
-
-            .filaPar {
-                text-align: center;
-                background: none repeat scroll 0 0 #FFFFFFF;
-                border-top: 1px solid #BBBBBB;
-            }
-
-            .filaImpar {
-                text-align: center;
-                background: none repeat scroll 0 0 #F9F9F9;
-                border-top: 1px solid #BBBBBB;
-            }
-        </style>
+        <title>Sucursales</title>
     </h:head>
     <h:body>
-        <h3>Categorias</h3>
-        <h:form>
-            <h:dataTable value="#{sucursalBean.list}" var="o" styleClass="tabla"
-                         headerClass="cabeceraTabla" rowClasses="filaPar,filaImpar">
-                <h:column>
-                    <f:facet name="header">Id</f:facet>
-                        #{o.id}
-                </h:column>
-                <h:column>
-                    <f:facet name="header">Nombre</f:facet>
-                    <h:inputText value="#{o.nombre}" size="10" rendered="#{o.editable}" />
-                    <h:outputText value="#{o.nombre}" rendered="#{not o.editable}" />
-                </h:column>
-                <h:column>
-                    <f:facet name="header">Latitud</f:facet>
-                    <h:inputText value="#{o.latitud}" size="10" rendered="#{o.editable}" />
-                    <h:outputText value="#{o.latitud}" rendered="#{not o.editable}" />
-                </h:column>
-                <h:column>
-                    <f:facet name="header">Longitud</f:facet>
-                    <h:inputText value="#{o.longitud}" size="10" rendered="#{o.editable}" />
-                    <h:outputText value="#{o.longitud}" rendered="#{not o.editable}" />
-                </h:column>
-                <h:column>
-				<f:facet name="header">Action</f:facet>
-				<h:commandLink value="Delete" action="#{sucursalBean.delete(o)}" />
-			</h:column>
-                <h:column>
-                    <f:facet name="header">Action</f:facet>
-                    <h:commandLink value="Editar" action="#{sucursalBean.edit(o)}" rendered="#{not o.editable}" />
-                    <h:commandLink value="Guardar" action="#{sucursalBean.save(o)}" rendered="#{o.editable}" />
-                </h:column>
-            </h:dataTable>
-            <ul>
-                <li>Id:<h:inputText size="10" value="#{sucursalBean.id}" /></li>
-                <li>Nombre:<h:inputText size="10" value="#{sucursalBean.nombre}" /></li>
-                <li>Latitud:<h:inputText size="10" value="#{sucursalBean.latitud}" /></li>
-                <li>Longitud:<h:inputText size="10" value="#{sucursalBean.longitud}"/></li>
-            </ul>
-            <h:commandButton value="Add" action="#{sucursalBean.add}" />
+       
+        <h:form id="form">
+            <p:growl id="msgs" showDetail="true"/>
+
+            <div class="card">
+                <h5>Row Editing</h5>
+                <p:dataTable id="sucursales" var="o" value="#{sucursalBean.list}" editable="true"
+                             style="margin-bottom:20px">
+
+                    <p:ajax event="rowEdit" listener="#{sucursalBean.edit(o)}" update=":form:msgs"/>
+                    <p:ajax event="rowEditCancel" listener="#{scEditView.onRowCancel}" update=":form:msgs"/>
+
+                    <p:column headerText="Id">
+                        <p:cellEditor>
+                            <f:facet name="output">
+                                <h:outputText value="#{o.id}"/>
+                            </f:facet>
+                            <f:facet name="input">
+                                <p:inputText id="modelInput" value="#{o.id}" style="width:100%"/>
+                            </f:facet>
+                        </p:cellEditor>
+                    </p:column>
+
+                    <p:column headerText="Nombre">
+                        <p:cellEditor>
+                            <f:facet name="output">
+                                <h:outputText value="#{o.nombre}"/>
+                            </f:facet>  
+                            <f:facet name="input">
+                                <p:inputText value="#{o.nombre}" style="width:100%" label="Nombre"/>
+                            </f:facet>
+                        </p:cellEditor>
+                    </p:column>
+                      <p:column headerText="Latitud">
+                        <p:cellEditor>
+                            <f:facet name="output">
+                                <h:outputText value="#{o.latitud}"/>
+                            </f:facet>  
+                            <f:facet name="input">
+                                <p:inputText value="#{o.latitud}" style="width:100%" label="Latitud"/>
+                            </f:facet>
+                        </p:cellEditor>
+                    </p:column>
+                    <p:column  headerText="Longitud">
+                        <p:cellEditor>
+                            <f:facet name="output">
+                                <h:outputText value="#{o.longitud}"/>
+                            </f:facet>  
+                            <f:facet name="input">
+                                <p:inputText value="#{o.longitud}" style="width:100%" label="Longitud"/>
+                            </f:facet>
+                        </p:cellEditor>
+                    </p:column>
+                    <p:column style="width:6rem">
+                        <p:rowEditor editTitle="Edit Row" cancelTitle="Cancel Edit" saveTitle="Save Row"/>
+                    </p:column>
+                    <p:column style="width:6rem">
+                        <p:commandButton id="btnEliminar" action="#{sucursalBean.delete(o)}" style="width: 50%"  type="button" icon="pi pi-trash" styleClass="rounded-button ui-button-flat ui-button-plain" ></p:commandButton>
+                    </p:column>
+                </p:dataTable>
+            </div>  
         </h:form>
     </h:body>
 </html>

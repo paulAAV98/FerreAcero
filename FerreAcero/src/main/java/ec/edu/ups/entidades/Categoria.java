@@ -27,7 +27,7 @@ public class Categoria implements Serializable {
     
     private static final long serialVersionUID = 1L;
     @Id
-     private Long id;
+     private int id;
     @GeneratedValue(strategy = GenerationType.AUTO)
    
     private String nombre;
@@ -42,10 +42,15 @@ public class Categoria implements Serializable {
         super();
     }
     
-    public Categoria(Long id, String nombre) {
+    public Categoria(int id, String nombre) {
         super();
         this.id = id;
         this.nombre = nombre;
+    }
+    
+    @Override
+    public Categoria clone(){
+        return new Categoria(getId(), getNombre());
     }
 
     public boolean isEditable() {
@@ -66,11 +71,11 @@ public class Categoria implements Serializable {
         this.productos.remove(producto);
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
@@ -81,6 +86,9 @@ public class Categoria implements Serializable {
     public String getNombre() {
         return nombre;
     }
+    
+    
+    
     @Override
     public String toString() {
         return "Categoria{" + "id=" + id + ", nombre=" + nombre + '}';

@@ -62,9 +62,9 @@ public class Persona implements Serializable{
         this.per_telefono = telefono;
 
         
-        this.editable = editable;
-        this.rol = rol;
     }
+    
+    
 
     public void setPer_apellido(String per_apellido) {
         this.per_apellido = per_apellido;
