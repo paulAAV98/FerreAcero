@@ -78,8 +78,7 @@ public class ProductoBean implements Serializable {
          //suc1.setId(getSuc());
          this.sucursal=suc1;
          this.categoria=cat1;
-        productoFacade.create(new Producto(id, nombre, marca, precio, stock, categoria, sucursal));
-        
+        productoFacade.create(new Producto(id, nombre, marca, precio, stock, categoria, sucursal)); 
         list = productoFacade.findAll();
 	return null;
     }

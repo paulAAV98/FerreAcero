@@ -168,6 +168,11 @@ public class Producto implements Serializable {
     public int getSuc() {
         return suc;
     }
+
+    @Override
+    public String toString() {
+        return "Producto{" + "id=" + id + ", nombre=" + nombre + ", marca=" + marca + ", precio=" + precio + ", stock=" + stock + ", categoria=" + categoria + ", sucursal=" + sucursal + '}';
+    }
     
     
     
