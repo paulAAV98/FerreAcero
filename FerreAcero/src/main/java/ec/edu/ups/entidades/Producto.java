@@ -58,6 +58,12 @@ public class Producto implements Serializable {
         this.categoria = categoria;
         this.sucursal = sucursal;
     }
+    
+    @Override
+    public Producto clone(){
+        return new Producto(getId(), getNombre(), getMarca(), getPrecio(), getStock(),
+        getCategoria(), getSucursal());
+    }
 
     public boolean isEditable() {
         return editable;
