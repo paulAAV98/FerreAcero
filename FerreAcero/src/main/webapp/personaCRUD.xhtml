@@ -37,42 +37,42 @@
                           headerClass="cabeceraTabla" rowClasses="filaPar,filaImpar">
 			<h:column>
                             <f:facet name="header" class="cabeceraTabla">Id</f:facet>
-                            #{o.per_id}
+                            #{o.id}
                         </h:column>
                         <h:column>
 				<f:facet name="header">Cedula</f:facet>
-				<h:inputText value="#{o.per_cedula}" size="10" rendered="#{o.editable}" />
-				<h:outputText value="#{o.per_cedula}" rendered="#{not o.editable}" />
+				<h:inputText value="#{o.cedula}" size="10" rendered="#{o.editable}" />
+				<h:outputText value="#{o.cedula}" rendered="#{not o.editable}" />
 			</h:column>            
 			<h:column>
 				<f:facet name="header">Nombre</f:facet>
-				<h:inputText value="#{o.per_nombre}" size="10" rendered="#{o.editable}" />
-				<h:outputText value="#{o.per_nombre}" rendered="#{not o.editable}" />
+				<h:inputText value="#{o.nombre}" size="10" rendered="#{o.editable}" />
+				<h:outputText value="#{o.nombre}" rendered="#{not o.editable}" />
 			</h:column>
 			<h:column>
 				<f:facet name="header">Apellido</f:facet>
-				<h:inputText value="#{o.per_apellido}" size="10" rendered="#{o.editable}" />
-				<h:outputText value="#{o.per_apellido}" rendered="#{not o.editable}" />
+				<h:inputText value="#{o.apellido}" size="10" rendered="#{o.editable}" />
+				<h:outputText value="#{o.apellido}" rendered="#{not o.editable}" />
 			</h:column>
                         <h:column>
 				<f:facet name="header">>Direccion</f:facet>
-				<h:inputText value="#{o.per_direccion}" size="10" rendered="#{o.editable}" />
-				<h:outputText value="#{o.per_direccion}" rendered="#{not o.editable}" />
+				<h:inputText value="#{o.direccion}" size="10" rendered="#{o.editable}" />
+				<h:outputText value="#{o.direccion}" rendered="#{not o.editable}" />
 			</h:column>
                     <h:column>
 				<f:facet name="header">Email</f:facet>
-				<h:inputText value="#{o.per_email}" size="10" rendered="#{o.editable}" />
-				<h:outputText value="#{o.per_email}" rendered="#{not o.editable}" />
+				<h:inputText value="#{o.email}" size="10" rendered="#{o.editable}" />
+				<h:outputText value="#{o.email}" rendered="#{not o.editable}" />
 			</h:column>
                         <h:column>
 				<f:facet name="header">>Telefono</f:facet>
-				<h:inputText value="#{o.per_telefono}" size="10" rendered="#{o.editable}" />
-				<h:outputText value="#{o.per_telefono}" rendered="#{not o.editable}" />
+				<h:inputText value="#{o.telefono}" size="10" rendered="#{o.editable}" />
+				<h:outputText value="#{o.telefono}" rendered="#{not o.editable}" />
 			</h:column>
                     <h:column>
 				<f:facet name="header">>Clave</f:facet>
-				<h:inputText value="#{o.per_clave}" size="10" rendered="#{o.editable}" />
-				<h:outputText value="#{o.per_clave}" rendered="#{not o.editable}" />
+				<h:inputText value="#{o.clave}" size="10" rendered="#{o.editable}" />
+				<h:outputText value="#{o.clave}" rendered="#{not o.editable}" />
 			</h:column>
 			<h:column>
 				<f:facet name="header">Action</f:facet>
@@ -84,17 +84,8 @@
 				<h:commandLink value="Save" action="#{personaBean.save(o)}" rendered="#{o.editable}" />
 			</h:column>
 		</h:dataTable>
-		<ul>
-			<li>Id:<h:inputText size="10" value="#{personaBean.per_id}" /></li>
-                        <li>Cedula:<h:inputText size="10" value="#{personaBean.per_cedula}" /></li>
-			<li>Nombre:<h:inputText size="10" value="#{personaBean.per_nombre}" /></li>
-			<li>Apellido:<h:inputText size="10" value="#{personaBean.per_apellido}" /></li>
-                        <li>Direccion:<h:inputText size="10" value="#{personaBean.per_direccion}" /></li>
-			<li>Email:<h:inputText size="10" value="#{personaBean.per_email}" /></li>
-			<li>Telefono:<h:inputText size="10" value="#{personaBean.per_telefono}" /></li>
-                        <li>Clave:<h:inputText size="10" value="#{personaBean.per_clave}" /></li>
-		</ul>
-		<h:commandButton value="Add" action="#{personaBean.add}" />
+		
+		
 	</h:form>
 </h:body>
 </html>

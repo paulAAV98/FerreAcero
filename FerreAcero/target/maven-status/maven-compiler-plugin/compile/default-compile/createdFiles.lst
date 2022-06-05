@@ -6,7 +6,9 @@ ec\edu\ups\entidades\Persona.class
 ec\edu\ups\entidades\Sucursal.class
 ec\edu\ups\view\EditViewProducto.class
 ec\edu\ups\ferreacero\JakartaRestConfiguration.class
+ec\edu\ups\view\EditViewPersona.class
 ec\edu\ups\entidades\Categoria.class
+ec\edu\ups\service\PersonaService.class
 ec\edu\ups\pojos\RowSucursal.class
 ec\edu\ups\ejb\PersonaFacade.class
 ec\edu\ups\pojos\RowCategoria.class

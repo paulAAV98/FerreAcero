@@ -1,4 +1,5 @@
 C:\Users\Usuario\Documents\GitHub\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\ejb\AbstractFacade.java
+C:\Users\Usuario\Documents\GitHub\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\service\PersonaService.java
 C:\Users\Usuario\Documents\GitHub\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\ejb\CategoriaFacade.java
 C:\Users\Usuario\Documents\GitHub\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\service\SucursalService.java
 C:\Users\Usuario\Documents\GitHub\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\view\EditViewCategoria.java
@@ -12,6 +13,7 @@ C:\Users\Usuario\Documents\GitHub\FerreAcero\FerreAcero\src\main\java\ec\edu\ups
 C:\Users\Usuario\Documents\GitHub\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\entidades\Producto.java
 C:\Users\Usuario\Documents\GitHub\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\entidades\Rols.java
 C:\Users\Usuario\Documents\GitHub\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\ejb\PersonaFacade.java
+C:\Users\Usuario\Documents\GitHub\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\view\EditViewPersona.java
 C:\Users\Usuario\Documents\GitHub\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\beans\CategoriaBean.java
 C:\Users\Usuario\Documents\GitHub\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\entidades\Persona.java
 C:\Users\Usuario\Documents\GitHub\FerreAcero\FerreAcero\src\main\java\ec\edu\ups\beans\CollectionBeanProducto.java

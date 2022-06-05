@@ -34,14 +34,14 @@ public class Persona implements Serializable{
 
    
     @Id
-    private int per_id;
-    private String  per_nombre;
-    private String per_apellido;
-    private String per_clave;
-    private String per_cedula;
-    private String per_direccion;
-    private String per_email;
-    private String per_telefono;
+    private int id;
+    private String  nombre;
+    private String apellido;
+    private String clave;
+    private String cedula;
+    private String direccion;
+    private String email;
+    private String telefono;
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "persona")
     private Rols rol;
    @Transient
@@ -52,92 +52,99 @@ public class Persona implements Serializable{
     }
 
     public Persona(int id, String nombre, String apellido, String clave, String cedula, String direccion, String email, String telefono) {
-        this.per_id = id;
-        this.per_nombre = nombre;
-        this.per_apellido = apellido;
-        this.per_clave = clave;
-        this.per_cedula = cedula;
-        this.per_direccion = direccion;
-        this.per_email = email;
-        this.per_telefono = telefono;
+        this.id = id;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.clave = clave;
+        this.cedula = cedula;
+        this.direccion = direccion;
+        this.email = email;
+        this.telefono = telefono;
 
         
     }
     
+    @Override
+    public Persona clone(){
+     return new Persona(getId(), getNombre(), getApellido(), getClave(),
+     getCedula(), getDireccion(), getEmail(), getTelefono());   
+    }
     
 
-    public void setPer_apellido(String per_apellido) {
-        this.per_apellido = per_apellido;
+    public int getId() {
+        return id;
     }
 
-    public void setPer_cedula(String per_cedula) {
-        this.per_cedula = per_cedula;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void setPer_clave(String per_clave) {
-        this.per_clave = per_clave;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setPer_direccion(String per_direccion) {
-        this.per_direccion = per_direccion;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public void setPer_email(String per_email) {
-        this.per_email = per_email;
+    public String getApellido() {
+        return apellido;
     }
 
-    public void setPer_id(int per_id) {
-        this.per_id = per_id;
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
-    public void setPer_nombre(String per_nombre) {
-        this.per_nombre = per_nombre;
+    public String getClave() {
+        return clave;
     }
 
-    public void setPer_rol(Rols per_rol) {
-        this.rol = per_rol;
+    public void setClave(String clave) {
+        this.clave = clave;
     }
 
-    public void setPer_telefono(String per_telefono) {
-        this.per_telefono = per_telefono;
+    public String getCedula() {
+        return cedula;
     }
 
-    public String getPer_apellido() {
-        return per_apellido;
+    public void setCedula(String cedula) {
+        this.cedula = cedula;
     }
 
-    public String getPer_cedula() {
-        return per_cedula;
+    public String getDireccion() {
+        return direccion;
     }
 
-    public String getPer_clave() {
-        return per_clave;
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
 
-    public String getPer_direccion() {
-        return per_direccion;
+    public String getEmail() {
+        return email;
     }
 
-    public String getPer_email() {
-        return per_email;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public int getPer_id() {
-        return per_id;
+    public String getTelefono() {
+        return telefono;
     }
 
-    public String getPer_nombre() {
-        return per_nombre;
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 
-    public Rols getPer_rol() {
+    public Rols getRol() {
         return rol;
     }
 
-    public String getPer_telefono() {
-        return per_telefono;
+    public void setRol(Rols rol) {
+        this.rol = rol;
     }
-
+    
+    
+    
 
    
     /*public static long getSerialVersionUID() {
@@ -158,7 +165,7 @@ public class Persona implements Serializable{
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (int) per_id;
+        hash += (int) id;
         return hash;
     }
 
@@ -169,7 +176,7 @@ public class Persona implements Serializable{
             return false;
         }
         Persona other = (Persona) object;
-        if (this.per_id != other.per_id) {
+        if (this.id != other.id) {
             return false;
         }
         return true;
@@ -177,6 +184,8 @@ public class Persona implements Serializable{
 
     @Override
     public String toString() {
-        return "Persona{" + "id=" + per_id + ", nombre=" + per_nombre + ", apellido=" + per_apellido + '}';
-        }
+        return "Persona{" + "id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", clave=" + clave + ", cedula=" + cedula + ", direccion=" + direccion + ", email=" + email + ", telefono=" + telefono + ", rol=" + rol + '}';
+    }
+
+    
      }

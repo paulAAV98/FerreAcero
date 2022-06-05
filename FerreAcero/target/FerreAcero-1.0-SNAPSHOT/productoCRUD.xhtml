@@ -32,9 +32,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit t
                         <p:menuitem value="Justify" icon="pi pi-fw pi-align-justify"/>
                     </p:submenu>
 
-                    <p:submenu label="Producto" icon="pi pi-fw pi-user">
-                        <p:menuitem value="New" icon="pi pi-fw pi-user-plus" url="http://localhost:8080/FerreAcero/IngresarProducto.xhtml"/>
-                        <p:menuitem value="View Table" icon="pi pi-fw pi-user-minus" url="http://localhost:8080/FerreAcero/productoCRUD.xhtml"/>
+                    <p:submenu label="Persona" icon="pi pi-fw pi-user">
+                        <p:menuitem value="New" icon="pi pi-fw pi-user-plus" url="http://localhost:8080/FerreAcero/IngresarPersona.xhtml"/>
+                        <p:menuitem value="View Table" icon="pi pi-fw pi-user-minus" url="http://localhost:8080/FerreAcero/perCRUD.xhtml"/>
                     </p:submenu>
 
                     <p:submenu label="Producto" icon="pi pi-fw pi-user">
@@ -108,7 +108,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit t
                                 <h:outputText value="#{o.marca}"/>
                             </f:facet>  
                             <f:facet name="input">
-                                <p:inputText value="#{o.marca}" style="width:100%" label="Latitud"/>
+                                <p:inputText value="#{o.marca}" style="width:100%" label="Marca"/>
                             </f:facet>
                         </p:cellEditor>
                     </p:column>
@@ -118,7 +118,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit t
                                 <h:outputText value="#{o.precio}"/>
                             </f:facet>  
                             <f:facet name="input">
-                                <p:inputText value="#{o.precio}" style="width:100%" label="Longitud"/>
+                                <p:inputText value="#{o.precio}" style="width:100%" label="Precio"/>
                             </f:facet>
                         </p:cellEditor>
                     </p:column>
@@ -128,7 +128,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit t
                                 <h:outputText value="#{o.stock}"/>
                             </f:facet>  
                             <f:facet name="input">
-                                <p:inputText value="#{o.stock}" style="width:100%" label="Longitud"/>
+                                <p:inputText value="#{o.stock}" style="width:100%" label="Stock"/>
                             </f:facet>
                         </p:cellEditor>
                     </p:column>
@@ -138,7 +138,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit t
                                 <h:outputText value="#{o.categoria.name}"/>
                             </f:facet>  
                             <f:facet name="input">
-                                <p:inputText value="#{o.categoria.name}" style="width:100%" label="Longitud"/>
+                                <p:inputText value="#{o.categoria.name}" style="width:100%" label="Categoria"/>
                             </f:facet>
                         </p:cellEditor>
                     </p:column>
@@ -148,7 +148,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit t
                                 <h:outputText value="#{o.sucursal.name}"/>
                             </f:facet>  
                             <f:facet name="input">
-                                <p:inputText value="#{o.sucursal.name}" style="width:100%" label="Longitud"/>
+                                <p:inputText value="#{o.sucursal.name}" style="width:100%" label="Sucursal"/>
                             </f:facet>
                         </p:cellEditor>
                     </p:column>
