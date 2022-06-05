@@ -68,13 +68,13 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit t
                 </p:menubar>
             </h:form>
         </div>
-        <h:form id="form">
+       <h:form id="form">
             <p:growl id="msgs" showDetail="true"/>
 
             <div class="card">
                 <h5>Row Editing</h5>
 
-                <p:dataTable id="sucursales" var="o" value="#{productoBean.list}" editable="true"
+                <p:dataTable id="productos" var="o" value="#{productoBean.list}" editable="true"
                              style="margin-bottom:20px">
 
                     <p:ajax event="rowEdit" listener="#{productoBean.edit(o)}" update=":form:msgs"/>
@@ -102,7 +102,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit t
                             </f:facet>
                         </p:cellEditor>
                     </p:column>
-                    <p:column headerText="Marca">
+                      <p:column headerText="Marca">
                         <p:cellEditor>
                             <f:facet name="output">
                                 <h:outputText value="#{o.marca}"/>
@@ -112,13 +112,13 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit t
                             </f:facet>
                         </p:cellEditor>
                     </p:column>
-                    <p:column  headerText="Precio">
+                    <p:column headerText="Precio">
                         <p:cellEditor>
                             <f:facet name="output">
                                 <h:outputText value="#{o.precio}"/>
                             </f:facet>  
                             <f:facet name="input">
-                                <p:inputText value="#{o.precio}" style="width:100%" label="Precio"/>
+                                <p:inputText value="#{o.precio}" style="width:100%" label="Apellido"/>
                             </f:facet>
                         </p:cellEditor>
                     </p:column>
@@ -128,27 +128,27 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit t
                                 <h:outputText value="#{o.stock}"/>
                             </f:facet>  
                             <f:facet name="input">
-                                <p:inputText value="#{o.stock}" style="width:100%" label="Stock"/>
+                                <p:inputText value="#{o.stock}" style="width:100%" label="Direccion"/>
                             </f:facet>
                         </p:cellEditor>
                     </p:column>
                     <p:column  headerText="Categoria">
                         <p:cellEditor>
                             <f:facet name="output">
-                                <h:outputText value="#{o.categoria.name}"/>
+                                <h:outputText value="#{o.categoria.nombre}"/>
                             </f:facet>  
                             <f:facet name="input">
-                                <p:inputText value="#{o.categoria.name}" style="width:100%" label="Categoria"/>
+                                <p:inputText value="#{o.categoria.nombre}" style="width:100%" label="Email"/>
                             </f:facet>
                         </p:cellEditor>
                     </p:column>
                     <p:column  headerText="Sucursal">
                         <p:cellEditor>
                             <f:facet name="output">
-                                <h:outputText value="#{o.sucursal.name}"/>
+                                <h:outputText value="#{o.sucursal.nombre}"/>
                             </f:facet>  
                             <f:facet name="input">
-                                <p:inputText value="#{o.sucursal.name}" style="width:100%" label="Sucursal"/>
+                                <p:inputText value="#{o.sucursal.nombre}" style="width:100%" label="Telefono"/>
                             </f:facet>
                         </p:cellEditor>
                     </p:column>
