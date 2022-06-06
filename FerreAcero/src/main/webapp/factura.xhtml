@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit this template
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Producto Management</title>
+        <style>
+            .tabla {
+                border-collapse: collapse;
+            }
+
+            .cabeceraTabla {
+                text-align: center;
+                background: none repeat scroll 0 0 #E5E5E5;
+                border-bottom: 1px solid #BBBBBB;
+                padding: 8px;
+            }
+
+            .filaPar {
+                text-align: center;
+                background: none repeat scroll 0 0 #FFFFFFF;
+                border-top: 1px solid #BBBBBB;
+            }
+
+            .filaImpar {
+                text-align: center;
+                background: none repeat scroll 0 0 #F9F9F9;
+                border-top: 1px solid #BBBBBB;
+            }
+        </style>
+    </h:head>
+    <h:body>
+        <h3>Factura</h3>
+        <h:form>
+
+            <ul>
+                <li>Codigo:<h:outputText  value="#{facdetalleBean.id}" /></li>
+
+                <div class="form-group d-flex">
+                    <div class="col-sm-6 d-flex">
+
+                        <h:inputText id="nombre" value="#{facdetalleBean.cedula}" p:placeholder="Cédula" class="form-control" >
+                            <f:passThroughAttribute name="placeholder" value="Cédula"/>            
+                        </h:inputText>
+                        <h:message for="nombre" style="color:red;"/>
+
+                        <h:commandButton action="#{facdetalleBean.buscarCliente}" value="Buscar" class="btn btn-primary">
+                            <f:ajax execute="nombre" render="resCliente" />
+                            <f:ajax execute="direccion" render="resdirec" />
+                            <f:ajax execute="email" render="resemail" />
+                            <f:ajax execute="telefono" render="restele" />
+                        </h:commandButton>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <li>Nombre:         <h:outputText value="#{facdetalleBean.persona.per_nombre} #{facturaBean.persona.per_apellido} " id="resCliente" class="form-control"/></li>
+                        <li>Direccion:     <h:outputText value="#{facdetalleBean.persona.per_direccion} " id="resdirec" class="form-control"/></li>
+                        <li>Email:       <h:outputText value="#{facdetalleBean.persona.per_email} " id="resemail" class="form-control"/></li>
+                        <li>Telefono:    <h:outputText value="#{facdetalleBean.persona.per_telefono} " id="restele" class="form-control"/></li>
+
+                        <li> <h:outputLabel value="Producto" for="producto" class="col-form-label"/>
+                            <h:selectOneMenu id="producto" value="#{facdetalleBean.nombrex}" class="form-select">
+                                <f:selectItem itemLabel="--- Seleccione una producto ---" itemValue="#{null}"/>
+                                <f:selectItems value="#{productoBean.list}" var="cat1" itemLabel="#{cat1.nombre}"/>
+
+
+
+                            </h:selectOneMenu>
+                            <h:inputText id="cantidad" value="#{facdetalleBean.cantidad}" p:placeholder="cantidad" class="form-control" >
+                                <f:passThroughAttribute name="placeholder" value="Cantidad"/>            
+                            </h:inputText>
+
+                            <h:commandButton value="AGREGAR" action="#{facdetalleBean.add}" /></li>
+
+
+
+
+                        <h3>Productos_Lista</h3>
+                        <h:form>
+                            <h:dataTable class="tabla" value="#{facdetalleBean.list}" var="o" styleClass="tabla"
+                                         headerClass="cabeceraTabla" rowClasses="filaPar,filaImpar">
+
+                                <h:column>
+                                    <f:facet name="header">Nombre</f:facet>
+                                    <h:inputText value="#{o.nombrex}" size="10" />
+
+                                </h:column>            
+                                <h:column>
+                                    <f:facet name="header">Cantidad</f:facet>
+                                    <h:inputText value="#{o.cantidad}" size="10" />
+
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">Precio</f:facet>
+                                    <h:inputText value="#{o.precio}" size="10"  />
+
+                                </h:column>
+
+                                <h:column>
+                                    <f:facet name="header">Subtotal</f:facet>
+                                    <h:inputText value="#{o.subtotal}" size="10"  />
+
+                                </h:column>
+                            </h:dataTable>
+
+
+                        </h:form>
+                        
+                        <li>TOTAL:         <h:outputText value="#{facdetalleBean.total} " id="resTotal" class="form-control"/></li>
+                    </div> 
+                 <h:commandButton value="GENERAR FACTURA" action="#{facdetalleBean.add_factura}" class="btn btn-primary" />
+                </div>
+            </ul>
+            
+            
+        </h:form>
+    </h:body>
+</html>
