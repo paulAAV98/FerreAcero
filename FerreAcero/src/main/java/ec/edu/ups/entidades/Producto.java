@@ -4,12 +4,14 @@
  */
 package ec.edu.ups.entidades;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Transient;
 import java.io.Serializable;
 
@@ -37,6 +39,9 @@ public class Producto implements Serializable {
     @ManyToOne
     @JoinColumn
     private Sucursal sucursal;
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "producto")
+    private Factura_Detalle fac;
+    
     @Transient
     private boolean editable;
      @Transient
@@ -174,6 +179,11 @@ public class Producto implements Serializable {
         return "Producto{" + "id=" + id + ", nombre=" + nombre + ", marca=" + marca + ", precio=" + precio + ", stock=" + stock + ", categoria=" + categoria + ", sucursal=" + sucursal + '}';
     }
     
+    @Override
+        
+    public String toString() {
+        return "Producto{" + "id=" + id + ", nombre=" + nombre + '}';
+    }
     
     
 }

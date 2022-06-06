@@ -44,6 +44,9 @@ public class Persona implements Serializable{
     private String telefono;
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "persona")
     private Rols rol;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "persona")
+    
+    private Set<Factura> factura = new HashSet<Factura>();
    @Transient
     private boolean editable;
 

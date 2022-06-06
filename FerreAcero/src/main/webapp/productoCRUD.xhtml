@@ -7,6 +7,120 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit t
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
+<<<<<<< HEAD
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>Producto Management</title>
+        <style>
+            .tabla {
+                border-collapse: collapse;
+            }
+
+            .cabeceraTabla {
+                text-align: center;
+                background: none repeat scroll 0 0 #E5E5E5;
+                border-bottom: 1px solid #BBBBBB;
+                padding: 8px;
+            }
+
+            .filaPar {
+                text-align: center;
+                background: none repeat scroll 0 0 #FFFFFFF;
+                border-top: 1px solid #BBBBBB;
+            }
+
+            .filaImpar {
+                text-align: center;
+                background: none repeat scroll 0 0 #F9F9F9;
+                border-top: 1px solid #BBBBBB;
+            }
+        </style>
+    </h:head>
+    <h:body>
+        <h3>Productos</h3>
+        <h:form>
+            <h:dataTable class="tabla" value="#{productoBean.list}" var="o" styleClass="tabla"
+                         headerClass="cabeceraTabla" rowClasses="filaPar,filaImpar">
+                <h:column>
+                    <f:facet name="header" class="cabeceraTabla">Id</f:facet>
+                        #{o.id}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Nombre</f:facet>
+                    <h:inputText value="#{o.nombre}" size="10" rendered="#{o.editable}" />
+                    <h:outputText value="#{o.nombre}" rendered="#{not o.editable}" />
+                </h:column>            
+                <h:column>
+                    <f:facet name="header">Marca</f:facet>
+                    <h:inputText value="#{o.marca}" size="10" rendered="#{o.editable}" />
+                    <h:outputText value="#{o.marca}" rendered="#{not o.editable}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Precio</f:facet>
+                    <h:inputText value="#{o.precio}" size="10" rendered="#{o.editable}" />
+                    <h:outputText value="#{o.precio}" rendered="#{not o.editable}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">>Stock</f:facet>
+                    <h:inputText value="#{o.stock}" size="10" rendered="#{o.editable}" />
+                    <h:outputText value="#{o.stock}" rendered="#{not o.editable}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Categoria</f:facet>
+                    <h:inputText value="#{o.categoria.nombre}" size="10" rendered="#{o.editable}" />
+                    <h:outputText value="#{o.categoria.nombre}" rendered="#{not o.editable}" />
+                </h:column>
+
+
+                <h:column>
+                    <f:facet name="header">Sucursal</f:facet>
+                    <h:inputText value="#{o.sucursal.nombre}" size="10" rendered="#{o.editable}" />
+                    <h:outputText value="#{o.sucursal.nombre}" rendered="#{not o.editable}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Action</f:facet>
+                    <h:commandLink value="Delete" action="#{productoBean.delete(o)}" />
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">Action</f:facet>
+                    <h:commandLink value="Edit" action="#{productoBean.edit(o)}" rendered="#{not o.editable}" />
+                    <h:commandLink value="Save" action="#{productoBean.save(o)}" rendered="#{o.editable}" />
+                </h:column>
+            </h:dataTable>
+            <ul>
+                <li>Id:<h:inputText size="10" value="#{productoBean.id}" /></li>
+                <li>Nombre:<h:inputText size="10" value="#{productoBean.nombre}" /></li>
+                <li>Marca:<h:inputText size="10" value="#{productoBean.marca}" /></li>
+                <li>Precio:<h:inputText size="10" value="#{productoBean.precio}" /></li>
+                <li>Stock:<h:inputText size="10" value="#{productoBean.stock}" /></li>
+
+
+                <li> <h:outputLabel value="Categoria" for="categoria" class="col-form-label"/>
+                    <h:selectOneMenu id="categoria" value="#{productoBean.cats}" class="form-select">
+                        <f:selectItem itemLabel="--- Seleccione una Categoria ---" itemValue="#{null}"/>
+                        <f:selectItems value="#{categoriaBean.list}" var="cat1" itemLabel="#{cat1.nombre}"/>
+
+
+
+                    </h:selectOneMenu></li>
+
+
+
+                <li> <h:outputLabel value="Sucursal" for="sucursal" class="col-form-label"/>
+                    <h:selectOneMenu id="sucursal" value="#{productoBean.sucs}" class="form-select">
+                        <f:selectItem itemLabel="--- Seleccione una Sucursal ---" itemValue="#{null}"/>
+                        <f:selectItems value="#{sucursalBean.list}" var="suc1" itemLabel="#{suc1.nombre}"/>
+
+
+
+                    </h:selectOneMenu></li>
+
+
+
+            </ul>
+            <h:commandButton value="Add" action="#{productoBean.add}" />
+=======
       xmlns:p="http://primefaces.org/ui">
     <h:head>
         <title>Sucursales</title>
@@ -159,6 +273,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit t
 
                 </p:dataTable>
             </div>      
+>>>>>>> 2e035343ecdadd8b0f9e56d4812085ccaf813f4e
         </h:form>
     </h:body>
 </html>
