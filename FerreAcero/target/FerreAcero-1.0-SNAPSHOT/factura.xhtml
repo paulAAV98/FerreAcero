@@ -60,10 +60,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit t
                     </div>
 
                     <div class="col-sm-6">
-                        <li>Nombre:         <h:outputText value="#{facdetalleBean.persona.per_nombre} #{facturaBean.persona.per_apellido} " id="resCliente" class="form-control"/></li>
-                        <li>Direccion:     <h:outputText value="#{facdetalleBean.persona.per_direccion} " id="resdirec" class="form-control"/></li>
-                        <li>Email:       <h:outputText value="#{facdetalleBean.persona.per_email} " id="resemail" class="form-control"/></li>
-                        <li>Telefono:    <h:outputText value="#{facdetalleBean.persona.per_telefono} " id="restele" class="form-control"/></li>
+                        <li>Nombre:         <h:outputText value="#{facdetalleBean.persona.nombre} #{facturaBean.persona.apellido} " id="resCliente" class="form-control"/></li>
+                        <li>Direccion:     <h:outputText value="#{facdetalleBean.persona.direccion} " id="resdirec" class="form-control"/></li>
+                        <li>Email:       <h:outputText value="#{facdetalleBean.persona.email} " id="resemail" class="form-control"/></li>
+                        <li>Telefono:    <h:outputText value="#{facdetalleBean.persona.telefono} " id="restele" class="form-control"/></li>
 
                         <li> <h:outputLabel value="Producto" for="producto" class="col-form-label"/>
                             <h:selectOneMenu id="producto" value="#{facdetalleBean.nombrex}" class="form-select">

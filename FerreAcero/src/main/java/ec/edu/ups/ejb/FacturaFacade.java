@@ -44,12 +44,12 @@ public class FacturaFacade extends AbstractFacade<Factura> {
         
         Persona  user = (Persona) em.createQuery(jpql).getSingleResult();
         Persona userx=new Persona();
-        userx.setPer_id(user.getPer_id());
-        userx.setPer_nombre(user.getPer_nombre());
-        userx.setPer_apellido(user.getPer_apellido());
-        userx.setPer_direccion(user.getPer_direccion());
-        userx.setPer_email(user.getPer_email());
-        userx.setPer_telefono(user.getPer_telefono());
+        userx.setId(user.getId());
+        userx.setNombre(user.getNombre());
+        userx.setApellido(user.getApellido());
+        userx.setDireccion(user.getDireccion());
+        userx.setEmail(user.getEmail());
+        userx.setTelefono(user.getTelefono());
         
         
         return userx;

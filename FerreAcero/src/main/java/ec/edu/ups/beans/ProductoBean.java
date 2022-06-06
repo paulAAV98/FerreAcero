@@ -218,10 +218,7 @@ public class ProductoBean implements Serializable {
     }
     
     
-<<<<<<< HEAD
 
-=======
->>>>>>> 2e035343ecdadd8b0f9e56d4812085ccaf813f4e
     
     public String extra(){
         String palabra=getCats();
@@ -316,8 +313,5 @@ public class ProductoBean implements Serializable {
         }
     }
     
-<<<<<<< HEAD
 
-=======
->>>>>>> 2e035343ecdadd8b0f9e56d4812085ccaf813f4e
 }
