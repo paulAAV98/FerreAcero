@@ -27,29 +27,24 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit t
                         <p:menuitem value="Delete" icon="pi pi-fw pi-trash"/>
                     </p:submenu>
 
-                    <p:submenu label="Edit" icon="pi pi-fw pi-pencil">
-                        <p:menuitem value="Left" icon="pi pi-fw pi-align-left"/>
-                        <p:menuitem value="Right" icon="pi pi-fw pi-align-right"/>
-                        <p:menuitem value="Center" icon="pi pi-fw pi-align-center"/>
-                        <p:menuitem value="Justify" icon="pi pi-fw pi-align-justify"/>
+                    
+                    
+                    <p:submenu label="Persona" icon="pi pi-fw pi-user">
+                        <p:menuitem value="New" icon="pi pi-fw pi-user-plus" url="http://localhost:8080/FerreAcero/IngresarPersona.xhtml"/>
+                        <p:menuitem value="View Table" icon="pi pi-fw pi-user-minus" url="http://localhost:8080/FerreAcero/perCRUD.xhtml"/>
                     </p:submenu>
                     
-                    <p:submenu label="Producto" icon="pi pi-fw pi-user">
-                        <p:menuitem value="New" icon="pi pi-fw pi-user-plus" url="http://localhost:8080/FerreAcero/IngresarProducto.xhtml"/>
-                        <p:menuitem value="View Table" icon="pi pi-fw pi-user-minus" url="http://localhost:8080/FerreAcero/productoCRUD.xhtml"/>
-                    </p:submenu>
-                    
-                    <p:submenu label="Producto" icon="pi pi-fw pi-user">
-                       <p:submenu label="Producto" icon="pi pi-fw pi-users">
-                            <p:menuitem value="Added" icon="pi pi-fw pi-filter" url="http://localhost:8080/FerreAcero/IngresarProducto.xhtml"/>
+                    <p:submenu label="Producto" icon="pi pi-fw pi-tag">
+                       <p:submenu label="Producto" icon="pi pi-fw pi-tags">
+                            <p:menuitem value="Added" icon="pi pi-fw pi-plus" url="http://localhost:8080/FerreAcero/IngresarProductoA.xhtml"/>
                             <p:menuitem value="List" icon="pi pi-fw pi-bars" url="http://localhost:8080/FerreAcero/productoCRUD.xhtml"/>
                         </p:submenu>
-                        <p:submenu label="Categoria" icon="pi pi-fw pi-users">
-                            <p:menuitem value="Added" icon="pi pi-fw pi-filter" url="http://localhost:8080/FerreAcero/IngresarCategoria.xhtml"/>
+                        <p:submenu label="Categoria" icon="pi pi-fw pi-sitemap">
+                            <p:menuitem value="Added" icon="pi pi-fw pi-plus" url="http://localhost:8080/FerreAcero/IngresarCategoria.xhtml"/>
                             <p:menuitem value="List" icon="pi pi-fw pi-bars" url="http://localhost:8080/FerreAcero/catCRUD.xhtml"/>
                         </p:submenu>
-                        <p:submenu label="Sucursal" icon="pi pi-fw pi-users">
-                            <p:menuitem value="Added" icon="pi pi-fw pi-filter" url="http://localhost:8080/FerreAcero/IngresarSucursal.xhtml"/>
+                        <p:submenu label="Sucursal" icon="pi pi-fw pi-home">
+                            <p:menuitem value="Added" icon="pi pi-fw pi-plus" url="http://localhost:8080/FerreAcero/IngresarSucursal.xhtml"/>
                             <p:menuitem value="List" icon="pi pi-fw pi-bars" url="http://localhost:8080/FerreAcero/sucursalCRUD.xhtml"/>
                         </p:submenu>
                     </p:submenu>
