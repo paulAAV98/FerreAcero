@@ -8,6 +8,7 @@ import ec.edu.ups.entidades.Categoria;
 import ec.edu.ups.entidades.Sucursal;
 import ec.edu.ups.pojos.Row;
 import ec.edu.ups.pojos.RowProducto;
+import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.context.SessionScoped;
 import jakarta.inject.Named;
 import java.io.Serializable;

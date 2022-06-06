@@ -9,11 +9,14 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import java.io.Serializable;
+<<<<<<< HEAD
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+=======
+>>>>>>> 2e035343ecdadd8b0f9e56d4812085ccaf813f4e
 
 
 /**
