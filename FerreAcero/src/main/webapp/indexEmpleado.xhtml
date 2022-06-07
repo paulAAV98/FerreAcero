@@ -6,39 +6,45 @@
       xmlns:p="http://primefaces.org/ui">
 
     <h:head>
+        <style>
+            .empleado{
+                text-align: center;
+            }
+            .foto{
+                text-align: center;
+                height:100vh;
+                width: 100vw;
+            }
+            img {
+                width : 85%;
+                height: 48%;
+            }
+        </style>
     </h:head>
 
     <h:body>
+        <div class="empleado">
+            <h1>Empleado</h1>
+        </div>
         <div class="card">
             <h:form>
                 <p:growl id="messages"/>
 
                 <p:menubar>
-                    <p:submenu label="Inicio" icon="pi pi-fw pi-file" >
-                        <p:submenu label="New" icon="pi pi-fw pi-plus">
-                            <p:menuitem value="Bookmark" icon="pi pi-fw pi-bookmark"/>
-                            <p:menuitem value="Video" icon="pi pi-fw pi-video"/>
-                        </p:submenu>
-                        <p:menuitem value="Delete" icon="pi pi-fw pi-trash"/>
+                    <p:submenu label="Home" icon="pi pi-fw pi-home">
+                        <p:menuitem value="Inicio" icon="pi pi-fw pi-home" url="http://localhost:8080/FerreAcero/indexEmpleado.xhtml"/>
                     </p:submenu>
-                    
+
+
                     <p:submenu label="Producto" icon="pi pi-fw pi-tag">
                         <p:submenu label="Producto" icon="pi pi-fw pi-tags">
                             <p:menuitem value="Added" icon="pi pi-fw pi-filter" url="http://localhost:8080/FerreAcero/IngresarProductoE.xhtml"/>   
                         </p:submenu>
-                       
-                    </p:submenu>
-                    
-                    <p:submenu label="Factura" icon="pi pi-fw pi-dollar">
-                        <p:menuitem value="Facturar" icon="pi pi-fw pi-dollar" url="http://localhost:8080/FerreAcero/IngresarPersona.xhtml"/>
-                    </p:submenu>
-      
 
-                    <p:submenu label="Carrito" icon="pi pi-fw pi-shopping-cart">
-                        <p:submenu label="Añadir al Carrito" icon="pi pi-fw pi-plus">
-                            <p:menuitem value="Save" icon="pi pi-fw pi-calendar-plus"/>
-                            <p:menuitem value="Delete" icon="pi pi-fw pi-calendar-minus"/>
-                        </p:submenu>
+                    </p:submenu>
+
+                    <p:submenu label="Factura" icon="pi pi-fw pi-dollar">
+                        <p:menuitem value="Facturar" icon="pi pi-fw pi-dollar" url="http://localhost:8080/FerreAcero/Fac.xhtml"/>
                     </p:submenu>
                     <f:facet name="options">
                         <div class="ui-input-icon-left p-mr-2">
@@ -50,7 +56,10 @@
                 </p:menubar>
             </h:form>
         </div>
-        
+        <div class="foto">
+            <img src="images/ferreacero.png"></img>
+        </div>
+
     </h:body>
 </html>
 

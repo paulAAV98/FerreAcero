@@ -40,7 +40,7 @@ public class FacturaFacade extends AbstractFacade<Factura> {
     public Persona getpersonaN(String cedula){
         int idx=1;
         System.out.println("Entro consulta-----------------------------------------------");
-        String jpql = "SELECT u FROM Persona u WHERE u.per_cedula = '" +cedula+"'" ;
+        String jpql = "SELECT u FROM Persona u WHERE u.cedula = '" +cedula+"'" ;
         
         Persona  user = (Persona) em.createQuery(jpql).getSingleResult();
         Persona userx=new Persona();

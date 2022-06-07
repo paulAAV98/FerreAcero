@@ -9,23 +9,34 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit t
       xmlns:f="http://java.sun.com/jsf/core"    
       xmlns:p="http://primefaces.org/ui">
 
-    <h:head>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"></link>
+  <h:head>
+        <style>
+            .administrador{
+                text-align: center;
+            }
+            .foto{
+                text-align: center;
+                height:100vh;
+                width: 100vw;
+            }
+            img {
+                width : 85%;
+                height: 48%;
+            }
+        </style>
     </h:head>
 
     <h:body>
-
+        <div class="administrador">
+            <h1>Administrador</h1>
+        </div>
        <div class="card">
             <h:form>
                 <p:growl id="messages"/>
 
                 <p:menubar>
-                    <p:submenu label="Inicio" icon="pi pi-fw pi-file" >
-                        <p:submenu label="New" icon="pi pi-fw pi-plus">
-                            <p:menuitem value="Bookmark" icon="pi pi-fw pi-bookmark"/>
-                            <p:menuitem value="Video" icon="pi pi-fw pi-video"/>
-                        </p:submenu>
-                        <p:menuitem value="Delete" icon="pi pi-fw pi-trash"/>
+                    <p:submenu label="Home" icon="pi pi-fw pi-home">
+                        <p:menuitem value="Inicio" icon="pi pi-fw pi-home" url="http://localhost:8080/FerreAcero/indexAdministrador.xhtml"/>
                     </p:submenu>
 
                     
@@ -38,7 +49,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit t
                     <p:submenu label="Producto" icon="pi pi-fw pi-tag">
                        <p:submenu label="Producto" icon="pi pi-fw pi-tags">
                             <p:menuitem value="Added" icon="pi pi-fw pi-plus" url="http://localhost:8080/FerreAcero/IngresarProductoA.xhtml"/>
-                            <p:menuitem value="List" icon="pi pi-fw pi-bars" url="http://localhost:8080/FerreAcero/productoCRUD.xhtml"/>
+                            <p:menuitem value="List" icon="pi pi-fw pi-bars" url="http://localhost:8080/FerreAcero/proCRUD.xhtml"/>
                         </p:submenu>
                         <p:submenu label="Categoria" icon="pi pi-fw pi-sitemap">
                             <p:menuitem value="Added" icon="pi pi-fw pi-plus" url="http://localhost:8080/FerreAcero/IngresarCategoria.xhtml"/>
@@ -50,12 +61,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit t
                         </p:submenu>
                     </p:submenu>
 
-                    <p:submenu label="Carrito" icon="pi pi-fw pi-shopping-cart">
-                        <p:submenu label="Añadir al Carrito" icon="pi pi-fw pi-plus">
-                            <p:menuitem value="Save" icon="pi pi-fw pi-calendar-plus"/>
-                            <p:menuitem value="Delete" icon="pi pi-fw pi-calendar-minus"/>
-                        </p:submenu>
-                    </p:submenu>
                     <f:facet name="options">
                         <div class="ui-input-icon-left p-mr-2">
                             <i class="pi pi-fw pi-search" />
@@ -67,46 +72,48 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit t
             </h:form>
         </div>
 
-        <h:form id="formLogin">
-            <p:panel id="pnlLogin" header="Registro de un Producto" style="width: 25%">
-                <p:panelGrid id="pnlGridLogin" layout="grid" columns="2">
+        <div class="formulario">
+            <h:form id="formLogin">
+                <p:panel id="pnlLogin" header="Registro de un Producto" style="width: 25%">
+                    <p:panelGrid id="pnlGridLogin" layout="grid" columns="2">
 
-                    <p:outputLabel id="lblIdProducto" value="Id: "></p:outputLabel>
-                    <p:inputText id="txtId" required="true" requiredMessage="El Id es requerido" style="width: 100%" value="#{productoBean.id}"></p:inputText>
+                        <p:outputLabel id="lblIdProducto" value="Id: "></p:outputLabel>
+                        <p:inputText id="txtId" required="true" requiredMessage="El Id es requerido" style="width: 100%" value="#{productoBean.id}"></p:inputText>
 
-                    <p:outputLabel id="lblNombre" value="Nombre: "></p:outputLabel>
-                    <p:inputText id="txtNombre" required="true" requiredMessage="El Nombre es requerido" style="width: 100%" value="#{productoBean.nombre}"></p:inputText>
+                        <p:outputLabel id="lblNombre" value="Nombre: "></p:outputLabel>
+                        <p:inputText id="txtNombre" required="true" requiredMessage="El Nombre es requerido" style="width: 100%" value="#{productoBean.nombre}"></p:inputText>
 
-                    <p:outputLabel id="lblMarca" value="Marca: "></p:outputLabel>
-                    <p:inputText id="txtMarca" required="true" requiredMessage="La Marca es requerido" style="width: 100%" value="#{productoBean.marca}"></p:inputText>
+                        <p:outputLabel id="lblMarca" value="Marca: "></p:outputLabel>
+                        <p:inputText id="txtMarca" required="true" requiredMessage="La Marca es requerida" style="width: 100%" value="#{productoBean.marca}"></p:inputText>
 
-                    <p:outputLabel id="lblPrecio" value="Precio: "></p:outputLabel>
-                    <p:inputText id="txtPrecio" required="true" requiredMessage="La Precio es requerido" style="width: 100%" value="#{productoBean.precio}"></p:inputText>
+                        <p:outputLabel id="lblPrecio" value="Precio: "></p:outputLabel>
+                        <p:inputText id="txtPrecio" required="true" requiredMessage="El Precio es requerido" style="width: 100%" value="#{productoBean.precio}"></p:inputText>
 
-                    <p:outputLabel id="lblStock" value="Stock: "></p:outputLabel>
-                    <p:inputText id="txtStock" required="true" requiredMessage="El Stock es requerido" style="width: 100%" value="#{productoBean.stock}"></p:inputText>
+                        <p:outputLabel id="lblStock" value="Stock: "></p:outputLabel>
+                        <p:inputText id="txtStock" required="true" requiredMessage="El Stock es requerido" style="width: 100%" value="#{productoBean.stock}"></p:inputText>
 
-                    <label for="state">Categoria</label>
-                    <p:selectOneMenu id="categoria" value="#{productoBean.cats}">
-                        <f:selectItem itemLabel="Categoria" itemValue="#{null}" />
-                        <f:selectItems value="#{categoriaBean.list}" var="cat1" itemLabel="#{cat1.nombre}"/>
-                    </p:selectOneMenu>
+                        <p:outputLabel value="Categoria" for="categoria" class="col-form-label"></p:outputLabel>   
+                        <p:selectOneMenu id="categoria" value="#{productoBean.cats}" class="form-select">
+                        <f:selectItem itemLabel="Categoria" itemValue="#{null}"/>
+                        <f:selectItems value="#{categoriaBean.list}" var="cat1" itemLabel="#{cat1.nombre}"/> 
+                        </p:selectOneMenu>
+                        
+                         <p:outputLabel value="Sucursal" for="sucursal" class="col-form-label"></p:outputLabel>   
+                        <p:selectOneMenu id="sucursal" value="#{productoBean.sucs}" class="form-select">
+                        <f:selectItem itemLabel="Producto" itemValue="#{null}"/>
+                        <f:selectItems value="#{sucursalBean.list}" var="suc1" itemLabel="#{suc1.nombre}"/> 
+                        </p:selectOneMenu>
+                        
+                        <p:commandButton id="btnRegistrar" value="Registrar" style="width: 100%" action="#{productoBean.add}"></p:commandButton>
 
-                    <label for="state">Sucursal</label>
-                    <p:selectOneMenu id="sucursal" value="#{productoBean.sucs}">
-                        <f:selectItem itemLabel="Sucursal" itemValue="#{null}" />
-                        <f:selectItems value="#{sucursalBean.list}" var="suc1" itemLabel="#{suc1.nombre}"/>
-                    </p:selectOneMenu>
+                        <a href="productoCRUD.xhtml"><input type="button" class="btn btn-primary" value = "Verificar" style="width: 100%" ></input></a>
 
 
-                    <p:commandButton id="btnRegistrar" value="Registrar" style="width: 100%" action="#{productoBean.add}"></p:commandButton>
 
-                    <p:linkButton outcome="productoCRUD" value="Verificar" style="margin-right:20px;">
-                        <f:param name="productId" value="10"/>
-                    </p:linkButton>
 
-                </p:panelGrid>    
-            </p:panel>  
-        </h:form>
+                    </p:panelGrid>    
+                </p:panel>  
+            </h:form>
+        </div>
     </h:body>
 </html>

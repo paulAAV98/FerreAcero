@@ -7,118 +7,164 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit t
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+      xmlns:p="http://primefaces.org/ui">
     <h:head>
-        <title>Producto Management</title>
         <style>
-            .tabla {
-                border-collapse: collapse;
-            }
-
-            .cabeceraTabla {
+            .administrador{
                 text-align: center;
-                background: none repeat scroll 0 0 #E5E5E5;
-                border-bottom: 1px solid #BBBBBB;
-                padding: 8px;
             }
-
-            .filaPar {
+            .foto{
                 text-align: center;
-                background: none repeat scroll 0 0 #FFFFFFF;
-                border-top: 1px solid #BBBBBB;
+                height:100vh;
+                width: 100vw;
             }
-
-            .filaImpar {
-                text-align: center;
-                background: none repeat scroll 0 0 #F9F9F9;
-                border-top: 1px solid #BBBBBB;
+            img {
+                width : 85%;
+                height: 48%;
             }
         </style>
     </h:head>
+
     <h:body>
-        <h3>Productos</h3>
-        <h:form>
-            <h:dataTable class="tabla" value="#{productoBean.list}" var="o" styleClass="tabla"
-                         headerClass="cabeceraTabla" rowClasses="filaPar,filaImpar">
-                <h:column>
-                    <f:facet name="header" class="cabeceraTabla">Id</f:facet>
-                        #{o.id}
-                </h:column>
-                <h:column>
-                    <f:facet name="header">Nombre</f:facet>
-                    <h:inputText value="#{o.nombre}" size="10" rendered="#{o.editable}" />
-                    <h:outputText value="#{o.nombre}" rendered="#{not o.editable}" />
-                </h:column>            
-                <h:column>
-                    <f:facet name="header">Marca</f:facet>
-                    <h:inputText value="#{o.marca}" size="10" rendered="#{o.editable}" />
-                    <h:outputText value="#{o.marca}" rendered="#{not o.editable}" />
-                </h:column>
-                <h:column>
-                    <f:facet name="header">Precio</f:facet>
-                    <h:inputText value="#{o.precio}" size="10" rendered="#{o.editable}" />
-                    <h:outputText value="#{o.precio}" rendered="#{not o.editable}" />
-                </h:column>
-                <h:column>
-                    <f:facet name="header">>Stock</f:facet>
-                    <h:inputText value="#{o.stock}" size="10" rendered="#{o.editable}" />
-                    <h:outputText value="#{o.stock}" rendered="#{not o.editable}" />
-                </h:column>
-                <h:column>
-                    <f:facet name="header">Categoria</f:facet>
-                    <h:inputText value="#{o.categoria.nombre}" size="10" rendered="#{o.editable}" />
-                    <h:outputText value="#{o.categoria.nombre}" rendered="#{not o.editable}" />
-                </h:column>
+        <div class="administrador">
+            <h1>Administrador</h1>
+        </div>
+        <div class="card">
+            <h:form>
+                <p:growl id="messages"/>
+
+                <p:menubar>
+                    <p:submenu label="Home" icon="pi pi-fw pi-home">
+                        <p:menuitem value="Inicio" icon="pi pi-fw pi-home" url="http://localhost:8080/FerreAcero/indexAdministrador.xhtml"/>
+                    </p:submenu>
+
+                    
+                    
+                    <p:submenu label="Persona" icon="pi pi-fw pi-user">
+                        <p:menuitem value="New" icon="pi pi-fw pi-user-plus" url="http://localhost:8080/FerreAcero/IngresarPersona.xhtml"/>
+                        <p:menuitem value="View Table" icon="pi pi-fw pi-user-minus" url="http://localhost:8080/FerreAcero/perCRUD.xhtml"/>
+                    </p:submenu>
+                    
+                    <p:submenu label="Producto" icon="pi pi-fw pi-tag">
+                       <p:submenu label="Producto" icon="pi pi-fw pi-tags">
+                            <p:menuitem value="Added" icon="pi pi-fw pi-plus" url="http://localhost:8080/FerreAcero/IngresarProductoA.xhtml"/>
+                            <p:menuitem value="List" icon="pi pi-fw pi-bars" url="http://localhost:8080/FerreAcero/proCRUD.xhtml"/>
+                        </p:submenu>
+                        <p:submenu label="Categoria" icon="pi pi-fw pi-sitemap">
+                            <p:menuitem value="Added" icon="pi pi-fw pi-plus" url="http://localhost:8080/FerreAcero/IngresarCategoria.xhtml"/>
+                            <p:menuitem value="List" icon="pi pi-fw pi-bars" url="http://localhost:8080/FerreAcero/catCRUD.xhtml"/>
+                        </p:submenu>
+                        <p:submenu label="Sucursal" icon="pi pi-fw pi-home">
+                            <p:menuitem value="Added" icon="pi pi-fw pi-plus" url="http://localhost:8080/FerreAcero/IngresarSucursal.xhtml"/>
+                            <p:menuitem value="List" icon="pi pi-fw pi-bars" url="http://localhost:8080/FerreAcero/sucursalCRUD.xhtml"/>
+                        </p:submenu>
+                    </p:submenu>
+
+                    <f:facet name="options">
+                        <div class="ui-input-icon-left p-mr-2">
+                            <i class="pi pi-fw pi-search" />
+                            <p:inputText placeholder="Search"/>
+                        </div>
+                        <p:button value="Logout" icon="pi pi-fw pi-sign-out" styleClass="ui-button-info"/>
+                    </f:facet>
+                </p:menubar>
+            </h:form>
+        </div>
+        <h:form id="form">
+            <p:growl id="msgs" showDetail="true"/>
+
+            <div class="card">
+                <h5>Row Editing</h5>
+
+                <p:dataTable id="personas" var="o" value="#{productoBean.list}" editable="true"
+                             style="margin-bottom:20px">
+
+                    <p:ajax event="rowEdit" listener="#{productoBean.edit(o)}" update=":form:msgs"/>
+                    <p:ajax event="rowEditCancel" listener="#{productoBean.delete(o)}" update=":form:msgs"/>
 
 
-                <h:column>
-                    <f:facet name="header">Sucursal</f:facet>
-                    <h:inputText value="#{o.sucursal.nombre}" size="10" rendered="#{o.editable}" />
-                    <h:outputText value="#{o.sucursal.nombre}" rendered="#{not o.editable}" />
-                </h:column>
-                <h:column>
-                    <f:facet name="header">Action</f:facet>
-                    <h:commandLink value="Delete" action="#{productoBean.delete(o)}" />
-                </h:column>
+                    <p:column headerText="Id">
+                        <p:cellEditor>
+                            <f:facet name="output">
+                                <h:outputText value="#{o.id}"/>
+                            </f:facet>
+                            <f:facet name="input">
+                                <p:inputText id="modelInput" value="#{o.id}" style="width:100%"/>
+                            </f:facet>
+                        </p:cellEditor>
+                    </p:column>
 
-                <h:column>
-                    <f:facet name="header">Action</f:facet>
-                    <h:commandLink value="Edit" action="#{productoBean.edit(o)}" rendered="#{not o.editable}" />
-                    <h:commandLink value="Save" action="#{productoBean.save(o)}" rendered="#{o.editable}" />
-                </h:column>
-            </h:dataTable>
-            <ul>
-                <li>Id:<h:inputText size="10" value="#{productoBean.id}" /></li>
-                <li>Nombre:<h:inputText size="10" value="#{productoBean.nombre}" /></li>
-                <li>Marca:<h:inputText size="10" value="#{productoBean.marca}" /></li>
-                <li>Precio:<h:inputText size="10" value="#{productoBean.precio}" /></li>
-                <li>Stock:<h:inputText size="10" value="#{productoBean.stock}" /></li>
+                    <p:column headerText="Nombre">
+                        <p:cellEditor>
+                            <f:facet name="output">
+                                <h:outputText value="#{o.nombre}"/>
+                            </f:facet>  
+                            <f:facet name="input">
+                                <p:inputText value="#{o.nombre}" style="width:100%" label="Nombre"/>
+                            </f:facet>
+                        </p:cellEditor>
+                    </p:column>
+                      <p:column headerText="Marca">
+                        <p:cellEditor>
+                            <f:facet name="output">
+                                <h:outputText value="#{o.marca}"/>
+                            </f:facet>  
+                            <f:facet name="input">
+                                <p:inputText value="#{o.marca}" style="width:100%" label="Marca"/>
+                            </f:facet>
+                        </p:cellEditor>
+                    </p:column>
+                    <p:column headerText="Stock">
+                        <p:cellEditor>
+                            <f:facet name="output">
+                                <h:outputText value="#{o.stock}"/>
+                            </f:facet>  
+                            <f:facet name="input">
+                                <p:inputText value="#{o.stock}" style="width:100%" label="Stock"/>
+                            </f:facet>
+                        </p:cellEditor>
+                    </p:column>
+                    <p:column  headerText="Precio">
+                        <p:cellEditor>
+                            <f:facet name="output">
+                                <h:outputText value="#{o.precio}"/>
+                            </f:facet>  
+                            <f:facet name="input">
+                                <p:inputText value="#{o.precio}" style="width:100%" label="Precio"/>
+                            </f:facet>
+                        </p:cellEditor>
+                    </p:column>
+                     <p:column  headerText="Categoria">
+                        <p:cellEditor>
+                            <f:facet name="output">
+                                <h:outputText value="#{o.categoria.nombre}"/>
+                            </f:facet>  
+                            <f:facet name="input">
+                                <p:inputText value="#{o.categoria.nombre}" style="width:100%" label="Telefono"/>
+                            </f:facet>
+                        </p:cellEditor>
+                    </p:column>
+                    <p:column  headerText="Sucursal">
+                        <p:cellEditor>
+                            <f:facet name="output">
+                                <h:outputText value="#{o.sucursal.nombre}"/>
+                            </f:facet>  
+                            <f:facet name="input">
+                                <p:inputText value="#{o.sucursal.nombre}" style="width:100%" label="Email"/>
+                            </f:facet>
+                        </p:cellEditor>
+                    </p:column>
 
+                    <p:column style="width:6rem">
+                        <p:rowEditor editTitle="Edit Row" cancelTitle="Cancel Edit" saveTitle="Save Row"/>
+                    </p:column>
+                    <p:column style="width:6rem">
+                        <p:commandButton  id="btnEliminar" actionListener="#{productoBean.delete(o)}" style="width: 50%"  type="button" icon="pi pi-trash" styleClass="rounded-button ui-button-flat ui-button-plain" ></p:commandButton>
 
-                <li> <h:outputLabel value="Categoria" for="categoria" class="col-form-label"/>
-                    <h:selectOneMenu id="categoria" value="#{productoBean.cats}" class="form-select">
-                        <f:selectItem itemLabel="--- Seleccione una Categoria ---" itemValue="#{null}"/>
-                        <f:selectItems value="#{categoriaBean.list}" var="cat1" itemLabel="#{cat1.nombre}"/>
+                    </p:column>
 
-
-
-                    </h:selectOneMenu></li>
-
-
-
-                <li> <h:outputLabel value="Sucursal" for="sucursal" class="col-form-label"/>
-                    <h:selectOneMenu id="sucursal" value="#{productoBean.sucs}" class="form-select">
-                        <f:selectItem itemLabel="--- Seleccione una Sucursal ---" itemValue="#{null}"/>
-                        <f:selectItems value="#{sucursalBean.list}" var="suc1" itemLabel="#{suc1.nombre}"/>
-
-
-
-                    </h:selectOneMenu></li>
-
-
-
-            </ul>
-            <h:commandButton value="Add" action="#{productoBean.add}" />
+                </p:dataTable>
+            </div>      
         </h:form>
     </h:body>
 </html>

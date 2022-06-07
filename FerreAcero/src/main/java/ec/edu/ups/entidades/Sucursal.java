@@ -109,7 +109,7 @@ public class Sucursal implements Serializable {
 
     @Override
     public String toString() {
-        return "Sucursal{" + "id=" + id + ", nombre=" + nombre + ", latitud=" + latitud + ", longitud=" + longitud + '}';
+        return "Sucursal{" + "id=" + id + ", nombre=" + nombre + '}';
     }
 
 
