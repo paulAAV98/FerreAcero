@@ -174,12 +174,12 @@ public class Producto implements Serializable {
         return suc;
     }
 
-    @Override
+   /* @Override
     public String toString() {
         return "Producto{" + "id=" + id + ", nombre=" + nombre + ", marca=" + marca + ", precio=" + precio + ", stock=" + stock + ", categoria=" + categoria + ", sucursal=" + sucursal + '}';
     }
     
-    @Override
+    @Override*/
         
     public String toString() {
         return "Producto{" + "id=" + id + ", nombre=" + nombre + '}';
