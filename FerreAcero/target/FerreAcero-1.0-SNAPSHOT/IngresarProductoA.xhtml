@@ -6,10 +6,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit t
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:f="http://java.sun.com/jsf/core"    
       xmlns:p="http://primefaces.org/ui">
 
-   <h:head>
+  <h:head>
         <style>
             .administrador{
                 text-align: center;
@@ -23,9 +23,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit t
                 width : 85%;
                 height: 48%;
             }
-            
-            
-            
         </style>
     </h:head>
 
@@ -33,7 +30,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit t
         <div class="administrador">
             <h1>Administrador</h1>
         </div>
-        <div class="card">
+       <div class="card">
             <h:form>
                 <p:growl id="messages"/>
 
@@ -73,33 +70,50 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit t
                     </f:facet>
                 </p:menubar>
             </h:form>
-        </div>        
-        <h:form id="formLogin">
-            <p:panel id="pnlLogin" header="Registro de una Sucursal" style="width: 25%">
-                <p:panelGrid id="pnlGridLogin" layout="grid" columns="2">
+        </div>
 
-                    <p:outputLabel id="lblIdCategoria" value="Id: "></p:outputLabel>
-                    <p:inputText id="txtId" required="true" requiredMessage="El Id es requerido" style="width: 100%" value="#{sucursalBean.id}"></p:inputText>
-                    
-                    <p:outputLabel id="lblNombre" value="Nombre: "></p:outputLabel>
-                    <p:inputText id="txtNombre" required="true" requiredMessage="El Nombre es requerido" style="width: 100%" value="#{sucursalBean.nombre}"></p:inputText>
-                    
-                     <p:outputLabel id="lblLatitud" value="Latitud: "></p:outputLabel>
-                    <p:inputText id="txtLatitud" required="true" requiredMessage="La latitud es requerido" style="width: 100%" value="#{sucursalBean.latitud}"></p:inputText>
-                    
-                    <p:outputLabel id="lblLongitud" value="Longitud: "></p:outputLabel>
-                    <p:inputText id="txtLongitud" required="true" requiredMessage="La longitud es requerido" style="width: 100%" value="#{sucursalBean.longitud}"></p:inputText>
+        <div class="formulario">
+            <h:form id="formLogin">
+                <p:panel id="pnlLogin" header="Registro de un Producto" style="width: 25%">
+                    <p:panelGrid id="pnlGridLogin" layout="grid" columns="2">
 
-                    
-                    <p:commandButton id="btnRegistrar" value="Registrar" style="width: 100%" action="#{sucursalBean.add}"></p:commandButton>
-                    
-                    
+                        <p:outputLabel id="lblIdProducto" value="Id: "></p:outputLabel>
+                        <p:inputText id="txtId" required="true" requiredMessage="El Id es requerido" style="width: 100%" value="#{productoBean.id}"></p:inputText>
+
+                        <p:outputLabel id="lblNombre" value="Nombre: "></p:outputLabel>
+                        <p:inputText id="txtNombre" required="true" requiredMessage="El Nombre es requerido" style="width: 100%" value="#{productoBean.nombre}"></p:inputText>
+
+                        <p:outputLabel id="lblMarca" value="Marca: "></p:outputLabel>
+                        <p:inputText id="txtMarca" required="true" requiredMessage="La Marca es requerida" style="width: 100%" value="#{productoBean.marca}"></p:inputText>
+
+                        <p:outputLabel id="lblPrecio" value="Precio: "></p:outputLabel>
+                        <p:inputText id="txtPrecio" required="true" requiredMessage="El Precio es requerido" style="width: 100%" value="#{productoBean.precio}"></p:inputText>
+
+                        <p:outputLabel id="lblStock" value="Stock: "></p:outputLabel>
+                        <p:inputText id="txtStock" required="true" requiredMessage="El Stock es requerido" style="width: 100%" value="#{productoBean.stock}"></p:inputText>
+
+                        <p:outputLabel value="Categoria" for="categoria" class="col-form-label"></p:outputLabel>   
+                        <p:selectOneMenu id="categoria" value="#{productoBean.cats}" class="form-select">
+                        <f:selectItem itemLabel="Categoria" itemValue="#{null}"/>
+                        <f:selectItems value="#{categoriaBean.list}" var="cat1" itemLabel="#{cat1.nombre}"/> 
+                        </p:selectOneMenu>
                         
-                    
-                   
+                         <p:outputLabel value="Sucursal" for="sucursal" class="col-form-label"></p:outputLabel>   
+                        <p:selectOneMenu id="sucursal" value="#{productoBean.sucs}" class="form-select">
+                        <f:selectItem itemLabel="Producto" itemValue="#{null}"/>
+                        <f:selectItems value="#{sucursalBean.list}" var="suc1" itemLabel="#{suc1.nombre}"/> 
+                        </p:selectOneMenu>
+                        
+                        <p:commandButton id="btnRegistrar" value="Registrar" style="width: 100%" action="#{productoBean.add}"></p:commandButton>
 
-                </p:panelGrid>    
-            </p:panel>  
-        </h:form>
+                        
+
+
+
+
+                    </p:panelGrid>    
+                </p:panel>  
+            </h:form>
+        </div>
     </h:body>
 </html>

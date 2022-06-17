@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <style>
+            .empleado{
+                text-align: center;
+            }
+            .foto{
+                text-align: center;
+                height:100vh;
+                width: 100vw;
+            }
+            img {
+                width : 85%;
+                height: 48%;
+            }
+        </style>
+    </h:head>
+
+    <h:body>
+        <div class="empleado">
+            <h1>Empleado</h1>
+        </div>
+        <div class="card">
+            <h:form>
+                <p:growl id="messages"/>
+
+                <p:menubar>
+                    <p:submenu label="Home" icon="pi pi-fw pi-home">
+                        <p:menuitem value="Inicio" icon="pi pi-fw pi-home" url="http://localhost:8080/FerreAcero/indexEmpleado.xhtml"/>
+                    </p:submenu>
+
+
+                    <p:submenu label="Producto" icon="pi pi-fw pi-tag">
+                        <p:submenu label="Producto" icon="pi pi-fw pi-tags">
+                            <p:menuitem value="Added" icon="pi pi-fw pi-filter" url="http://localhost:8080/FerreAcero/IngresarProductoE.xhtml"/>   
+                        </p:submenu>
+
+                    </p:submenu>
+
+                    <p:submenu label="Factura" icon="pi pi-fw pi-dollar">
+                        <p:menuitem value="Facturar" icon="pi pi-fw pi-dollar" url="http://localhost:8080/FerreAcero/Fac.xhtml"/>
+                    </p:submenu>
+                    <f:facet name="options">
+                        <div class="ui-input-icon-left p-mr-2">
+                            <i class="pi pi-fw pi-search" />
+                            <p:inputText placeholder="Search"/>
+                        </div>
+                        <p:button value="Logout" icon="pi pi-fw pi-sign-out" styleClass="ui-button-info"/>
+                    </f:facet>
+                </p:menubar>
+            </h:form>
+        </div>
+        <div class="foto">
+            <img src="images/ferreacero.png"></img>
+        </div>
+
+    </h:body>
+</html>
+

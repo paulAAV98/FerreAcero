@@ -38,7 +38,7 @@ public class FacdetalleFacade extends AbstractFacade<fac_detalle> {
     public Persona getpersonaN(String cedula){
         int idx=1;
         System.out.println("Entro consulta-----------------------------------------------");
-        String jpql = "SELECT u FROM Persona u WHERE u.per_cedula = '" +cedula+"'" ;
+        String jpql = "SELECT u FROM Persona u WHERE u.cedula = '" +cedula+"'" ;
         
         Persona  user = (Persona) em.createQuery(jpql).getSingleResult();
         Persona userx=new Persona();
@@ -47,7 +47,11 @@ public class FacdetalleFacade extends AbstractFacade<fac_detalle> {
         userx.setApellido(user.getApellido());
         userx.setDireccion(user.getDireccion());
         userx.setEmail(user.getEmail());
+<<<<<<< HEAD
         userx.setTelefono(user.getTelefono());
+=======
+            userx.setTelefono(user.getTelefono());
+>>>>>>> d186f221cb8b32c5206f62d6804d707b6845ef93
         
         
         return userx;

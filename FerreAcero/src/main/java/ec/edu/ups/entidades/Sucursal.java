@@ -107,6 +107,7 @@ public class Sucursal implements Serializable {
         this.editable = editable;
     }
 
+<<<<<<< HEAD
 
    /* @Override
     public String toString() {
@@ -117,5 +118,12 @@ public class Sucursal implements Serializable {
     public String toString() {
         return "Sucursal{" + "id=" + id + ", nombre=" + nombre +'}';
     }
+=======
+    @Override
+    public String toString() {
+        return "Sucursal{" + "id=" + id + ", nombre=" + nombre + '}';
+    }
+
+>>>>>>> d186f221cb8b32c5206f62d6804d707b6845ef93
 
 }

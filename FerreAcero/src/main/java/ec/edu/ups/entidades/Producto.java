@@ -176,14 +176,21 @@ public class Producto implements Serializable {
 
    /* @Override
     public String toString() {
+<<<<<<< HEAD
         return "Producto{" + "id=" + id + ", nombre=" + nombre + ", marca=" + marca + ", precio=" + precio + ", stock=" + stock + ", categoria=" + categoria + ", sucursal=" + sucursal + '}';
     }
     
     @Override*/
         
     public String toString() {
+=======
+>>>>>>> d186f221cb8b32c5206f62d6804d707b6845ef93
         return "Producto{" + "id=" + id + ", nombre=" + nombre + '}';
     }
+
+   
+    
+   
     
     
 }

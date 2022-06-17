@@ -9,7 +9,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit t
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:p="http://primefaces.org/ui">
 
-   <h:head>
+    <h:head>
         <style>
             .administrador{
                 text-align: center;
@@ -23,9 +23,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit t
                 width : 85%;
                 height: 48%;
             }
-            
-            
-            
         </style>
     </h:head>
 
@@ -73,33 +70,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit t
                     </f:facet>
                 </p:menubar>
             </h:form>
-        </div>        
-        <h:form id="formLogin">
-            <p:panel id="pnlLogin" header="Registro de una Sucursal" style="width: 25%">
-                <p:panelGrid id="pnlGridLogin" layout="grid" columns="2">
-
-                    <p:outputLabel id="lblIdCategoria" value="Id: "></p:outputLabel>
-                    <p:inputText id="txtId" required="true" requiredMessage="El Id es requerido" style="width: 100%" value="#{sucursalBean.id}"></p:inputText>
-                    
-                    <p:outputLabel id="lblNombre" value="Nombre: "></p:outputLabel>
-                    <p:inputText id="txtNombre" required="true" requiredMessage="El Nombre es requerido" style="width: 100%" value="#{sucursalBean.nombre}"></p:inputText>
-                    
-                     <p:outputLabel id="lblLatitud" value="Latitud: "></p:outputLabel>
-                    <p:inputText id="txtLatitud" required="true" requiredMessage="La latitud es requerido" style="width: 100%" value="#{sucursalBean.latitud}"></p:inputText>
-                    
-                    <p:outputLabel id="lblLongitud" value="Longitud: "></p:outputLabel>
-                    <p:inputText id="txtLongitud" required="true" requiredMessage="La longitud es requerido" style="width: 100%" value="#{sucursalBean.longitud}"></p:inputText>
-
-                    
-                    <p:commandButton id="btnRegistrar" value="Registrar" style="width: 100%" action="#{sucursalBean.add}"></p:commandButton>
-                    
-                    
-                        
-                    
-                   
-
-                </p:panelGrid>    
-            </p:panel>  
-        </h:form>
+        </div>
+        <div class="foto">
+            <img src="images/ferreacero.png"></img>
+        </div>
+        
     </h:body>
 </html>

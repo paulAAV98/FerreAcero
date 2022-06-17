@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit this template
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"    
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <style>
+            .empleado{
+                text-align: center;
+            }
+            .foto{
+                text-align: center;
+                height:100vh;
+                width: 100vw;
+            }
+            img {
+                width : 85%;
+                height: 48%;
+            }
+        </style>
+    </h:head>
+
+    <h:body>
+        <div class="empleado">
+            <h1>Empleado</h1>
+        </div>
+        <div class="card">
+            <h:form>
+                <p:growl id="messages"/>
+
+                <p:menubar>
+                    <p:submenu label="Home" icon="pi pi-fw pi-home">
+                        <p:menuitem value="Inicio" icon="pi pi-fw pi-home" url="http://localhost:8080/FerreAcero/indexEmpleado.xhtml"/>
+                    </p:submenu>
+
+
+                    <p:submenu label="Producto" icon="pi pi-fw pi-tag">
+                        <p:submenu label="Producto" icon="pi pi-fw pi-tags">
+                            <p:menuitem value="Added" icon="pi pi-fw pi-filter" url="http://localhost:8080/FerreAcero/IngresarProductoE.xhtml"/>   
+                        </p:submenu>
+
+                    </p:submenu>
+
+                    <p:submenu label="Factura" icon="pi pi-fw pi-dollar">
+                        <p:menuitem value="Facturar" icon="pi pi-fw pi-dollar" url="http://localhost:8080/FerreAcero/Fac.xhtml"/>
+                    </p:submenu>
+                    <f:facet name="options">
+                        <div class="ui-input-icon-left p-mr-2">
+                            <i class="pi pi-fw pi-search" />
+                            <p:inputText placeholder="Search"/>
+                        </div>
+                        <p:button value="Logout" icon="pi pi-fw pi-sign-out" styleClass="ui-button-info"/>
+                    </f:facet>
+                </p:menubar>
+            </h:form>
+        </div>
+
+        <div class="formBuscarCliente">
+            <h:form id="formBuscarCliente">
+                <p:panelGrid id="pnlGridLogin" layout="grid" style="width: 50%" columns="3">
+
+                    <p:outputLabel id="lblCliente" value="Cedula del cliente: "></p:outputLabel>
+                    <p:inputText id="txtCedula" value="#{facdetalleBean.cedula}" required="true" requiredMessage="El Id es requerido" style="width: 100%" class="form-control"></p:inputText>
+                    <p:commandButton id="btnRegistrar" value="Buscar" style="width: 100%" action="#{facdetalleBean.buscarCliente}" icon="pi pi-search">
+                        <f:ajax execute="nombre" render="resCliente" />
+                        <f:ajax execute="direccion" render="resdirec" />
+                        <f:ajax execute="email" render="resemail" />
+                        <f:ajax execute="telefono" render="restele" />
+                    </p:commandButton>
+
+                </p:panelGrid>     
+            </h:form>
+        </div>
+        <div class="formResultadoCliente">
+            <h:form id="formResultadoCliente">
+                <p:panelGrid id="pnlGridLogin" layout="grid" style="width: 75%" columns="4">
+
+                    <p:outputLabel id="lblNomCliente" value="Nombre: "></p:outputLabel>
+                    <p:outputLabel value="#{facdetalleBean.persona.nombre} #{facturaBean.persona.apellido}" id="resCliente" class="form-control"></p:outputLabel>
+
+                    <p:outputLabel id="lblDirCliente" value="Direccion: "></p:outputLabel>
+                    <p:outputLabel value="#{facdetalleBean.persona.direccion}" id="resdirec" class="form-control"></p:outputLabel>
+
+                    <p:outputLabel id="lblEmCliente" value="Email: "></p:outputLabel>
+                    <p:outputLabel value="#{facdetalleBean.persona.email}" id="resemail" class="form-control"></p:outputLabel>
+
+                    <p:outputLabel id="lblTelCliente" value="Telefono: "></p:outputLabel>
+                    <p:outputLabel value="#{facdetalleBean.persona.telefono}" id="restele" class="form-control"></p:outputLabel>
+
+                </p:panelGrid>     
+            </h:form>
+        </div>
+
+        <div class="formProducto">
+            <h:form id="formProducto">
+                <p:panelGrid id="pnlGridLogin" layout="grid" style="width: 75%" columns="4">
+
+                    <p:outputLabel value="Producto" for="producto" class="col-form-label"></p:outputLabel>   
+                    <p:selectOneMenu id="producto" value="#{facdetalleBean.nombrex}" class="form-select">
+                        <f:selectItem itemLabel="Producto" itemValue="#{null}"/>
+                        <f:selectItems value="#{productoBean.list}" var="pro" itemLabel="#{pro.nombre}"/> 
+                    </p:selectOneMenu>
+                    <p:spinner id="basic" value="#{facdetalleBean.cantidad}"/>
+                    <p:commandButton id="btnRegistrar" value="Agregar" style="width: 100%" action="#{facdetalleBean.add}">
+                    </p:commandButton>
+                </p:panelGrid>     
+            </h:form>
+        </div>
+        <div class="card">
+            <h:form>
+
+                <p:dataTable value="#{facdetalleBean.list}" stripedRows="true" var="o">
+                    <p:column headerText="Cantidad">
+                        <h:outputText value="#{o.cantidad}" />
+                    </p:column>
+
+                    <p:column headerText="Descripcion">
+                        <h:outputText value="#{o.nombrex}" />
+                    </p:column>
+
+                    <p:column headerText="Precio">
+                        <h:outputText value="#{o.precio}" />
+                    </p:column>
+
+                    <p:column headerText="Subtotal">
+                        <h:outputText value="#{o.subtotal}" />
+                    </p:column>
+                </p:dataTable>
+            </h:form>
+            <p:outputLabel id="lblTotal" value="Total: "></p:outputLabel>
+            <p:outputLabel value="#{facdetalleBean.total}" id="resTotal" class="form-control"></p:outputLabel>
+        </div>
+        <p:commandButton id="btnRegistrar" value="Generar Factura" style="width: 100%" action="#{facdetalleBean.add_factura}">
+        </p:commandButton>
+
+
+
+    </h:body>
+</html>
